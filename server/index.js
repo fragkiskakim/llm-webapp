@@ -37,14 +37,21 @@ app.get("/health", (_req, res) => res.json({ ok: true }));
 app.post("/api/generate", async (req, res) => {
     try {
         const prompt = (req.body?.prompt ?? "").trim();
+        const exp_name = (req.body?.exp_name ?? null);
+        const architecture = (req.body?.architecture ?? null);
+        const description_type = (req.body?.description_type ?? null);
+
         if (!prompt) return res.status(400).json({ error: "Empty prompt" });
-        if (prompt.length > 8000) return res.status(400).json({ error: "Prompt too long" });
+        if (prompt.length > 18000) return res.status(400).json({ error: "Prompt too long" });
 
         // 1) Store prompt
         const ins = await pool.query(
-            "INSERT INTO prompts(prompt) VALUES($1) RETURNING id, created_at",
-            [prompt]
+        `INSERT INTO prompts(prompt, exp_name, architecture, description_type)
+        VALUES($1, $2, $3, $4)
+        RETURNING id, created_at`,
+        [prompt, exp_name, architecture, description_type]
         );
+
         const rowId = ins.rows[0].id;
 
         // 2) Call OpenAI (request JSON-only output)
@@ -98,22 +105,25 @@ app.get("/api/latest", async (_req, res) => {
 });
 
 app.get("/api/prompts", async (_req, res) => {
-    try {
-        const r = await pool.query(`
+  try {
+    const r = await pool.query(`
       SELECT
         id,
         created_at,
+        exp_name,
+        architecture,
+        description_type,
         prompt,
         CASE WHEN cpp_code IS NULL OR length(cpp_code)=0 THEN false ELSE true END AS has_cpp,
         CASE WHEN uml_code IS NULL OR length(uml_code)=0 THEN false ELSE true END AS has_uml
       FROM prompts
       ORDER BY id DESC
     `);
-        res.json(r.rows);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: "Server error" });
-    }
+    res.json(r.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
 });
 
 
@@ -153,6 +163,88 @@ app.get("/api/prompts/:id/uml", async (req, res) => {
         res.status(500).send("Server error");
     }
 });
+
+
+app.get("/api/prompt-template", async (req, res) => {
+  try {
+    const arch = String(req.query.arch || "").toLowerCase();     // "3tier" | "microservices" | "mvc"
+    const spec = String(req.query.spec || "").toLowerCase();     // "srs" | "frnfr"
+
+    const archKey =
+      arch === "3tier" ? "3_3tier" :
+      arch === "mvc" ? "3_mvc" :
+      arch === "microservices" ? "3_micro" :
+      null;
+
+    const specKey =
+      spec === "srs" ? "2_srs" :
+      spec === "frnfr" ? "2_frnfr" :
+      null;
+
+    if (!archKey || !specKey) {
+      return res.status(400).json({ error: "Invalid arch/spec. Use arch=3tier|mvc|microservices and spec=srs|frnfr." });
+    }
+
+    const keys = ["1_task_description", specKey, archKey, "4_finalInstructions"];
+
+    const r = await pool.query(
+      "SELECT name, prompt_part FROM prompt_experiment WHERE name = ANY($1)",
+      [keys]
+    );
+
+    const map = new Map(r.rows.map(x => [x.name, x.prompt_part]));
+
+    const missing = keys.filter(k => !map.has(k));
+    if (missing.length) {
+      return res.status(422).json({ error: "Missing prompt parts in prompt_experiment.", missing });
+    }
+
+    const fullPrompt = keys.map(k => map.get(k)).join("\n\n");
+
+    return res.json({ arch, spec, prompt: fullPrompt });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ error: "Server error" });
+  }
+
+
+});
+
+app.get("/api/prompt-experiment", async (_req, res) => {
+  try {
+    const r = await pool.query(
+      "SELECT name, prompt_part FROM prompt_experiment ORDER BY name"
+    );
+    res.json(r.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+
+app.put("/api/prompt-experiment/:name", async (req, res) => {
+  try {
+    const name = String(req.params.name || "").trim();
+    const prompt_part = String(req.body?.prompt_part ?? "");
+
+    if (!name) return res.status(400).json({ error: "Empty name" });
+
+    const r = await pool.query(
+      `INSERT INTO prompt_experiment(name, prompt_part)
+       VALUES ($1, $2)
+       ON CONFLICT (name) DO UPDATE SET prompt_part = EXCLUDED.prompt_part
+       RETURNING name, prompt_part`,
+      [name, prompt_part]
+    );
+
+    res.json(r.rows[0]);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 
 
 (async () => {
