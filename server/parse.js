@@ -1,8 +1,18 @@
+function stripFence(str, lang) {
+    if (typeof str !== "string") return str;
+
+    const re = new RegExp(
+        "^```\\s*" + lang + "\\s*([\\s\\S]*?)\\s*```$",
+        "i"
+    );
+
+    const m = str.trim().match(re);
+    return m ? m[1].trim() : str;
+}
+
 function safeJsonParse(str) {
-    // Μερικές φορές τα μοντέλα επιστρέφουν ```json ... ``` ή extra whitespace
     const trimmed = (str || "").trim();
 
-    // Αν είναι fenced
     const fenced = trimmed.match(/^```(?:json)?\s*([\s\S]*?)\s*```$/i);
     const payload = fenced ? fenced[1].trim() : trimmed;
 
@@ -15,10 +25,15 @@ function safeJsonParse(str) {
 
 function extractCppUmlFromJson(rawText) {
     const obj = safeJsonParse(rawText);
-    if (!obj || typeof obj !== "object") return { cpp: null, uml: null, parsed: false };
+    if (!obj || typeof obj !== "object") {
+        return { cpp: null, uml: null, parsed: false };
+    }
 
-    const cpp = typeof obj.cpp === "string" ? obj.cpp : null;
-    const uml = typeof obj.uml === "string" ? obj.uml : null;
+    let cpp = typeof obj.cpp === "string" ? obj.cpp : null;
+    let uml = typeof obj.uml === "string" ? obj.uml : null;
+
+    if (cpp) cpp = stripFence(cpp, "cpp");
+    if (uml) uml = stripFence(uml, "plantuml");
 
     return { cpp, uml, parsed: Boolean(cpp && uml) };
 }

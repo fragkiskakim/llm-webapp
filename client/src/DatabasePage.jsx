@@ -125,6 +125,9 @@ export default function DatabasePage() {
                 <tr>
                   <th>ID</th>
                   <th>Created</th>
+                  <th>Experiment</th>
+                  <th>Architecture</th>
+                  <th>Description Type</th>
                   <th>Prompt</th>
                   <th>CPP</th>
                   <th>UML</th>
@@ -135,6 +138,9 @@ export default function DatabasePage() {
                   <tr key={r.id}>
                     <td>{r.id}</td>
                     <td>{r.created_at ? new Date(r.created_at).toLocaleString() : ""}</td>
+                    <td>{r.exp_name || ""}</td>
+                    <td>{r.architecture || ""}</td>
+                    <td>{r.description_type || ""}</td>
                     <td title={r.prompt || ""}>{snippet(r.prompt)}</td>
                     <td>
                       <button

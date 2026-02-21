@@ -18,6 +18,7 @@ export default function HistoryPage() {
         try {
             const r = await fetch(`${API}/api/prompts`);
             const data = await r.json();
+            console.log("Loaded prompts:", data);
             if (!r.ok) throw new Error(data?.error || "Failed to load");
             setRows(Array.isArray(data) ? data : []);
         } catch (e) {
@@ -47,9 +48,14 @@ export default function HistoryPage() {
                         <tr>
                             <th>ID</th>
                             <th>Created</th>
+                            <th>Experiment</th>
+                            <th>Architecture</th>
+                            <th>Description Type</th>
                             <th>Prompt</th>
                             <th>CPP</th>
                             <th>UML</th>
+                            <th>Analyze</th>
+                            <th>CPP Metrics</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,6 +63,9 @@ export default function HistoryPage() {
                             <tr key={r.id}>
                                 <td>{r.id}</td>
                                 <td>{r.created_at ? new Date(r.created_at).toLocaleString() : ""}</td>
+                                <td>{r.exp_name || ""}</td>
+                                <td>{r.architecture || ""}</td>
+                                <td>{r.description_type || ""}</td>
                                 <td title={r.prompt || ""}>{snippet(r.prompt)}</td>
                                 <td>
                                     <button
@@ -74,6 +83,37 @@ export default function HistoryPage() {
                                         Download
                                     </button>
                                 </td>
+                                <td>
+                                    <button
+                                        disabled={!r.has_uml}
+                                        onClick={async () => {
+                                            try {
+                                                const res = await fetch(`${API}/api/analyze/${r.id}`, {
+                                                    method: "POST",
+                                                    headers: {
+                                                        "Content-Type": "application/json",
+                                                    },
+                                                    body: JSON.stringify({}), // αν δεν θες payload, άστο κενό
+                                                });
+
+                                                if (!res.ok) {
+                                                    const err = await res.text();
+                                                    throw new Error(err);
+                                                }
+
+                                                const data = await res.json();
+                                                console.log("Analyze result:", data);
+
+                                            } catch (e) {
+                                                console.error("Analyze failed:", e);
+                                            }
+                                        }}
+                                    >
+                                        Analyze
+                                    </button>
+                                </td>
+
+                                <td>{JSON.stringify(r.cpp_metrics) || ""}</td>
                             </tr>
                         ))}
                         {(!loading && rows.length === 0) && (

@@ -19,6 +19,8 @@ async function initDb() {
     await pool.query(`ALTER TABLE prompts ADD COLUMN IF NOT EXISTS exp_name TEXT;`);
     await pool.query(`ALTER TABLE prompts ADD COLUMN IF NOT EXISTS architecture TEXT;`);
     await pool.query(`ALTER TABLE prompts ADD COLUMN IF NOT EXISTS description_type TEXT;`);
+    await pool.query(`ALTER TABLE prompts ADD COLUMN IF NOT EXISTS cpp_metrics JSONB;`);
+
 
 
     await pool.query(`ALTER TABLE prompts ADD COLUMN IF NOT EXISTS cpp_code TEXT;`);
