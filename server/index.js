@@ -120,6 +120,7 @@ app.get("/api/prompts", async (_req, res) => {
         prompt,
         CASE WHEN cpp_code IS NULL OR length(cpp_code)=0 THEN false ELSE true END AS has_cpp,
         CASE WHEN uml_code IS NULL OR length(uml_code)=0 THEN false ELSE true END AS has_uml,
+        CASE WHEN uml_code_produced IS NULL OR length(uml_code_produced)=0 THEN false ELSE true END AS has_uml_produced,
         CASE
           WHEN cpp_metrics IS NULL THEN false
           WHEN cpp_metrics = '{}'::jsonb THEN false
@@ -176,6 +177,24 @@ app.get("/api/prompts/:id/uml", async (req, res) => {
   }
 });
 
+
+app.get("/api/prompts/:id/uml_produced", async (req, res) => {
+  try {
+    const id = Number(req.params.id);
+    if (!Number.isFinite(id)) return res.status(400).send("Invalid id");
+
+    const r = await pool.query("SELECT uml_code_produced FROM prompts WHERE id=$1", [id]);
+    const uml = r.rows[0]?.uml_code_produced;
+    if (!uml) return res.status(404).send("UML not found");
+
+    res.setHeader("Content-Type", "text/plain; charset=utf-8");
+    res.setHeader("Content-Disposition", `attachment; filename="diagram_${id}.puml"`);
+    res.send(uml);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server error");
+  }
+});
 
 app.get("/api/prompt-template", async (req, res) => {
   try {

@@ -26,6 +26,8 @@ async function initDb() {
     await pool.query(`ALTER TABLE prompts ADD COLUMN IF NOT EXISTS cpp_code TEXT;`);
     await pool.query(`ALTER TABLE prompts ADD COLUMN IF NOT EXISTS uml_code TEXT;`);
 
+    await pool.query(`ALTER TABLE prompts ADD COLUMN IF NOT EXISTS uml_code_produced TEXT;`);
+
 
     await pool.query(`
         CREATE TABLE IF NOT EXISTS prompt_experiment (

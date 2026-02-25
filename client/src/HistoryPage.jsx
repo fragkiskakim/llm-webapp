@@ -54,8 +54,10 @@ export default function HistoryPage() {
                             <th>Prompt</th>
                             <th>CPP</th>
                             <th>UML</th>
+                            <th>UML PRODUCED </th>
                             <th>Analyze</th>
                             <th>CPP Metrics</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -79,6 +81,14 @@ export default function HistoryPage() {
                                     <button
                                         disabled={!r.has_uml}
                                         onClick={() => { window.location.href = `${API}/api/prompts/${r.id}/uml`; }}
+                                    >
+                                        Download
+                                    </button>
+                                </td>
+                                <td>
+                                    <button
+                                        disabled={!r.has_uml_produced}
+                                        onClick={() => { window.location.href = `${API}/api/prompts/${r.id}/uml_produced`; }}
                                     >
                                         Download
                                     </button>
