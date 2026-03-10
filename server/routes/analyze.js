@@ -7,13 +7,11 @@ const os = require("node:os");
 
 function runAnalyzer(cppPath) {
     return new Promise((resolve, reject) => {
-        // Windows default: use Python Launcher (py). Override via .env if you want.
         const PYTHON_BIN = process.env.PYTHON_BIN || "py";
         const PYTHON_ARGS = (process.env.PYTHON_ARGS || "-3")
             .split(/\s+/)
             .filter(Boolean);
 
-        // Absolute path to analyzer script (so CWD doesn't matter)
         const scriptPath = path.join(__dirname, "..", "routes", "analyze_cpp_namespaces.py");
 
         const args = [
@@ -24,14 +22,11 @@ function runAnalyzer(cppPath) {
             "--flag=-std=c++17",
         ];
 
-
         const p = spawn(PYTHON_BIN, args, { windowsHide: true });
 
         let out = "", err = "";
         p.stdout.on("data", d => (out += d.toString()));
         p.stderr.on("data", d => (err += d.toString()));
-
-        // IMPORTANT: prevents server crash on spawn failures
         p.on("error", (e) => reject(e));
 
         p.on("close", code => {
@@ -45,11 +40,54 @@ function runAnalyzer(cppPath) {
     });
 }
 
+// NEW: run hpp2plantuml and return the generated .puml content (as text)
+function runHpp2Plantuml(headerPath, pumlOutPath) {
+    return new Promise((resolve, reject) => {
+        const PYTHON_BIN = process.env.PYTHON_BIN || "py";
+        const PYTHON_ARGS = (process.env.PYTHON_ARGS || "-3")
+            .split(/\s+/)
+            .filter(Boolean);
+
+        const SCRIPT = process.env.HPP2PLANTUML_SCRIPT;
+
+        if (!SCRIPT) {
+            return reject(new Error("HPP2PLANTUML_SCRIPT not defined in .env"));
+        }
+
+        const args = [
+            ...PYTHON_ARGS,
+            SCRIPT,
+            "-i", headerPath,
+            "-o", pumlOutPath,
+            "-d" // enable dependency extraction (optional but useful for metrics)
+        ];
+
+        const p = spawn(PYTHON_BIN, args, { windowsHide: true });
+
+        let err = "";
+        p.stderr.on("data", d => (err += d.toString()));
+        p.on("error", reject);
+
+        p.on("close", async (code) => {
+            if (code !== 0)
+                return reject(new Error(err || `hpp2plantuml failed (${code})`));
+
+            try {
+                const puml = await fs.readFile(pumlOutPath, "utf8");
+                resolve(puml);
+            } catch (e) {
+                reject(new Error(`Failed to read .puml: ${e.message}`));
+            }
+        });
+    });
+}
+
 module.exports = function createAnalyzeRouter({ pool }) {
     const router = express.Router();
 
     // POST /api/analyze/:id
     router.post("/analyze/:id", async (req, res) => {
+        let dir = null;
         try {
             const id = Number(req.params.id);
             if (!Number.isFinite(id)) return res.status(400).json({ error: "Invalid id" });
@@ -58,19 +96,38 @@ module.exports = function createAnalyzeRouter({ pool }) {
             const cpp = r.rows[0]?.cpp_code;
             if (!cpp) return res.status(404).json({ error: "CPP not found" });
 
-            const dir = await fs.mkdtemp(path.join(os.tmpdir(), "cppns-"));
+            dir = await fs.mkdtemp(path.join(os.tmpdir(), "cppns-"));
+
+            // 1) Keep your analyzer input (.cpp)
             const cppPath = path.join(dir, `generated_${id}.cpp`);
             await fs.writeFile(cppPath, cpp, "utf8");
 
-            const metrics = await runAnalyzer(cppPath);
+            // 2) Create a header file for hpp2plantuml (better results than feeding .cpp)
+            //    If your LLM output is a full .cpp, this may still work, but headers are safer.
+            const hppPath = path.join(dir, `generated_${id}.hpp`);
+            await fs.writeFile(hppPath, cpp, "utf8"); // simplest: reuse same content
+            // If you want: extract only class/struct declarations into .hpp later.
 
-            await pool.query("UPDATE prompts SET cpp_metrics=$1 WHERE id=$2", [metrics, id]);
+            // 3) Run both steps
+            const [metrics, plantuml] = await Promise.all([
+                runAnalyzer(cppPath),
+                runHpp2Plantuml(hppPath, path.join(dir, `diagram_${id}.puml`)),
+            ]);
 
-            await fs.rm(dir, { recursive: true, force: true });
-            return res.json({ id, metrics });
+            // 4) Store results
+            await pool.query(
+                "UPDATE prompts SET cpp_metrics=$1, uml_code_produced=$2 WHERE id=$3",
+                [metrics, plantuml, id]
+            );
+
+            return res.json({ id, metrics, plantuml });
         } catch (err) {
             console.error(err);
             return res.status(500).json({ error: "Server error", details: String(err.message || err) });
+        } finally {
+            if (dir) {
+                await fs.rm(dir, { recursive: true, force: true }).catch(() => { });
+            }
         }
     });
 

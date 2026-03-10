@@ -95,7 +95,7 @@ export default function HistoryPage() {
                                 </td>
                                 <td>
                                     <button
-                                        disabled={!r.has_uml}
+                                        disabled={!r.has_cpp}
                                         onClick={async () => {
                                             try {
                                                 const res = await fetch(`${API}/api/analyze/${r.id}`, {

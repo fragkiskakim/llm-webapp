@@ -36,6 +36,23 @@ async function initDb() {
         );
     `);
 
+    //ΝEW TABLES
+
+    await pool.query(`
+    CREATE TABLE IF NOT EXISTS run_experiments (
+    id SERIAL PRIMARY KEY,
+    created_at TIMESTAMP DEFAULT NOW(),
+
+    architecture TEXT NOT NULL,
+    model TEXT NOT NULL,
+    prompt_type TEXT NOT NULL,
+
+    prompt TEXT,
+    response TEXT,
+    cpp_code TEXT
+    );
+    `);
+
 
 }
 

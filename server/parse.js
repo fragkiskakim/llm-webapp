@@ -35,7 +35,21 @@ function extractCppUmlFromJson(rawText) {
     if (cpp) cpp = stripFence(cpp, "cpp");
     if (uml) uml = stripFence(uml, "plantuml");
 
-    return { cpp, uml, parsed: Boolean(cpp && uml) };
+    return { cpp, uml, parsed: Boolean(cpp) };
 }
 
-module.exports = { extractCppUmlFromJson };
+
+function extractCppFromJson(rawText) {
+    const obj = safeJsonParse(rawText);
+    if (!obj || typeof obj !== "object") {
+        return { cpp: null, parsed: false };
+    }
+
+    let cpp = typeof obj.cpp === "string" ? obj.cpp : null;
+
+    if (cpp) cpp = stripFence(cpp, "cpp");
+
+    return { cpp, parsed: Boolean(cpp) };
+}
+
+module.exports = { extractCppUmlFromJson, extractCppFromJson };

@@ -1,11 +1,20 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const { extractCppUmlFromJson } = require("./parse");
+const { extractCppUmlFromJson, extractCppFromJson } = require("./parse");
 
 
 
 const OpenAI = require("openai");
+
+const Anthropic = require("@anthropic-ai/sdk");
+
+const anthropic = new Anthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY,
+});
+
+
+
 const { pool, initDb } = require("./db");
 
 const app = express();
@@ -24,11 +33,9 @@ const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 function wrapPromptForJson(prompt) {
   return [
     "You must respond with ONLY valid JSON.",
-    'Schema: {"cpp": string, "uml": string}',
+    'Schema: {"cpp": string}',
     "No markdown. No explanations. No extra keys.",
-    "The value of cpp must be valid C++ source code as a string.",
-    "The value of uml must be valid PlantUML as a string.",
-    "",
+    "The value of cpp must be valid C++ header source code as a string.",
     "User request:",
     prompt
   ].join("\n");
@@ -150,7 +157,7 @@ app.get("/api/prompts/:id/cpp", async (req, res) => {
     if (!cpp) return res.status(404).send("CPP not found");
 
     res.setHeader("Content-Type", "text/x-c++src; charset=utf-8");
-    res.setHeader("Content-Disposition", `attachment; filename="generated_${id}.cpp"`);
+    res.setHeader("Content-Disposition", `attachment; filename="generated_${id}.hpp"`);
     res.send(cpp);
   } catch (err) {
     console.error(err);
@@ -270,6 +277,134 @@ app.put("/api/prompt-experiment/:name", async (req, res) => {
     );
 
     res.json(r.rows[0]);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+
+app.post("/api/run-experiment", async (req, res) => {
+  try {
+
+    const architecture = req.body?.architecture;
+    const promptType = req.body?.promptType;
+    const model = req.body?.model;
+    if (model == "gpt4") {
+      const request_model = process.env.OPENAI_MODEL || "gpt-5.2";
+    }
+    else if (model == "claude") {
+
+    }
+
+    
+    if (!architecture || !promptType) {
+      return res.status(400).json({ error: "Missing parameters" });
+    }
+
+    const archKey =
+      architecture === "3tier" ? "3_3tier" :
+      architecture === "mvc" ? "3_mvc" :
+      architecture === "microservices" ? "3_micro" :
+      null;
+
+    const specKey =
+      promptType === "srs" ? "2_srs" :
+      promptType === "frnfr" ? "2_frnfr" :
+      null;
+
+    if (!archKey || !specKey) {
+      return res.status(400).json({ error: "Invalid architecture or spec" });
+    }
+
+    const keys = [
+      "1_task_description",
+      specKey,
+      archKey,
+      "4_finalInstructions"
+    ];
+
+    const r = await pool.query(
+      "SELECT name, prompt_part FROM prompt_experiment WHERE name = ANY($1)",
+      [keys]
+    );
+
+    const map = new Map(r.rows.map(x => [x.name, x.prompt_part]));
+
+    const prompt = keys.map(k => map.get(k)).join("\n\n");
+
+    // ------------------------
+    // INSERT RUN
+    // ------------------------
+
+    const ins = await pool.query(
+      `INSERT INTO run_experiments
+       (architecture, model, prompt_type, prompt)
+       VALUES ($1,$2,$3,$4)
+       RETURNING id`,
+      [architecture, model, promptType, prompt]
+    );
+
+    const runId = ins.rows[0].id;
+
+    // ------------------------
+    // CALL LLM
+    // ------------------------
+
+    
+    const llmInput = wrapPromptForJson(prompt);
+
+    let text = "";
+    let response;
+
+    if (model === "gpt4") {
+
+      const request_model = process.env.OPENAI_MODEL || "gpt-4o";
+
+      response = await client.responses.create({
+        model: request_model,
+        input: llmInput
+      });
+
+      text = response.output_text ?? "";
+
+    }
+    else if (model === "claude") {
+
+      const msg = await anthropic.messages.create({
+        model: "claude-opus-4-6",
+        max_tokens: 4000,
+        messages: [
+          {
+            role: "user",
+            content: llmInput
+          }
+        ]
+      });
+
+      text = msg.content[0].text;
+
+    }
+
+    const { cpp } = extractCppFromJson(text);
+
+    // ------------------------
+    // UPDATE WITH RESULT
+    // ------------------------
+
+    await pool.query(
+      `UPDATE run_experiments
+       SET response=$1, cpp_code=$2
+       WHERE id=$3`,
+      [text, cpp, runId]
+    );
+
+    return res.json({
+      id: runId,
+      prompt,
+      cpp
+    });
+
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Server error" });
