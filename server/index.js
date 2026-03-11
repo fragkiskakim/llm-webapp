@@ -284,6 +284,8 @@ app.put("/api/prompt-experiment/:name", async (req, res) => {
 });
 
 
+
+// RUN EXPERIMENT API that runs each time we run a new experiment from the run page
 app.post("/api/run-experiment", async (req, res) => {
   try {
 
@@ -306,6 +308,7 @@ app.post("/api/run-experiment", async (req, res) => {
       architecture === "3tier" ? "3_3tier" :
       architecture === "mvc" ? "3_mvc" :
       architecture === "microservices" ? "3_micro" :
+      architecture === "client-server" ? "3_client-server" :
       null;
 
     const specKey =
@@ -399,10 +402,20 @@ app.post("/api/run-experiment", async (req, res) => {
       [text, cpp, runId]
     );
 
+    //TODO: change the analysis to something that makes sense
+    analysis = {
+      min: 0.32,
+      max: 0.87,
+      total: 0.67,
+      problem: "You have too many connections"
+    }
+
+
     return res.json({
       id: runId,
       prompt,
-      cpp
+      cpp,
+      analysis
     });
 
   } catch (err) {

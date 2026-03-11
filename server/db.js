@@ -49,7 +49,10 @@ async function initDb() {
 
     prompt TEXT,
     response TEXT,
-    cpp_code TEXT
+    cpp_code TEXT,
+    uml_produced TEXT,
+    cpp_metrics JSONB
+
     );
     `);
 

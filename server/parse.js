@@ -41,15 +41,23 @@ function extractCppUmlFromJson(rawText) {
 
 function extractCppFromJson(rawText) {
     const obj = safeJsonParse(rawText);
-    if (!obj || typeof obj !== "object") {
-        return { cpp: null, parsed: false };
+
+    if (obj && typeof obj.cpp === "string") {
+        return { cpp: stripFence(obj.cpp, "cpp"), parsed: true };
     }
 
-    let cpp = typeof obj.cpp === "string" ? obj.cpp : null;
+    // fallback: regex extraction
+    const match = rawText.match(/"cpp"\s*:\s*"([\s\S]*)"/);
 
-    if (cpp) cpp = stripFence(cpp, "cpp");
+    if (match) {
+        let cpp = match[1]
+            .replace(/\\n/g, "\n")
+            .replace(/\\"/g, '"');
 
-    return { cpp, parsed: Boolean(cpp) };
+        return { cpp, parsed: true };
+    }
+
+    return { cpp: null, parsed: false };
 }
 
 module.exports = { extractCppUmlFromJson, extractCppFromJson };

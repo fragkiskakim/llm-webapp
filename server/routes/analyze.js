@@ -5,6 +5,25 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const os = require("node:os");
 
+
+
+//helper function to strip function bodies from C++ code, leaving only declarations (for better namespace analysis)
+function stripFunctionBodies(code) {
+
+    // remove constructor initializer lists
+    code = code.replace(/\)\s*:\s*[^{]+{/g, "){");
+
+    // remove inline function bodies
+    code = code.replace(/\)\s*\{[^{}]*\}/g, ");");
+
+    return code;
+}
+
+
+
+
+
+
 function runAnalyzer(cppPath) {
     return new Promise((resolve, reject) => {
         const PYTHON_BIN = process.env.PYTHON_BIN || "py";
@@ -92,7 +111,7 @@ module.exports = function createAnalyzeRouter({ pool }) {
             const id = Number(req.params.id);
             if (!Number.isFinite(id)) return res.status(400).json({ error: "Invalid id" });
 
-            const r = await pool.query("SELECT cpp_code FROM prompts WHERE id=$1", [id]);
+            const r = await pool.query("SELECT cpp_code FROM run_experiments WHERE id=$1", [id]);
             const cpp = r.rows[0]?.cpp_code;
             if (!cpp) return res.status(404).json({ error: "CPP not found" });
 
@@ -105,7 +124,13 @@ module.exports = function createAnalyzeRouter({ pool }) {
             // 2) Create a header file for hpp2plantuml (better results than feeding .cpp)
             //    If your LLM output is a full .cpp, this may still work, but headers are safer.
             const hppPath = path.join(dir, `generated_${id}.hpp`);
-            await fs.writeFile(hppPath, cpp, "utf8"); // simplest: reuse same content
+            const headerOnly = stripFunctionBodies(cpp);
+
+            await fs.writeFile(hppPath, headerOnly, "utf8");
+
+            console.log("\n===== HEADER SENT TO HPP2PLANTUML =====");
+            console.log(headerOnly);
+            console.log("===== END HEADER =====\n");
             // If you want: extract only class/struct declarations into .hpp later.
 
             // 3) Run both steps
@@ -116,7 +141,7 @@ module.exports = function createAnalyzeRouter({ pool }) {
 
             // 4) Store results
             await pool.query(
-                "UPDATE prompts SET cpp_metrics=$1, uml_code_produced=$2 WHERE id=$3",
+                "UPDATE run_experiments SET cpp_metrics=$1, uml_produced=$2 WHERE id=$3",
                 [metrics, plantuml, id]
             );
 

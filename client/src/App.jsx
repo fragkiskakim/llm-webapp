@@ -5,7 +5,7 @@ import DatabasePage from "./DatabasePage.jsx";
 import NewProjectPage from "./NewProjectPage.jsx";
 import NewPage from "./NewPage.jsx";
 import Header from "./Header.jsx";
-import RunPage from "./dcc_project/RunPage.jsx";
+import RunPage from "./dcc_project/run/RunPage.jsx";
 import RepeatedVisualizations from "./dcc_project/repeated/RepeatedVisualizations.jsx";
 import RepeatedResults from "./dcc_project/repeated/RepeatedResults.jsx";
 import MultiTurnPage from "./dcc_project/MultiTurnPage.jsx";

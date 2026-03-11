@@ -1,4 +1,5 @@
-import DccTabs from "../DccTabs.jsx";
+import DccTabs from "../../DccTabs.jsx";
+import ResultContainer from "./ResultContainer.jsx";
 import { useState } from "react";
 
 const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
@@ -9,6 +10,8 @@ export default function RunPage() {
   const [model, setModel] = useState("");
   const [promptType, setPromptType] = useState("");
   const [warning, setWarning] = useState("");
+
+  const [result, setResult] = useState(null);
 
   async function runExperiment(architecture, model, promptType) {
 
@@ -30,7 +33,23 @@ export default function RunPage() {
 
     if (!r.ok) throw new Error(data?.error || "Run failed");
 
-    console.log("Experiment result:", data);
+    const analyze = await fetch(`${API}/api/analyze/${data.id}`, {
+      method: "POST"
+    });
+
+    const analyzeData = await analyze.json();
+    if (!analyze.ok) throw new Error(analyzeData?.error || "Analyze failed");
+
+    // 3️⃣ combine results
+    const result = {
+      ...data,
+      metrics: analyzeData.metrics,
+      plantuml_produced: analyzeData.plantuml
+    };
+
+    setResult(result);
+
+    console.log("Experiment result:", result);
 
   } catch (e) {
     setWarning(e.message);
@@ -94,9 +113,13 @@ export default function RunPage() {
             value={architecture}
             onChange={(e) => setArchitecture(e.target.value)}
           >
-            <option value="">Architecture</option>
+            <option value="" disabled>
+              Architecture
+            </option>
             <option value="mvc">MVC</option>
-            <option value="Layered">Layered</option>
+            <option value="3tier">3-Tier</option>
+            <option value="microservices">Microservices</option>
+            <option value="client-server">Client Server</option>
           </select>
 
           <select
@@ -104,7 +127,7 @@ export default function RunPage() {
             value={model}
             onChange={(e) => setModel(e.target.value)}
           >
-            <option value="">LLM Model</option>
+            <option value="" disabled>LLM Model</option>
             <option value="gpt4">GPT-4</option>
             <option value="claude">Claude</option>
           </select>
@@ -114,7 +137,7 @@ export default function RunPage() {
             value={promptType}
             onChange={(e) => setPromptType(e.target.value)}
           >
-            <option value="">Prompt Type</option>
+            <option value="" disabled>Prompt Type</option>
             <option value="frnfr">FR-NFR</option>
             <option value="srs">SRS</option>
           </select>
@@ -134,17 +157,7 @@ export default function RunPage() {
       </div>
 
       {/* Result */}
-      <div style={cardStyle}>
-        <h3 style={{ marginTop: 0 }}>Result</h3>
-
-        <div
-          style={{
-            height: 350,
-            border: "1px dashed #ddd",
-            borderRadius: 6
-          }}
-        />
-      </div>
+      <ResultContainer result={result} />
 
     </div>
   );
