@@ -299,22 +299,22 @@ app.post("/api/run-experiment", async (req, res) => {
 
     }
 
-    
+
     if (!architecture || !promptType) {
       return res.status(400).json({ error: "Missing parameters" });
     }
 
     const archKey =
       architecture === "3tier" ? "3_3tier" :
-      architecture === "mvc" ? "3_mvc" :
-      architecture === "microservices" ? "3_micro" :
-      architecture === "client-server" ? "3_client-server" :
-      null;
+        architecture === "mvc" ? "3_mvc" :
+          architecture === "microservices" ? "3_micro" :
+            architecture === "client-server" ? "3_client-server" :
+              null;
 
     const specKey =
       promptType === "srs" ? "2_srs" :
-      promptType === "frnfr" ? "2_frnfr" :
-      null;
+        promptType === "frnfr" ? "2_frnfr" :
+          null;
 
     if (!archKey || !specKey) {
       return res.status(400).json({ error: "Invalid architecture or spec" });
@@ -339,13 +339,14 @@ app.post("/api/run-experiment", async (req, res) => {
     // ------------------------
     // INSERT RUN
     // ------------------------
+    const category = `DCC_${architecture}_${model}_${promptType}`;
 
     const ins = await pool.query(
       `INSERT INTO run_experiments
-       (architecture, model, prompt_type, prompt)
-       VALUES ($1,$2,$3,$4)
-       RETURNING id`,
-      [architecture, model, promptType, prompt]
+      (architecture, model, prompt_type, prompt, category)
+      VALUES ($1,$2,$3,$4,$5)
+      RETURNING id`,
+      [architecture, model, promptType, prompt, category]
     );
 
     const runId = ins.rows[0].id;
@@ -354,7 +355,7 @@ app.post("/api/run-experiment", async (req, res) => {
     // CALL LLM
     // ------------------------
 
-    
+
     const llmInput = wrapPromptForJson(prompt);
 
     let text = "";
@@ -424,6 +425,71 @@ app.post("/api/run-experiment", async (req, res) => {
   }
 });
 
+// API to get all distinct categories for filtering on the frontend
+app.get("/api/categories", async (req, res) => {
+  try {
+
+    const r = await pool.query(
+      `SELECT DISTINCT category
+       FROM run_experiments
+       ORDER BY category`
+    );
+
+    res.json(r.rows);
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+
+app.get("/api/results", async (req, res) => {
+
+  const { category, architecture, model, promptType } = req.query;
+
+  let query = `
+    SELECT id,
+           category,
+           architecture,
+           model,
+           prompt_type
+    FROM run_experiments
+    WHERE 1=1
+  `;
+
+  const params = [];
+  let i = 1;
+
+  if (category) {
+    query += ` AND category = $${i++}`;
+    params.push(category);
+  }
+
+  if (architecture) {
+    query += ` AND architecture = $${i++}`;
+    params.push(architecture);
+  }
+
+  if (model) {
+    query += ` AND model = $${i++}`;
+    params.push(model);
+  }
+
+  if (promptType) {
+    query += ` AND prompt_type = $${i++}`;
+    params.push(promptType);
+  }
+
+  query += `
+    GROUP BY category, architecture, model, prompt_type, id
+    ORDER BY category
+  `;
+
+  const r = await pool.query(query, params);
+
+  res.json(r.rows);
+});
 
 
 (async () => {

@@ -42,6 +42,7 @@ async function initDb() {
     CREATE TABLE IF NOT EXISTS run_experiments (
     id SERIAL PRIMARY KEY,
     created_at TIMESTAMP DEFAULT NOW(),
+    category TEXT,
 
     architecture TEXT NOT NULL,
     model TEXT NOT NULL,
