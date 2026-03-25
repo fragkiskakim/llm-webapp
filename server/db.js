@@ -52,6 +52,7 @@ async function initDb() {
     response TEXT,
     cpp_code TEXT,
     uml_produced TEXT,
+    graph_json JSONB,
     cpp_metrics JSONB
 
     );

@@ -101,6 +101,55 @@ function runHpp2Plantuml(headerPath, pumlOutPath) {
     });
 }
 
+
+function runGraphExtractor(cppPath) {
+    return new Promise((resolve, reject) => {
+        const pythonBin = process.env.PYTHON_BIN || "python";
+
+        const scriptPath = path.join(__dirname, "..", "routes", "analyze_cpp_classes_to_graph.py");
+        // άλλαξέ το path ανάλογα με το project σου
+
+        const args = [
+            scriptPath,
+            cppPath,
+            "--flag=-std=c++17",
+            "--ignore-std"
+        ];
+
+        const py = spawn(pythonBin, args, {
+            cwd: process.cwd()
+        });
+        let stdout = "";
+        let stderr = "";
+
+        py.stdout.on("data", (data) => {
+            stdout += data.toString();
+        });
+
+        py.stderr.on("data", (data) => {
+            stderr += data.toString();
+        });
+
+        py.on("close", (code) => {
+            if (code !== 0) {
+                return reject(new Error(`Graph extractor failed:\n${stderr}`));
+            }
+
+            try {
+                const parsed = JSON.parse(stdout);
+                resolve(parsed);
+            } catch (e) {
+                reject(new Error(`Invalid graph JSON output:\n${stdout}`));
+            }
+        });
+
+        py.on("error", (err) => {
+            reject(err);
+        });
+    });
+}
+
+
 module.exports = function createAnalyzeRouter({ pool }) {
     const router = express.Router();
 
@@ -133,19 +182,32 @@ module.exports = function createAnalyzeRouter({ pool }) {
             console.log("===== END HEADER =====\n");
             // If you want: extract only class/struct declarations into .hpp later.
 
-            // 3) Run both steps
-            const [metrics, plantuml] = await Promise.all([
+            // 3) Run all analysis steps
+            const [metrics, plantuml, graphJson] = await Promise.all([
                 runAnalyzer(cppPath),
                 runHpp2Plantuml(hppPath, path.join(dir, `diagram_${id}.puml`)),
+                runGraphExtractor(cppPath) // ή hppPath, ανάλογα τι θες να αναλύσεις
             ]);
 
-            // 4) Store results
+            // 4) Store all results
             await pool.query(
-                "UPDATE run_experiments SET cpp_metrics=$1, uml_produced=$2 WHERE id=$3",
-                [metrics, plantuml, id]
+                `
+                UPDATE run_experiments
+                SET cpp_metrics = $1,
+                    uml_produced = $2,
+                    graph_json = $3
+                WHERE id = $4
+                `,
+                [metrics, plantuml, graphJson, id]
             );
 
-            return res.json({ id, metrics, plantuml });
+            return res.json({
+                id,
+                metrics,
+                plantuml,
+                graphJson
+            });
+
         } catch (err) {
             console.error(err);
             return res.status(500).json({ error: "Server error", details: String(err.message || err) });

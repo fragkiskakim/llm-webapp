@@ -1,0 +1,278 @@
+{
+    "nodes": [
+        {
+            "id": "Client::CartesianCoordinate",
+            "kind": "class",
+            "owner_namespace": "Client",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Client::PolarCoordinate",
+            "kind": "class",
+            "owner_namespace": "Client",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Client::ClientCoordinateGroup",
+            "kind": "class",
+            "owner_namespace": "Client",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Client::ClientCoordinateConverter",
+            "kind": "class",
+            "owner_namespace": "Client",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Client::CoordinateInputPanel",
+            "kind": "class",
+            "owner_namespace": "Client",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Client::CoordinateListPanel",
+            "kind": "class",
+            "owner_namespace": "Client",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Client::ClientMainFrame",
+            "kind": "class",
+            "owner_namespace": "Client",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Server::ServerCartesianCoordinate",
+            "kind": "class",
+            "owner_namespace": "Server",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Server::ServerPolarCoordinate",
+            "kind": "class",
+            "owner_namespace": "Server",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Server::ServerCoordinateGroup",
+            "kind": "class",
+            "owner_namespace": "Server",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Server::ServerCoordinateConverter",
+            "kind": "class",
+            "owner_namespace": "Server",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Server::ServerCoordinateValidator",
+            "kind": "class",
+            "owner_namespace": "Server",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Server::ServerCoordinateService",
+            "kind": "class",
+            "owner_namespace": "Server",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Database::DatabaseConnectionConfig",
+            "kind": "class",
+            "owner_namespace": "Database",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Database::MySQLConnectionManager",
+            "kind": "class",
+            "owner_namespace": "Database",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Database::DatabaseCoordinateEntity",
+            "kind": "class",
+            "owner_namespace": "Database",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Database::DatabaseCoordinateMapper",
+            "kind": "class",
+            "owner_namespace": "Database",
+            "is_abstract": false,
+            "is_template": false
+        },
+        {
+            "id": "Database::DatabaseCoordinateRepository",
+            "kind": "class",
+            "owner_namespace": "Database",
+            "is_abstract": false,
+            "is_template": false
+        }
+    ],
+    "edges": [
+        {
+            "src": "Client::ClientCoordinateConverter",
+            "dst": "Client::CartesianCoordinate",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Client::ClientCoordinateConverter",
+            "dst": "Client::PolarCoordinate",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Client::ClientCoordinateGroup",
+            "dst": "Client::CartesianCoordinate",
+            "type": "COMPOSE"
+        },
+        {
+            "src": "Client::ClientCoordinateGroup",
+            "dst": "Client::CartesianCoordinate",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Client::ClientCoordinateGroup",
+            "dst": "Client::PolarCoordinate",
+            "type": "COMPOSE"
+        },
+        {
+            "src": "Client::ClientCoordinateGroup",
+            "dst": "Client::PolarCoordinate",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Client::ClientMainFrame",
+            "dst": "Client::CoordinateInputPanel",
+            "type": "COMPOSE"
+        },
+        {
+            "src": "Client::ClientMainFrame",
+            "dst": "Client::CoordinateListPanel",
+            "type": "COMPOSE"
+        },
+        {
+            "src": "Client::ClientMainFrame",
+            "dst": "Server::ServerCoordinateService",
+            "type": "COMPOSE"
+        },
+        {
+            "src": "Client::ClientMainFrame",
+            "dst": "Server::ServerCoordinateService",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Client::CoordinateInputPanel",
+            "dst": "Client::ClientCoordinateGroup",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Client::CoordinateListPanel",
+            "dst": "Client::ClientCoordinateGroup",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Database::DatabaseCoordinateMapper",
+            "dst": "Database::DatabaseCoordinateEntity",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Database::DatabaseCoordinateMapper",
+            "dst": "Server::ServerCoordinateGroup",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Database::DatabaseCoordinateRepository",
+            "dst": "Database::DatabaseCoordinateEntity",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Database::DatabaseCoordinateRepository",
+            "dst": "Database::MySQLConnectionManager",
+            "type": "COMPOSE"
+        },
+        {
+            "src": "Database::DatabaseCoordinateRepository",
+            "dst": "Database::MySQLConnectionManager",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Database::MySQLConnectionManager",
+            "dst": "Database::DatabaseConnectionConfig",
+            "type": "COMPOSE"
+        },
+        {
+            "src": "Database::MySQLConnectionManager",
+            "dst": "Database::DatabaseConnectionConfig",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Server::ServerCoordinateConverter",
+            "dst": "Server::ServerCartesianCoordinate",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Server::ServerCoordinateConverter",
+            "dst": "Server::ServerPolarCoordinate",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Server::ServerCoordinateGroup",
+            "dst": "Server::ServerCartesianCoordinate",
+            "type": "COMPOSE"
+        },
+        {
+            "src": "Server::ServerCoordinateGroup",
+            "dst": "Server::ServerCartesianCoordinate",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Server::ServerCoordinateGroup",
+            "dst": "Server::ServerPolarCoordinate",
+            "type": "COMPOSE"
+        },
+        {
+            "src": "Server::ServerCoordinateGroup",
+            "dst": "Server::ServerPolarCoordinate",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Server::ServerCoordinateService",
+            "dst": "Database::DatabaseCoordinateRepository",
+            "type": "COMPOSE"
+        },
+        {
+            "src": "Server::ServerCoordinateService",
+            "dst": "Database::DatabaseCoordinateRepository",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Server::ServerCoordinateService",
+            "dst": "Server::ServerCoordinateGroup",
+            "type": "USE_TYPE"
+        },
+        {
+            "src": "Server::ServerCoordinateValidator",
+            "dst": "Server::ServerCoordinateGroup",
+            "type": "USE_TYPE"
+        }
+    ],
+    "scope": "single_translation_unit"
+}

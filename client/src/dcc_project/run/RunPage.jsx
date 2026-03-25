@@ -44,7 +44,8 @@ export default function RunPage() {
       const result = {
         ...data,
         metrics: analyzeData.metrics,
-        plantuml_produced: analyzeData.plantuml
+        plantuml_produced: analyzeData.plantuml,
+        graphJson: analyzeData.graphJson
       };
 
       setResult(result);
