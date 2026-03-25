@@ -148,6 +148,7 @@ export default function RepeatedResults() {
             <option value="">LLM Model</option>
             <option value="gpt4">GPT-4</option>
             <option value="claude">Claude</option>
+            <option value="grok">Grok</option>
           </select>
 
 

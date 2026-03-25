@@ -15,46 +15,46 @@ export default function RunPage() {
 
   async function runExperiment(architecture, model, promptType) {
 
-  try {
+    try {
 
-    const r = await fetch(`${API}/api/run-experiment`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        architecture,
-        model,
-        promptType
-      })
-    });
+      const r = await fetch(`${API}/api/run-experiment`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          architecture,
+          model,
+          promptType
+        })
+      });
 
-    const data = await r.json();
+      const data = await r.json();
 
-    if (!r.ok) throw new Error(data?.error || "Run failed");
+      if (!r.ok) throw new Error(data?.error || "Run failed");
 
-    const analyze = await fetch(`${API}/api/analyze/${data.id}`, {
-      method: "POST"
-    });
+      const analyze = await fetch(`${API}/api/analyze/${data.id}`, {
+        method: "POST"
+      });
 
-    const analyzeData = await analyze.json();
-    if (!analyze.ok) throw new Error(analyzeData?.error || "Analyze failed");
+      const analyzeData = await analyze.json();
+      if (!analyze.ok) throw new Error(analyzeData?.error || "Analyze failed");
 
-    // 3️⃣ combine results
-    const result = {
-      ...data,
-      metrics: analyzeData.metrics,
-      plantuml_produced: analyzeData.plantuml
-    };
+      // 3️⃣ combine results
+      const result = {
+        ...data,
+        metrics: analyzeData.metrics,
+        plantuml_produced: analyzeData.plantuml
+      };
 
-    setResult(result);
+      setResult(result);
 
-    console.log("Experiment result:", result);
+      console.log("Experiment result:", result);
 
-  } catch (e) {
-    setWarning(e.message);
+    } catch (e) {
+      setWarning(e.message);
+    }
   }
-}
 
   function handleRun() {
     if (!architecture || !model || !promptType) {
@@ -130,6 +130,7 @@ export default function RunPage() {
             <option value="" disabled>LLM Model</option>
             <option value="gpt4">GPT-4</option>
             <option value="claude">Claude</option>
+            <option value="grok">Grok</option>
           </select>
 
           <select

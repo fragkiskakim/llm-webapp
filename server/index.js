@@ -4,7 +4,7 @@ const cors = require("cors");
 const { extractCppUmlFromJson, extractCppFromJson } = require("./parse");
 
 
-
+const grokKey = process.env.GROK_API_KEY;
 const OpenAI = require("openai");
 
 const Anthropic = require("@anthropic-ai/sdk");
@@ -292,12 +292,6 @@ app.post("/api/run-experiment", async (req, res) => {
     const architecture = req.body?.architecture;
     const promptType = req.body?.promptType;
     const model = req.body?.model;
-    if (model == "gpt4") {
-      const request_model = process.env.OPENAI_MODEL || "gpt-5.2";
-    }
-    else if (model == "claude") {
-
-    }
 
 
     if (!architecture || !promptType) {
@@ -387,6 +381,27 @@ app.post("/api/run-experiment", async (req, res) => {
       });
 
       text = msg.content[0].text;
+
+    }
+    else if (model === "grok") {
+
+      const r = await fetch("https://api.x.ai/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${process.env.GROK_API_KEY}`
+        },
+        body: JSON.stringify({
+          model: "grok-4",
+          messages: [
+            { role: "user", content: llmInput }
+          ]
+        })
+      });
+
+      const data = await r.json();
+
+      text = data.choices?.[0]?.message?.content ?? "";
 
     }
 
