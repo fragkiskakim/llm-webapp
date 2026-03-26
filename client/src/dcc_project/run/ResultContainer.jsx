@@ -87,7 +87,7 @@ export default function ResultContainer({ result }) {
         {tab === "code" && <CodePanel code={result.cpp} />}
         {tab === "viz" && <VisualizationPanel uml={result.plantuml_produced} />}
         {tab === "analysis" && <AnalysisPanel analysis={result.analysis} />}
-        {tab === "graphjson" && <CodePanel code={JSON.stringify(result.graphJson, null, 2)} />}
+        {tab === "graphjson" && <CodePanel code={JSON.stringify(result.graphjson, null, 2)} />}
 
 
       </div>

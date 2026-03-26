@@ -1,278 +1,3180 @@
 {
-    "nodes": [
+  "nodes": [
+    {
+      "id": "Client::CartesianCoordinate",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Client",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Client::PolarCoordinate",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Client",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Client::ClientCoordinateGroup",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Client",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Client::ClientCoordinateConverter",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Client",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Client::CoordinateInputPanel",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Client",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Client::CoordinateListPanel",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Client",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Client::ClientMainFrame",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Client",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Server::ServerCartesianCoordinate",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Server",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Server::ServerPolarCoordinate",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Server",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Server::ServerCoordinateGroup",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Server",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Server::ServerCoordinateConverter",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Server",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Server::ServerCoordinateValidator",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Server",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Server::ServerCoordinateService",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Server",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Database::DatabaseConnectionConfig",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Database",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Database::MySQLConnectionManager",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Database",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Database",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Database::DatabaseCoordinateMapper",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Database",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Database::DatabaseCoordinateRepository",
+      "node_type": "class",
+      "kind": "class",
+      "owner_namespace": "Database",
+      "is_abstract": false,
+      "is_template": false
+    },
+    {
+      "id": "Client::CartesianCoordinate::CartesianCoordinate()",
+      "node_type": "method",
+      "owner_class": "Client::CartesianCoordinate",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": []
+    },
+    {
+      "id": "Client::CartesianCoordinate::CartesianCoordinate(double, double)",
+      "node_type": "method",
+      "owner_class": "Client::CartesianCoordinate",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": [
         {
-            "id": "Client::CartesianCoordinate",
-            "kind": "class",
-            "owner_namespace": "Client",
-            "is_abstract": false,
-            "is_template": false
+          "name": "x",
+          "type": "double",
+          "type_canonical": "double"
         },
         {
-            "id": "Client::PolarCoordinate",
-            "kind": "class",
-            "owner_namespace": "Client",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Client::ClientCoordinateGroup",
-            "kind": "class",
-            "owner_namespace": "Client",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Client::ClientCoordinateConverter",
-            "kind": "class",
-            "owner_namespace": "Client",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Client::CoordinateInputPanel",
-            "kind": "class",
-            "owner_namespace": "Client",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Client::CoordinateListPanel",
-            "kind": "class",
-            "owner_namespace": "Client",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Client::ClientMainFrame",
-            "kind": "class",
-            "owner_namespace": "Client",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Server::ServerCartesianCoordinate",
-            "kind": "class",
-            "owner_namespace": "Server",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Server::ServerPolarCoordinate",
-            "kind": "class",
-            "owner_namespace": "Server",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Server::ServerCoordinateGroup",
-            "kind": "class",
-            "owner_namespace": "Server",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Server::ServerCoordinateConverter",
-            "kind": "class",
-            "owner_namespace": "Server",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Server::ServerCoordinateValidator",
-            "kind": "class",
-            "owner_namespace": "Server",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Server::ServerCoordinateService",
-            "kind": "class",
-            "owner_namespace": "Server",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Database::DatabaseConnectionConfig",
-            "kind": "class",
-            "owner_namespace": "Database",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Database::MySQLConnectionManager",
-            "kind": "class",
-            "owner_namespace": "Database",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Database::DatabaseCoordinateEntity",
-            "kind": "class",
-            "owner_namespace": "Database",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Database::DatabaseCoordinateMapper",
-            "kind": "class",
-            "owner_namespace": "Database",
-            "is_abstract": false,
-            "is_template": false
-        },
-        {
-            "id": "Database::DatabaseCoordinateRepository",
-            "kind": "class",
-            "owner_namespace": "Database",
-            "is_abstract": false,
-            "is_template": false
+          "name": "y",
+          "type": "double",
+          "type_canonical": "double"
         }
-    ],
-    "edges": [
+      ]
+    },
+    {
+      "id": "Client::CartesianCoordinate::getX()",
+      "node_type": "method",
+      "owner_class": "Client::CartesianCoordinate",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "double",
+      "parameters": []
+    },
+    {
+      "id": "Client::CartesianCoordinate::getY()",
+      "node_type": "method",
+      "owner_class": "Client::CartesianCoordinate",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "double",
+      "parameters": []
+    },
+    {
+      "id": "Client::CartesianCoordinate::setX(double)",
+      "node_type": "method",
+      "owner_class": "Client::CartesianCoordinate",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
         {
-            "src": "Client::ClientCoordinateConverter",
-            "dst": "Client::CartesianCoordinate",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Client::ClientCoordinateConverter",
-            "dst": "Client::PolarCoordinate",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Client::ClientCoordinateGroup",
-            "dst": "Client::CartesianCoordinate",
-            "type": "COMPOSE"
-        },
-        {
-            "src": "Client::ClientCoordinateGroup",
-            "dst": "Client::CartesianCoordinate",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Client::ClientCoordinateGroup",
-            "dst": "Client::PolarCoordinate",
-            "type": "COMPOSE"
-        },
-        {
-            "src": "Client::ClientCoordinateGroup",
-            "dst": "Client::PolarCoordinate",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Client::ClientMainFrame",
-            "dst": "Client::CoordinateInputPanel",
-            "type": "COMPOSE"
-        },
-        {
-            "src": "Client::ClientMainFrame",
-            "dst": "Client::CoordinateListPanel",
-            "type": "COMPOSE"
-        },
-        {
-            "src": "Client::ClientMainFrame",
-            "dst": "Server::ServerCoordinateService",
-            "type": "COMPOSE"
-        },
-        {
-            "src": "Client::ClientMainFrame",
-            "dst": "Server::ServerCoordinateService",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Client::CoordinateInputPanel",
-            "dst": "Client::ClientCoordinateGroup",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Client::CoordinateListPanel",
-            "dst": "Client::ClientCoordinateGroup",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Database::DatabaseCoordinateMapper",
-            "dst": "Database::DatabaseCoordinateEntity",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Database::DatabaseCoordinateMapper",
-            "dst": "Server::ServerCoordinateGroup",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Database::DatabaseCoordinateRepository",
-            "dst": "Database::DatabaseCoordinateEntity",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Database::DatabaseCoordinateRepository",
-            "dst": "Database::MySQLConnectionManager",
-            "type": "COMPOSE"
-        },
-        {
-            "src": "Database::DatabaseCoordinateRepository",
-            "dst": "Database::MySQLConnectionManager",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Database::MySQLConnectionManager",
-            "dst": "Database::DatabaseConnectionConfig",
-            "type": "COMPOSE"
-        },
-        {
-            "src": "Database::MySQLConnectionManager",
-            "dst": "Database::DatabaseConnectionConfig",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Server::ServerCoordinateConverter",
-            "dst": "Server::ServerCartesianCoordinate",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Server::ServerCoordinateConverter",
-            "dst": "Server::ServerPolarCoordinate",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Server::ServerCoordinateGroup",
-            "dst": "Server::ServerCartesianCoordinate",
-            "type": "COMPOSE"
-        },
-        {
-            "src": "Server::ServerCoordinateGroup",
-            "dst": "Server::ServerCartesianCoordinate",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Server::ServerCoordinateGroup",
-            "dst": "Server::ServerPolarCoordinate",
-            "type": "COMPOSE"
-        },
-        {
-            "src": "Server::ServerCoordinateGroup",
-            "dst": "Server::ServerPolarCoordinate",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Server::ServerCoordinateService",
-            "dst": "Database::DatabaseCoordinateRepository",
-            "type": "COMPOSE"
-        },
-        {
-            "src": "Server::ServerCoordinateService",
-            "dst": "Database::DatabaseCoordinateRepository",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Server::ServerCoordinateService",
-            "dst": "Server::ServerCoordinateGroup",
-            "type": "USE_TYPE"
-        },
-        {
-            "src": "Server::ServerCoordinateValidator",
-            "dst": "Server::ServerCoordinateGroup",
-            "type": "USE_TYPE"
+          "name": "x",
+          "type": "double",
+          "type_canonical": "double"
         }
-    ],
-    "scope": "single_translation_unit"
+      ]
+    },
+    {
+      "id": "Client::CartesianCoordinate::setY(double)",
+      "node_type": "method",
+      "owner_class": "Client::CartesianCoordinate",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "y",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Client::PolarCoordinate::PolarCoordinate()",
+      "node_type": "method",
+      "owner_class": "Client::PolarCoordinate",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": []
+    },
+    {
+      "id": "Client::PolarCoordinate::PolarCoordinate(double, double)",
+      "node_type": "method",
+      "owner_class": "Client::PolarCoordinate",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": [
+        {
+          "name": "r",
+          "type": "double",
+          "type_canonical": "double"
+        },
+        {
+          "name": "theta",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Client::PolarCoordinate::getR()",
+      "node_type": "method",
+      "owner_class": "Client::PolarCoordinate",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "double",
+      "parameters": []
+    },
+    {
+      "id": "Client::PolarCoordinate::getTheta()",
+      "node_type": "method",
+      "owner_class": "Client::PolarCoordinate",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "double",
+      "parameters": []
+    },
+    {
+      "id": "Client::PolarCoordinate::setR(double)",
+      "node_type": "method",
+      "owner_class": "Client::PolarCoordinate",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "r",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Client::PolarCoordinate::setTheta(double)",
+      "node_type": "method",
+      "owner_class": "Client::PolarCoordinate",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "theta",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Client::ClientCoordinateGroup::ClientCoordinateGroup()",
+      "node_type": "method",
+      "owner_class": "Client::ClientCoordinateGroup",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": []
+    },
+    {
+      "id": "Client::ClientCoordinateGroup::getId()",
+      "node_type": "method",
+      "owner_class": "Client::ClientCoordinateGroup",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "int",
+      "parameters": []
+    },
+    {
+      "id": "Client::ClientCoordinateGroup::setId(int)",
+      "node_type": "method",
+      "owner_class": "Client::ClientCoordinateGroup",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "int",
+          "type_canonical": "int"
+        }
+      ]
+    },
+    {
+      "id": "Client::ClientCoordinateGroup::getLabel()",
+      "node_type": "method",
+      "owner_class": "Client::ClientCoordinateGroup",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "std::string",
+      "parameters": []
+    },
+    {
+      "id": "Client::ClientCoordinateGroup::setLabel(const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Client::ClientCoordinateGroup",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "label",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Client::ClientCoordinateGroup::getTimestamp()",
+      "node_type": "method",
+      "owner_class": "Client::ClientCoordinateGroup",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "std::string",
+      "parameters": []
+    },
+    {
+      "id": "Client::ClientCoordinateGroup::setTimestamp(const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Client::ClientCoordinateGroup",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "timestamp",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Client::ClientCoordinateGroup::getCartesian()",
+      "node_type": "method",
+      "owner_class": "Client::ClientCoordinateGroup",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "CartesianCoordinate",
+      "parameters": []
+    },
+    {
+      "id": "Client::ClientCoordinateGroup::setCartesian(const Client::CartesianCoordinate &)",
+      "node_type": "method",
+      "owner_class": "Client::ClientCoordinateGroup",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "cartesian",
+          "type": "const CartesianCoordinate &",
+          "type_canonical": "const Client::CartesianCoordinate &"
+        }
+      ]
+    },
+    {
+      "id": "Client::ClientCoordinateGroup::getPolar()",
+      "node_type": "method",
+      "owner_class": "Client::ClientCoordinateGroup",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "PolarCoordinate",
+      "parameters": []
+    },
+    {
+      "id": "Client::ClientCoordinateGroup::setPolar(const Client::PolarCoordinate &)",
+      "node_type": "method",
+      "owner_class": "Client::ClientCoordinateGroup",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "polar",
+          "type": "const PolarCoordinate &",
+          "type_canonical": "const Client::PolarCoordinate &"
+        }
+      ]
+    },
+    {
+      "id": "Client::ClientCoordinateConverter::cartesianToPolar(const Client::CartesianCoordinate &)",
+      "node_type": "method",
+      "owner_class": "Client::ClientCoordinateConverter",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": true,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "PolarCoordinate",
+      "parameters": [
+        {
+          "name": "cartesian",
+          "type": "const CartesianCoordinate &",
+          "type_canonical": "const Client::CartesianCoordinate &"
+        }
+      ]
+    },
+    {
+      "id": "Client::ClientCoordinateConverter::polarToCartesian(const Client::PolarCoordinate &)",
+      "node_type": "method",
+      "owner_class": "Client::ClientCoordinateConverter",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": true,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "CartesianCoordinate",
+      "parameters": [
+        {
+          "name": "polar",
+          "type": "const PolarCoordinate &",
+          "type_canonical": "const Client::PolarCoordinate &"
+        }
+      ]
+    },
+    {
+      "id": "Client::CoordinateInputPanel::CoordinateInputPanel()",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateInputPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": []
+    },
+    {
+      "id": "Client::CoordinateInputPanel::setLabel(const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateInputPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "label",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Client::CoordinateInputPanel::getLabel()",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateInputPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "std::string",
+      "parameters": []
+    },
+    {
+      "id": "Client::CoordinateInputPanel::setCartesianInput(double, double)",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateInputPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "x",
+          "type": "double",
+          "type_canonical": "double"
+        },
+        {
+          "name": "y",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Client::CoordinateInputPanel::setPolarInput(double, double)",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateInputPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "r",
+          "type": "double",
+          "type_canonical": "double"
+        },
+        {
+          "name": "theta",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Client::CoordinateInputPanel::setInputMode(bool)",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateInputPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "cartesian",
+          "type": "bool",
+          "type_canonical": "bool"
+        }
+      ]
+    },
+    {
+      "id": "Client::CoordinateInputPanel::getInputMode()",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateInputPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "bool",
+      "parameters": []
+    },
+    {
+      "id": "Client::CoordinateInputPanel::buildCoordinateGroup()",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateInputPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "ClientCoordinateGroup",
+      "parameters": []
+    },
+    {
+      "id": "Client::CoordinateInputPanel::populateFromGroup(const Client::ClientCoordinateGroup &)",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateInputPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "group",
+          "type": "const ClientCoordinateGroup &",
+          "type_canonical": "const Client::ClientCoordinateGroup &"
+        }
+      ]
+    },
+    {
+      "id": "Client::CoordinateInputPanel::clear()",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateInputPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": []
+    },
+    {
+      "id": "Client::CoordinateListPanel::CoordinateListPanel()",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateListPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": []
+    },
+    {
+      "id": "Client::CoordinateListPanel::setCoordinateGroups(const int &)",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateListPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "groups",
+          "type": "const int &",
+          "type_canonical": "const int &"
+        }
+      ]
+    },
+    {
+      "id": "Client::CoordinateListPanel::getDisplayedGroups()",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateListPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "int",
+      "parameters": []
+    },
+    {
+      "id": "Client::CoordinateListPanel::getSelectedGroup()",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateListPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "ClientCoordinateGroup",
+      "parameters": []
+    },
+    {
+      "id": "Client::CoordinateListPanel::getSelectedIndex()",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateListPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "int",
+      "parameters": []
+    },
+    {
+      "id": "Client::CoordinateListPanel::refresh(const int &)",
+      "node_type": "method",
+      "owner_class": "Client::CoordinateListPanel",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "groups",
+          "type": "const int &",
+          "type_canonical": "const int &"
+        }
+      ]
+    },
+    {
+      "id": "Client::ClientMainFrame::ClientMainFrame(Server::ServerCoordinateService *)",
+      "node_type": "method",
+      "owner_class": "Client::ClientMainFrame",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": [
+        {
+          "name": "service",
+          "type": "Server::ServerCoordinateService *",
+          "type_canonical": "Server::ServerCoordinateService *"
+        }
+      ]
+    },
+    {
+      "id": "Client::ClientMainFrame::~ClientMainFrame()",
+      "node_type": "method",
+      "owner_class": "Client::ClientMainFrame",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": true,
+      "return_type": null,
+      "parameters": []
+    },
+    {
+      "id": "Client::ClientMainFrame::initialize()",
+      "node_type": "method",
+      "owner_class": "Client::ClientMainFrame",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": []
+    },
+    {
+      "id": "Client::ClientMainFrame::display()",
+      "node_type": "method",
+      "owner_class": "Client::ClientMainFrame",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": []
+    },
+    {
+      "id": "Client::ClientMainFrame::onCreateCoordinateGroup()",
+      "node_type": "method",
+      "owner_class": "Client::ClientMainFrame",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": []
+    },
+    {
+      "id": "Client::ClientMainFrame::onRetrieveByLabel(const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Client::ClientMainFrame",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "label",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Client::ClientMainFrame::onRetrieveAll()",
+      "node_type": "method",
+      "owner_class": "Client::ClientMainFrame",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": []
+    },
+    {
+      "id": "Client::ClientMainFrame::onModifyCoordinateGroup()",
+      "node_type": "method",
+      "owner_class": "Client::ClientMainFrame",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": []
+    },
+    {
+      "id": "Client::ClientMainFrame::onDeleteCoordinateGroup()",
+      "node_type": "method",
+      "owner_class": "Client::ClientMainFrame",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": []
+    },
+    {
+      "id": "Client::ClientMainFrame::showMessage(const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Client::ClientMainFrame",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "message",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Client::ClientMainFrame::showError(const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Client::ClientMainFrame",
+      "owner_namespace": "Client",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "error",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCartesianCoordinate::ServerCartesianCoordinate()",
+      "node_type": "method",
+      "owner_class": "Server::ServerCartesianCoordinate",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": []
+    },
+    {
+      "id": "Server::ServerCartesianCoordinate::ServerCartesianCoordinate(double, double)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCartesianCoordinate",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": [
+        {
+          "name": "x",
+          "type": "double",
+          "type_canonical": "double"
+        },
+        {
+          "name": "y",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCartesianCoordinate::getX()",
+      "node_type": "method",
+      "owner_class": "Server::ServerCartesianCoordinate",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "double",
+      "parameters": []
+    },
+    {
+      "id": "Server::ServerCartesianCoordinate::getY()",
+      "node_type": "method",
+      "owner_class": "Server::ServerCartesianCoordinate",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "double",
+      "parameters": []
+    },
+    {
+      "id": "Server::ServerCartesianCoordinate::setX(double)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCartesianCoordinate",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "x",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCartesianCoordinate::setY(double)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCartesianCoordinate",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "y",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerPolarCoordinate::ServerPolarCoordinate()",
+      "node_type": "method",
+      "owner_class": "Server::ServerPolarCoordinate",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": []
+    },
+    {
+      "id": "Server::ServerPolarCoordinate::ServerPolarCoordinate(double, double)",
+      "node_type": "method",
+      "owner_class": "Server::ServerPolarCoordinate",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": [
+        {
+          "name": "r",
+          "type": "double",
+          "type_canonical": "double"
+        },
+        {
+          "name": "theta",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerPolarCoordinate::getR()",
+      "node_type": "method",
+      "owner_class": "Server::ServerPolarCoordinate",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "double",
+      "parameters": []
+    },
+    {
+      "id": "Server::ServerPolarCoordinate::getTheta()",
+      "node_type": "method",
+      "owner_class": "Server::ServerPolarCoordinate",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "double",
+      "parameters": []
+    },
+    {
+      "id": "Server::ServerPolarCoordinate::setR(double)",
+      "node_type": "method",
+      "owner_class": "Server::ServerPolarCoordinate",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "r",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerPolarCoordinate::setTheta(double)",
+      "node_type": "method",
+      "owner_class": "Server::ServerPolarCoordinate",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "theta",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateGroup::ServerCoordinateGroup()",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateGroup",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": []
+    },
+    {
+      "id": "Server::ServerCoordinateGroup::getId()",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateGroup",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "int",
+      "parameters": []
+    },
+    {
+      "id": "Server::ServerCoordinateGroup::setId(int)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateGroup",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "int",
+          "type_canonical": "int"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateGroup::getLabel()",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateGroup",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "std::string",
+      "parameters": []
+    },
+    {
+      "id": "Server::ServerCoordinateGroup::setLabel(const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateGroup",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "label",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateGroup::getTimestamp()",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateGroup",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "std::string",
+      "parameters": []
+    },
+    {
+      "id": "Server::ServerCoordinateGroup::setTimestamp(const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateGroup",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "timestamp",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateGroup::getCartesian()",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateGroup",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "ServerCartesianCoordinate",
+      "parameters": []
+    },
+    {
+      "id": "Server::ServerCoordinateGroup::setCartesian(const Server::ServerCartesianCoordinate &)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateGroup",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "cartesian",
+          "type": "const ServerCartesianCoordinate &",
+          "type_canonical": "const Server::ServerCartesianCoordinate &"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateGroup::getPolar()",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateGroup",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "ServerPolarCoordinate",
+      "parameters": []
+    },
+    {
+      "id": "Server::ServerCoordinateGroup::setPolar(const Server::ServerPolarCoordinate &)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateGroup",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "polar",
+          "type": "const ServerPolarCoordinate &",
+          "type_canonical": "const Server::ServerPolarCoordinate &"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateConverter::cartesianToPolar(const Server::ServerCartesianCoordinate &)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateConverter",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": true,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "ServerPolarCoordinate",
+      "parameters": [
+        {
+          "name": "cartesian",
+          "type": "const ServerCartesianCoordinate &",
+          "type_canonical": "const Server::ServerCartesianCoordinate &"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateConverter::polarToCartesian(const Server::ServerPolarCoordinate &)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateConverter",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": true,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "ServerCartesianCoordinate",
+      "parameters": [
+        {
+          "name": "polar",
+          "type": "const ServerPolarCoordinate &",
+          "type_canonical": "const Server::ServerPolarCoordinate &"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateValidator::validateCartesian(double, double)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateValidator",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": true,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "bool",
+      "parameters": [
+        {
+          "name": "x",
+          "type": "double",
+          "type_canonical": "double"
+        },
+        {
+          "name": "y",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateValidator::validatePolar(double, double)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateValidator",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": true,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "bool",
+      "parameters": [
+        {
+          "name": "r",
+          "type": "double",
+          "type_canonical": "double"
+        },
+        {
+          "name": "theta",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateValidator::validateLabel(const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateValidator",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": true,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "bool",
+      "parameters": [
+        {
+          "name": "label",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateValidator::validateCoordinateGroup(const Server::ServerCoordinateGroup &)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateValidator",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": true,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "bool",
+      "parameters": [
+        {
+          "name": "group",
+          "type": "const ServerCoordinateGroup &",
+          "type_canonical": "const Server::ServerCoordinateGroup &"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateService::ServerCoordinateService(Database::DatabaseCoordinateRepository *)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateService",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": [
+        {
+          "name": "repository",
+          "type": "Database::DatabaseCoordinateRepository *",
+          "type_canonical": "Database::DatabaseCoordinateRepository *"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateService::~ServerCoordinateService()",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateService",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": true,
+      "return_type": null,
+      "parameters": []
+    },
+    {
+      "id": "Server::ServerCoordinateService::createFromCartesian(double, double, const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateService",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "ServerCoordinateGroup",
+      "parameters": [
+        {
+          "name": "x",
+          "type": "double",
+          "type_canonical": "double"
+        },
+        {
+          "name": "y",
+          "type": "double",
+          "type_canonical": "double"
+        },
+        {
+          "name": "label",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateService::createFromPolar(double, double, const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateService",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "ServerCoordinateGroup",
+      "parameters": [
+        {
+          "name": "r",
+          "type": "double",
+          "type_canonical": "double"
+        },
+        {
+          "name": "theta",
+          "type": "double",
+          "type_canonical": "double"
+        },
+        {
+          "name": "label",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateService::getById(int)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateService",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "ServerCoordinateGroup",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "int",
+          "type_canonical": "int"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateService::getByLabel(const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateService",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "int",
+      "parameters": [
+        {
+          "name": "label",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateService::getAll()",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateService",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "int",
+      "parameters": []
+    },
+    {
+      "id": "Server::ServerCoordinateService::updateCoordinateGroup(int, const Server::ServerCoordinateGroup &)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateService",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "ServerCoordinateGroup",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "int",
+          "type_canonical": "int"
+        },
+        {
+          "name": "updatedGroup",
+          "type": "const ServerCoordinateGroup &",
+          "type_canonical": "const Server::ServerCoordinateGroup &"
+        }
+      ]
+    },
+    {
+      "id": "Server::ServerCoordinateService::deleteCoordinateGroup(int)",
+      "node_type": "method",
+      "owner_class": "Server::ServerCoordinateService",
+      "owner_namespace": "Server",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "bool",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "int",
+          "type_canonical": "int"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseConnectionConfig::DatabaseConnectionConfig()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseConnectionConfig",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseConnectionConfig::DatabaseConnectionConfig(const std::basic_string<char> &, int, const std::basic_string<char> &, const std::basic_string<char> &, const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseConnectionConfig",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": [
+        {
+          "name": "host",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        },
+        {
+          "name": "port",
+          "type": "int",
+          "type_canonical": "int"
+        },
+        {
+          "name": "databaseName",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        },
+        {
+          "name": "username",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        },
+        {
+          "name": "password",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseConnectionConfig::getHost()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseConnectionConfig",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "std::string",
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseConnectionConfig::getPort()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseConnectionConfig",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "int",
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseConnectionConfig::getDatabaseName()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseConnectionConfig",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "std::string",
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseConnectionConfig::getUsername()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseConnectionConfig",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "std::string",
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseConnectionConfig::getPassword()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseConnectionConfig",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "std::string",
+      "parameters": []
+    },
+    {
+      "id": "Database::MySQLConnectionManager::MySQLConnectionManager(const Database::DatabaseConnectionConfig &)",
+      "node_type": "method",
+      "owner_class": "Database::MySQLConnectionManager",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": [
+        {
+          "name": "config",
+          "type": "const DatabaseConnectionConfig &",
+          "type_canonical": "const Database::DatabaseConnectionConfig &"
+        }
+      ]
+    },
+    {
+      "id": "Database::MySQLConnectionManager::~MySQLConnectionManager()",
+      "node_type": "method",
+      "owner_class": "Database::MySQLConnectionManager",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": true,
+      "return_type": null,
+      "parameters": []
+    },
+    {
+      "id": "Database::MySQLConnectionManager::connect()",
+      "node_type": "method",
+      "owner_class": "Database::MySQLConnectionManager",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "bool",
+      "parameters": []
+    },
+    {
+      "id": "Database::MySQLConnectionManager::disconnect()",
+      "node_type": "method",
+      "owner_class": "Database::MySQLConnectionManager",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "bool",
+      "parameters": []
+    },
+    {
+      "id": "Database::MySQLConnectionManager::isConnected()",
+      "node_type": "method",
+      "owner_class": "Database::MySQLConnectionManager",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "bool",
+      "parameters": []
+    },
+    {
+      "id": "Database::MySQLConnectionManager::getConnectionHandle()",
+      "node_type": "method",
+      "owner_class": "Database::MySQLConnectionManager",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void *",
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity::DatabaseCoordinateEntity()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateEntity",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity::getId()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateEntity",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "int",
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity::setId(int)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateEntity",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "int",
+          "type_canonical": "int"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity::getLabel()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateEntity",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "std::string",
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity::setLabel(const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateEntity",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "label",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity::getTimestamp()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateEntity",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "std::string",
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity::setTimestamp(const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateEntity",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "timestamp",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity::getCartesianX()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateEntity",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "double",
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity::setCartesianX(double)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateEntity",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "x",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity::getCartesianY()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateEntity",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "double",
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity::setCartesianY(double)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateEntity",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "y",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity::getPolarR()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateEntity",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "double",
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity::setPolarR(double)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateEntity",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "r",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity::getPolarTheta()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateEntity",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "double",
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseCoordinateEntity::setPolarTheta(double)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateEntity",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "theta",
+          "type": "double",
+          "type_canonical": "double"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseCoordinateMapper::entityToServerGroup(const Database::DatabaseCoordinateEntity &)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateMapper",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": true,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "Server::ServerCoordinateGroup",
+      "parameters": [
+        {
+          "name": "entity",
+          "type": "const DatabaseCoordinateEntity &",
+          "type_canonical": "const Database::DatabaseCoordinateEntity &"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseCoordinateMapper::serverGroupToEntity(const Server::ServerCoordinateGroup &)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateMapper",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": true,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "DatabaseCoordinateEntity",
+      "parameters": [
+        {
+          "name": "group",
+          "type": "const Server::ServerCoordinateGroup &",
+          "type_canonical": "const Server::ServerCoordinateGroup &"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseCoordinateRepository::DatabaseCoordinateRepository(Database::MySQLConnectionManager *)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateRepository",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": true,
+      "is_destructor": false,
+      "return_type": null,
+      "parameters": [
+        {
+          "name": "connectionManager",
+          "type": "MySQLConnectionManager *",
+          "type_canonical": "Database::MySQLConnectionManager *"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseCoordinateRepository::~DatabaseCoordinateRepository()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateRepository",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": true,
+      "return_type": null,
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseCoordinateRepository::insert(const Database::DatabaseCoordinateEntity &)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateRepository",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "DatabaseCoordinateEntity",
+      "parameters": [
+        {
+          "name": "entity",
+          "type": "const DatabaseCoordinateEntity &",
+          "type_canonical": "const Database::DatabaseCoordinateEntity &"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseCoordinateRepository::findById(int)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateRepository",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "DatabaseCoordinateEntity",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "int",
+          "type_canonical": "int"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseCoordinateRepository::findByLabel(const std::basic_string<char> &)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateRepository",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "int",
+      "parameters": [
+        {
+          "name": "label",
+          "type": "const std::string &",
+          "type_canonical": "const std::basic_string<char> &"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseCoordinateRepository::findAll()",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateRepository",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "int",
+      "parameters": []
+    },
+    {
+      "id": "Database::DatabaseCoordinateRepository::update(int, const Database::DatabaseCoordinateEntity &)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateRepository",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "DatabaseCoordinateEntity",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "int",
+          "type_canonical": "int"
+        },
+        {
+          "name": "entity",
+          "type": "const DatabaseCoordinateEntity &",
+          "type_canonical": "const Database::DatabaseCoordinateEntity &"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseCoordinateRepository::deleteById(int)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateRepository",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "bool",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "int",
+          "type_canonical": "int"
+        }
+      ]
+    },
+    {
+      "id": "Database::DatabaseCoordinateRepository::exists(int)",
+      "node_type": "method",
+      "owner_class": "Database::DatabaseCoordinateRepository",
+      "owner_namespace": "Database",
+      "is_virtual": false,
+      "is_static": false,
+      "is_constructor": false,
+      "is_destructor": false,
+      "return_type": "bool",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "int",
+          "type_canonical": "int"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "src": "Client::CartesianCoordinate",
+      "dst": "Client::CartesianCoordinate::CartesianCoordinate()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CartesianCoordinate",
+      "dst": "Client::CartesianCoordinate::CartesianCoordinate(double, double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CartesianCoordinate",
+      "dst": "Client::CartesianCoordinate::getX()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CartesianCoordinate",
+      "dst": "Client::CartesianCoordinate::getY()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CartesianCoordinate",
+      "dst": "Client::CartesianCoordinate::setX(double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CartesianCoordinate",
+      "dst": "Client::CartesianCoordinate::setY(double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientCoordinateConverter",
+      "dst": "Client::CartesianCoordinate",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Client::ClientCoordinateConverter",
+      "dst": "Client::ClientCoordinateConverter::cartesianToPolar(const Client::CartesianCoordinate &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientCoordinateConverter",
+      "dst": "Client::ClientCoordinateConverter::polarToCartesian(const Client::PolarCoordinate &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientCoordinateConverter",
+      "dst": "Client::PolarCoordinate",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Client::ClientCoordinateConverter::cartesianToPolar(const Client::CartesianCoordinate &)",
+      "dst": "Client::CartesianCoordinate",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Client::ClientCoordinateConverter::cartesianToPolar(const Client::CartesianCoordinate &)",
+      "dst": "Client::PolarCoordinate",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Client::ClientCoordinateConverter::polarToCartesian(const Client::PolarCoordinate &)",
+      "dst": "Client::CartesianCoordinate",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Client::ClientCoordinateConverter::polarToCartesian(const Client::PolarCoordinate &)",
+      "dst": "Client::PolarCoordinate",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup",
+      "dst": "Client::CartesianCoordinate",
+      "type": "COMPOSE"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup",
+      "dst": "Client::CartesianCoordinate",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup",
+      "dst": "Client::ClientCoordinateGroup::ClientCoordinateGroup()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup",
+      "dst": "Client::ClientCoordinateGroup::getCartesian()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup",
+      "dst": "Client::ClientCoordinateGroup::getId()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup",
+      "dst": "Client::ClientCoordinateGroup::getLabel()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup",
+      "dst": "Client::ClientCoordinateGroup::getPolar()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup",
+      "dst": "Client::ClientCoordinateGroup::getTimestamp()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup",
+      "dst": "Client::ClientCoordinateGroup::setCartesian(const Client::CartesianCoordinate &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup",
+      "dst": "Client::ClientCoordinateGroup::setId(int)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup",
+      "dst": "Client::ClientCoordinateGroup::setLabel(const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup",
+      "dst": "Client::ClientCoordinateGroup::setPolar(const Client::PolarCoordinate &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup",
+      "dst": "Client::ClientCoordinateGroup::setTimestamp(const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup",
+      "dst": "Client::PolarCoordinate",
+      "type": "COMPOSE"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup",
+      "dst": "Client::PolarCoordinate",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup::getCartesian()",
+      "dst": "Client::CartesianCoordinate",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup::getPolar()",
+      "dst": "Client::PolarCoordinate",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup::setCartesian(const Client::CartesianCoordinate &)",
+      "dst": "Client::CartesianCoordinate",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Client::ClientCoordinateGroup::setPolar(const Client::PolarCoordinate &)",
+      "dst": "Client::PolarCoordinate",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Client::ClientMainFrame",
+      "dst": "Client::ClientMainFrame::ClientMainFrame(Server::ServerCoordinateService *)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientMainFrame",
+      "dst": "Client::ClientMainFrame::display()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientMainFrame",
+      "dst": "Client::ClientMainFrame::initialize()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientMainFrame",
+      "dst": "Client::ClientMainFrame::onCreateCoordinateGroup()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientMainFrame",
+      "dst": "Client::ClientMainFrame::onDeleteCoordinateGroup()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientMainFrame",
+      "dst": "Client::ClientMainFrame::onModifyCoordinateGroup()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientMainFrame",
+      "dst": "Client::ClientMainFrame::onRetrieveAll()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientMainFrame",
+      "dst": "Client::ClientMainFrame::onRetrieveByLabel(const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientMainFrame",
+      "dst": "Client::ClientMainFrame::showError(const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientMainFrame",
+      "dst": "Client::ClientMainFrame::showMessage(const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientMainFrame",
+      "dst": "Client::ClientMainFrame::~ClientMainFrame()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::ClientMainFrame",
+      "dst": "Client::CoordinateInputPanel",
+      "type": "COMPOSE"
+    },
+    {
+      "src": "Client::ClientMainFrame",
+      "dst": "Client::CoordinateListPanel",
+      "type": "COMPOSE"
+    },
+    {
+      "src": "Client::ClientMainFrame",
+      "dst": "Server::ServerCoordinateService",
+      "type": "COMPOSE"
+    },
+    {
+      "src": "Client::ClientMainFrame",
+      "dst": "Server::ServerCoordinateService",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Client::ClientMainFrame::ClientMainFrame(Server::ServerCoordinateService *)",
+      "dst": "Server::ServerCoordinateService",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Client::CoordinateInputPanel",
+      "dst": "Client::ClientCoordinateGroup",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Client::CoordinateInputPanel",
+      "dst": "Client::CoordinateInputPanel::CoordinateInputPanel()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateInputPanel",
+      "dst": "Client::CoordinateInputPanel::buildCoordinateGroup()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateInputPanel",
+      "dst": "Client::CoordinateInputPanel::clear()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateInputPanel",
+      "dst": "Client::CoordinateInputPanel::getInputMode()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateInputPanel",
+      "dst": "Client::CoordinateInputPanel::getLabel()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateInputPanel",
+      "dst": "Client::CoordinateInputPanel::populateFromGroup(const Client::ClientCoordinateGroup &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateInputPanel",
+      "dst": "Client::CoordinateInputPanel::setCartesianInput(double, double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateInputPanel",
+      "dst": "Client::CoordinateInputPanel::setInputMode(bool)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateInputPanel",
+      "dst": "Client::CoordinateInputPanel::setLabel(const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateInputPanel",
+      "dst": "Client::CoordinateInputPanel::setPolarInput(double, double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateInputPanel::buildCoordinateGroup()",
+      "dst": "Client::ClientCoordinateGroup",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Client::CoordinateInputPanel::populateFromGroup(const Client::ClientCoordinateGroup &)",
+      "dst": "Client::ClientCoordinateGroup",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Client::CoordinateListPanel",
+      "dst": "Client::ClientCoordinateGroup",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Client::CoordinateListPanel",
+      "dst": "Client::CoordinateListPanel::CoordinateListPanel()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateListPanel",
+      "dst": "Client::CoordinateListPanel::getDisplayedGroups()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateListPanel",
+      "dst": "Client::CoordinateListPanel::getSelectedGroup()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateListPanel",
+      "dst": "Client::CoordinateListPanel::getSelectedIndex()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateListPanel",
+      "dst": "Client::CoordinateListPanel::refresh(const int &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateListPanel",
+      "dst": "Client::CoordinateListPanel::setCoordinateGroups(const int &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::CoordinateListPanel::getSelectedGroup()",
+      "dst": "Client::ClientCoordinateGroup",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Client::PolarCoordinate",
+      "dst": "Client::PolarCoordinate::PolarCoordinate()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::PolarCoordinate",
+      "dst": "Client::PolarCoordinate::PolarCoordinate(double, double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::PolarCoordinate",
+      "dst": "Client::PolarCoordinate::getR()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::PolarCoordinate",
+      "dst": "Client::PolarCoordinate::getTheta()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::PolarCoordinate",
+      "dst": "Client::PolarCoordinate::setR(double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Client::PolarCoordinate",
+      "dst": "Client::PolarCoordinate::setTheta(double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseConnectionConfig",
+      "dst": "Database::DatabaseConnectionConfig::DatabaseConnectionConfig()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseConnectionConfig",
+      "dst": "Database::DatabaseConnectionConfig::DatabaseConnectionConfig(const std::basic_string<char> &, int, const std::basic_string<char> &, const std::basic_string<char> &, const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseConnectionConfig",
+      "dst": "Database::DatabaseConnectionConfig::getDatabaseName()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseConnectionConfig",
+      "dst": "Database::DatabaseConnectionConfig::getHost()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseConnectionConfig",
+      "dst": "Database::DatabaseConnectionConfig::getPassword()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseConnectionConfig",
+      "dst": "Database::DatabaseConnectionConfig::getPort()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseConnectionConfig",
+      "dst": "Database::DatabaseConnectionConfig::getUsername()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateEntity",
+      "dst": "Database::DatabaseCoordinateEntity::DatabaseCoordinateEntity()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateEntity",
+      "dst": "Database::DatabaseCoordinateEntity::getCartesianX()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateEntity",
+      "dst": "Database::DatabaseCoordinateEntity::getCartesianY()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateEntity",
+      "dst": "Database::DatabaseCoordinateEntity::getId()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateEntity",
+      "dst": "Database::DatabaseCoordinateEntity::getLabel()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateEntity",
+      "dst": "Database::DatabaseCoordinateEntity::getPolarR()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateEntity",
+      "dst": "Database::DatabaseCoordinateEntity::getPolarTheta()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateEntity",
+      "dst": "Database::DatabaseCoordinateEntity::getTimestamp()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateEntity",
+      "dst": "Database::DatabaseCoordinateEntity::setCartesianX(double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateEntity",
+      "dst": "Database::DatabaseCoordinateEntity::setCartesianY(double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateEntity",
+      "dst": "Database::DatabaseCoordinateEntity::setId(int)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateEntity",
+      "dst": "Database::DatabaseCoordinateEntity::setLabel(const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateEntity",
+      "dst": "Database::DatabaseCoordinateEntity::setPolarR(double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateEntity",
+      "dst": "Database::DatabaseCoordinateEntity::setPolarTheta(double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateEntity",
+      "dst": "Database::DatabaseCoordinateEntity::setTimestamp(const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateMapper",
+      "dst": "Database::DatabaseCoordinateEntity",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Database::DatabaseCoordinateMapper",
+      "dst": "Database::DatabaseCoordinateMapper::entityToServerGroup(const Database::DatabaseCoordinateEntity &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateMapper",
+      "dst": "Database::DatabaseCoordinateMapper::serverGroupToEntity(const Server::ServerCoordinateGroup &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateMapper",
+      "dst": "Server::ServerCoordinateGroup",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Database::DatabaseCoordinateMapper::entityToServerGroup(const Database::DatabaseCoordinateEntity &)",
+      "dst": "Database::DatabaseCoordinateEntity",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Database::DatabaseCoordinateMapper::entityToServerGroup(const Database::DatabaseCoordinateEntity &)",
+      "dst": "Server::ServerCoordinateGroup",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Database::DatabaseCoordinateMapper::serverGroupToEntity(const Server::ServerCoordinateGroup &)",
+      "dst": "Database::DatabaseCoordinateEntity",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Database::DatabaseCoordinateMapper::serverGroupToEntity(const Server::ServerCoordinateGroup &)",
+      "dst": "Server::ServerCoordinateGroup",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository",
+      "dst": "Database::DatabaseCoordinateEntity",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository",
+      "dst": "Database::DatabaseCoordinateRepository::DatabaseCoordinateRepository(Database::MySQLConnectionManager *)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository",
+      "dst": "Database::DatabaseCoordinateRepository::deleteById(int)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository",
+      "dst": "Database::DatabaseCoordinateRepository::exists(int)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository",
+      "dst": "Database::DatabaseCoordinateRepository::findAll()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository",
+      "dst": "Database::DatabaseCoordinateRepository::findById(int)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository",
+      "dst": "Database::DatabaseCoordinateRepository::findByLabel(const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository",
+      "dst": "Database::DatabaseCoordinateRepository::insert(const Database::DatabaseCoordinateEntity &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository",
+      "dst": "Database::DatabaseCoordinateRepository::update(int, const Database::DatabaseCoordinateEntity &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository",
+      "dst": "Database::DatabaseCoordinateRepository::~DatabaseCoordinateRepository()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository",
+      "dst": "Database::MySQLConnectionManager",
+      "type": "COMPOSE"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository",
+      "dst": "Database::MySQLConnectionManager",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository::DatabaseCoordinateRepository(Database::MySQLConnectionManager *)",
+      "dst": "Database::MySQLConnectionManager",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository::findById(int)",
+      "dst": "Database::DatabaseCoordinateEntity",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository::insert(const Database::DatabaseCoordinateEntity &)",
+      "dst": "Database::DatabaseCoordinateEntity",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository::insert(const Database::DatabaseCoordinateEntity &)",
+      "dst": "Database::DatabaseCoordinateEntity",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository::update(int, const Database::DatabaseCoordinateEntity &)",
+      "dst": "Database::DatabaseCoordinateEntity",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Database::DatabaseCoordinateRepository::update(int, const Database::DatabaseCoordinateEntity &)",
+      "dst": "Database::DatabaseCoordinateEntity",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Database::MySQLConnectionManager",
+      "dst": "Database::DatabaseConnectionConfig",
+      "type": "COMPOSE"
+    },
+    {
+      "src": "Database::MySQLConnectionManager",
+      "dst": "Database::DatabaseConnectionConfig",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Database::MySQLConnectionManager",
+      "dst": "Database::MySQLConnectionManager::MySQLConnectionManager(const Database::DatabaseConnectionConfig &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::MySQLConnectionManager",
+      "dst": "Database::MySQLConnectionManager::connect()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::MySQLConnectionManager",
+      "dst": "Database::MySQLConnectionManager::disconnect()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::MySQLConnectionManager",
+      "dst": "Database::MySQLConnectionManager::getConnectionHandle()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::MySQLConnectionManager",
+      "dst": "Database::MySQLConnectionManager::isConnected()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::MySQLConnectionManager",
+      "dst": "Database::MySQLConnectionManager::~MySQLConnectionManager()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Database::MySQLConnectionManager::MySQLConnectionManager(const Database::DatabaseConnectionConfig &)",
+      "dst": "Database::DatabaseConnectionConfig",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Server::ServerCartesianCoordinate",
+      "dst": "Server::ServerCartesianCoordinate::ServerCartesianCoordinate()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCartesianCoordinate",
+      "dst": "Server::ServerCartesianCoordinate::ServerCartesianCoordinate(double, double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCartesianCoordinate",
+      "dst": "Server::ServerCartesianCoordinate::getX()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCartesianCoordinate",
+      "dst": "Server::ServerCartesianCoordinate::getY()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCartesianCoordinate",
+      "dst": "Server::ServerCartesianCoordinate::setX(double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCartesianCoordinate",
+      "dst": "Server::ServerCartesianCoordinate::setY(double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateConverter",
+      "dst": "Server::ServerCartesianCoordinate",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Server::ServerCoordinateConverter",
+      "dst": "Server::ServerCoordinateConverter::cartesianToPolar(const Server::ServerCartesianCoordinate &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateConverter",
+      "dst": "Server::ServerCoordinateConverter::polarToCartesian(const Server::ServerPolarCoordinate &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateConverter",
+      "dst": "Server::ServerPolarCoordinate",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Server::ServerCoordinateConverter::cartesianToPolar(const Server::ServerCartesianCoordinate &)",
+      "dst": "Server::ServerCartesianCoordinate",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Server::ServerCoordinateConverter::cartesianToPolar(const Server::ServerCartesianCoordinate &)",
+      "dst": "Server::ServerPolarCoordinate",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Server::ServerCoordinateConverter::polarToCartesian(const Server::ServerPolarCoordinate &)",
+      "dst": "Server::ServerCartesianCoordinate",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Server::ServerCoordinateConverter::polarToCartesian(const Server::ServerPolarCoordinate &)",
+      "dst": "Server::ServerPolarCoordinate",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup",
+      "dst": "Server::ServerCartesianCoordinate",
+      "type": "COMPOSE"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup",
+      "dst": "Server::ServerCartesianCoordinate",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup",
+      "dst": "Server::ServerCoordinateGroup::ServerCoordinateGroup()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup",
+      "dst": "Server::ServerCoordinateGroup::getCartesian()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup",
+      "dst": "Server::ServerCoordinateGroup::getId()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup",
+      "dst": "Server::ServerCoordinateGroup::getLabel()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup",
+      "dst": "Server::ServerCoordinateGroup::getPolar()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup",
+      "dst": "Server::ServerCoordinateGroup::getTimestamp()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup",
+      "dst": "Server::ServerCoordinateGroup::setCartesian(const Server::ServerCartesianCoordinate &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup",
+      "dst": "Server::ServerCoordinateGroup::setId(int)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup",
+      "dst": "Server::ServerCoordinateGroup::setLabel(const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup",
+      "dst": "Server::ServerCoordinateGroup::setPolar(const Server::ServerPolarCoordinate &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup",
+      "dst": "Server::ServerCoordinateGroup::setTimestamp(const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup",
+      "dst": "Server::ServerPolarCoordinate",
+      "type": "COMPOSE"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup",
+      "dst": "Server::ServerPolarCoordinate",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup::getCartesian()",
+      "dst": "Server::ServerCartesianCoordinate",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup::getPolar()",
+      "dst": "Server::ServerPolarCoordinate",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup::setCartesian(const Server::ServerCartesianCoordinate &)",
+      "dst": "Server::ServerCartesianCoordinate",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Server::ServerCoordinateGroup::setPolar(const Server::ServerPolarCoordinate &)",
+      "dst": "Server::ServerPolarCoordinate",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Server::ServerCoordinateService",
+      "dst": "Database::DatabaseCoordinateRepository",
+      "type": "COMPOSE"
+    },
+    {
+      "src": "Server::ServerCoordinateService",
+      "dst": "Database::DatabaseCoordinateRepository",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Server::ServerCoordinateService",
+      "dst": "Server::ServerCoordinateGroup",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Server::ServerCoordinateService",
+      "dst": "Server::ServerCoordinateService::ServerCoordinateService(Database::DatabaseCoordinateRepository *)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateService",
+      "dst": "Server::ServerCoordinateService::createFromCartesian(double, double, const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateService",
+      "dst": "Server::ServerCoordinateService::createFromPolar(double, double, const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateService",
+      "dst": "Server::ServerCoordinateService::deleteCoordinateGroup(int)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateService",
+      "dst": "Server::ServerCoordinateService::getAll()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateService",
+      "dst": "Server::ServerCoordinateService::getById(int)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateService",
+      "dst": "Server::ServerCoordinateService::getByLabel(const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateService",
+      "dst": "Server::ServerCoordinateService::updateCoordinateGroup(int, const Server::ServerCoordinateGroup &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateService",
+      "dst": "Server::ServerCoordinateService::~ServerCoordinateService()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateService::ServerCoordinateService(Database::DatabaseCoordinateRepository *)",
+      "dst": "Database::DatabaseCoordinateRepository",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Server::ServerCoordinateService::createFromCartesian(double, double, const std::basic_string<char> &)",
+      "dst": "Server::ServerCoordinateGroup",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Server::ServerCoordinateService::createFromPolar(double, double, const std::basic_string<char> &)",
+      "dst": "Server::ServerCoordinateGroup",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Server::ServerCoordinateService::getById(int)",
+      "dst": "Server::ServerCoordinateGroup",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Server::ServerCoordinateService::updateCoordinateGroup(int, const Server::ServerCoordinateGroup &)",
+      "dst": "Server::ServerCoordinateGroup",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Server::ServerCoordinateService::updateCoordinateGroup(int, const Server::ServerCoordinateGroup &)",
+      "dst": "Server::ServerCoordinateGroup",
+      "type": "RETURNS"
+    },
+    {
+      "src": "Server::ServerCoordinateValidator",
+      "dst": "Server::ServerCoordinateGroup",
+      "type": "USE_TYPE"
+    },
+    {
+      "src": "Server::ServerCoordinateValidator",
+      "dst": "Server::ServerCoordinateValidator::validateCartesian(double, double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateValidator",
+      "dst": "Server::ServerCoordinateValidator::validateCoordinateGroup(const Server::ServerCoordinateGroup &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateValidator",
+      "dst": "Server::ServerCoordinateValidator::validateLabel(const std::basic_string<char> &)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateValidator",
+      "dst": "Server::ServerCoordinateValidator::validatePolar(double, double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerCoordinateValidator::validateCoordinateGroup(const Server::ServerCoordinateGroup &)",
+      "dst": "Server::ServerCoordinateGroup",
+      "type": "ACCEPTS"
+    },
+    {
+      "src": "Server::ServerPolarCoordinate",
+      "dst": "Server::ServerPolarCoordinate::ServerPolarCoordinate()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerPolarCoordinate",
+      "dst": "Server::ServerPolarCoordinate::ServerPolarCoordinate(double, double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerPolarCoordinate",
+      "dst": "Server::ServerPolarCoordinate::getR()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerPolarCoordinate",
+      "dst": "Server::ServerPolarCoordinate::getTheta()",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerPolarCoordinate",
+      "dst": "Server::ServerPolarCoordinate::setR(double)",
+      "type": "DEFINES"
+    },
+    {
+      "src": "Server::ServerPolarCoordinate",
+      "dst": "Server::ServerPolarCoordinate::setTheta(double)",
+      "type": "DEFINES"
+    }
+  ],
+  "scope": "single_translation_unit",
+  "stats": {
+    "class_nodes": 18,
+    "method_nodes": 129,
+    "edges": 196,
+    "edge_type_counts": {
+      "INHERIT": 0,
+      "IMPLEMENTS": 0,
+      "COMPOSE": 10,
+      "USE_TYPE": 19,
+      "DEFINES": 129,
+      "CALLS": 0,
+      "ACCEPTS": 19,
+      "RETURNS": 19
+    }
+  }
 }

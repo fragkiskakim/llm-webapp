@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import DccTabs from "../../DccTabs.jsx";
 import RepeatedTabs from "../../RepeatedTabs.jsx";
+import ResultContainer from "../run/ResultContainer.jsx";
+import React from "react";
 
 const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
@@ -14,7 +16,14 @@ export default function RepeatedResults() {
   const [promptType, setPromptType] = useState("");
   const [categories, setCategories] = useState([]);
   const [results, setResults] = useState([]);
+  const [result, setResult] = useState(null);
   const [openRows, setOpenRows] = useState({});
+
+  const [selectedResult, setSelectedResult] = useState(null);
+  const [selectedId, setSelectedId] = useState(null);
+  const [isPanelOpen, setIsPanelOpen] = useState(false);
+  const [loadingResult, setLoadingResult] = useState(false);
+  const [resultError, setResultError] = useState("");
 
   const cardStyle = {
     border: "1px solid #ddd",
@@ -70,6 +79,30 @@ export default function RepeatedResults() {
   function handleMultiSelect(e, setter) {
     const values = Array.from(e.target.selectedOptions, o => o.value);
     setter(values);
+  }
+
+  async function handleRowClick(id) {
+    try {
+      setLoadingResult(true);
+      setResultError("");
+      setSelectedId(id);
+
+      const r = await fetch(`${API}/api/run-experiments/${id}`);
+      const data = await r.json();
+
+      if (!r.ok) {
+        throw new Error(data?.error || "Failed to load result");
+      }
+
+      console.log("Fetched result:", data);
+
+      setSelectedResult(data);
+      setIsPanelOpen(true);
+    } catch (e) {
+      setResultError(e.message);
+    } finally {
+      setLoadingResult(false);
+    }
   }
 
 
@@ -182,21 +215,16 @@ export default function RepeatedResults() {
           </thead>
 
           <tbody>
-
             {Object.entries(grouped).map(([category, rows]) => {
-
               const first = rows[0];
 
               return (
-                <>
-
+                <React.Fragment key={category}>
                   {/* main row */}
                   <tr
-                    key={category}
                     style={{ borderBottom: "1px solid #eee", cursor: "pointer" }}
                     onClick={() => toggle(category)}
                   >
-
                     <td>
                       {openRows[category] ? "▼" : "▶"} {category}
                     </td>
@@ -206,37 +234,36 @@ export default function RepeatedResults() {
                     <td>{first.prompt_type}</td>
                     <td></td>
                     <td></td>
-
                   </tr>
 
                   {/* children rows */}
                   {openRows[category] &&
-                    rows.map(r => (
-                      <tr key={r.id} style={{ background: "#fafafa" }}>
-
+                    rows.map((r) => (
+                      <tr
+                        key={r.id}
+                        style={{ background: "#fafafa", cursor: "pointer" }}
+                        onClick={() => handleRowClick(r.id)}
+                      >
                         <td style={{ paddingLeft: 30 }}>
                           {category}_{r.id}
                         </td>
 
+                        <td>{r.architecture}</td>
+                        <td>{r.model}</td>
+                        <td>{r.prompt_type}</td>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-
                       </tr>
-                    ))
-                  }
-
-                </>
+                    ))}
+                </React.Fragment>
               );
-
             })}
-
           </tbody>
         </table>
-
       </div>
+
+      {/* Result */}
+      <ResultContainer result={selectedResult} />
 
     </div>
   );

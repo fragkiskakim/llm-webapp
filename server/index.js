@@ -305,6 +305,13 @@ app.post("/api/run-experiment", async (req, res) => {
             architecture === "client-server" ? "3_client-server" :
               null;
 
+    const finalInstructionsKey =
+      architecture === "3tier" ? "4_finalInstructions_3tier" :
+        architecture === "mvc" ? "4_finalInstructions_mvc" :
+          architecture === "microservices" ? "4_finalInstructions_micro" :
+            architecture === "client-server" ? "4_finalInstructions_client-server" :
+              null;
+
     const specKey =
       promptType === "srs" ? "2_srs" :
         promptType === "frnfr" ? "2_frnfr" :
@@ -318,7 +325,7 @@ app.post("/api/run-experiment", async (req, res) => {
       "1_task_description",
       specKey,
       archKey,
-      "4_finalInstructions"
+      finalInstructionsKey
     ];
 
     const r = await pool.query(
@@ -504,6 +511,44 @@ app.get("/api/results", async (req, res) => {
   const r = await pool.query(query, params);
 
   res.json(r.rows);
+});
+
+
+app.get("/api/run-experiments/:id", async (req, res) => {
+  try {
+    const id = Number(req.params.id);
+
+    if (!Number.isFinite(id)) {
+      return res.status(400).json({ error: "Invalid id" });
+    }
+
+    const r = await pool.query(
+      `
+      SELECT
+        id,
+        prompt,
+        cpp_code AS cpp,
+        cpp_metrics AS metrics,
+        uml_produced AS plantuml_produced,
+        graph_json AS graphJson
+      FROM run_experiments
+      WHERE id = $1
+      `,
+      [id]
+    );
+
+    if (r.rows.length === 0) {
+      return res.status(404).json({ error: "Result not found" });
+    }
+
+    return res.json(r.rows[0]);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      error: "Server error",
+      details: String(err.message || err),
+    });
+  }
 });
 
 
