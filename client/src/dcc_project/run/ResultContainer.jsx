@@ -4,7 +4,7 @@ import AnalysisPanel from "./AnalysisPanel.jsx";
 import VisualizationPanel from "./VisualizationPanel.jsx";
 import { useControlled } from "@mui/material";
 import GraphViewer from "./GraphViewer.jsx";
-
+import NamespaceGraphViewer from "./NamespaceGraphViewer.jsx";
 
 export default function ResultContainer({ result }) {
   const [tab, setTab] = useState("code");
@@ -83,15 +83,26 @@ export default function ResultContainer({ result }) {
           Graph JSON
         </button>
         <button
-          onClick={() => setTab("graphviewer")}
+          onClick={() => setTab("classgraphviewer")}
           style={{
             padding: "6px 14px",
             borderRadius: 20,
             border: "none",
-            background: tab === "graphviewer" ? "#e3a1a1" : "#eee"
+            background: tab === "classgraphviewer" ? "#e3a1a1" : "#eee"
           }}
         >
-          Graph Viewer
+          Class Graph Viewer
+        </button>
+        <button
+          onClick={() => setTab("namespacegraphviewer")}
+          style={{
+            padding: "6px 14px",
+            borderRadius: 20,
+            border: "none",
+            background: tab === "namespacegraphviewer" ? "#e3a1a1" : "#eee"
+          }}
+        >
+          Namespace Graph Viewer
         </button>
       </div>
 
@@ -101,8 +112,8 @@ export default function ResultContainer({ result }) {
         {tab === "viz" && <VisualizationPanel uml={result.plantuml_produced} />}
         {tab === "analysis" && <AnalysisPanel analysis={result.analysis} />}
         {tab === "graphjson" && <CodePanel code={JSON.stringify(result.graphjson, null, 2)} />}
-        {tab === "graphviewer" && <GraphViewer runId={result.id} />}
-
+        {tab === "classgraphviewer" && <GraphViewer runId={result.id} />}
+        {tab === "namespacegraphviewer" && <NamespaceGraphViewer runId={result.id} />}
 
       </div>
     </div>

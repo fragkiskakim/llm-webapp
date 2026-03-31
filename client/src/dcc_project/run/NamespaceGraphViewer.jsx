@@ -29,7 +29,7 @@ export default function GraphViewer({ runId }) {
             try {
                 setLoading(true);
                 setError("");
-                const res = await fetch(`${API}/api/graph/view/${runId}`);
+                const res = await fetch(`${API}/api/graph/namespace/view/${runId}`);
                 if (!res.ok) throw new Error((await res.text()) || "Failed to load graph");
                 const data = await res.json();
                 if (!cancelled) {

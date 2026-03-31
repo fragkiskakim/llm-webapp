@@ -5,7 +5,8 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const os = require("node:os");
 
-
+const driver = require("../neo4j");
+const { importGraphForRun } = require("./graphImport");
 
 //helper function to strip function bodies from C++ code, leaving only declarations (for better namespace analysis)
 function stripFunctionBodies(code) {
@@ -26,8 +27,8 @@ function stripFunctionBodies(code) {
 
 function runAnalyzer(cppPath) {
     return new Promise((resolve, reject) => {
-        const PYTHON_BIN = process.env.PYTHON_BIN || "py";
-        const PYTHON_ARGS = (process.env.PYTHON_ARGS || "-3")
+        const PYTHON_BIN = process.env.PYTHON_BIN || "python3";
+        const PYTHON_ARGS = (process.env.PYTHON_ARGS || "")
             .split(/\s+/)
             .filter(Boolean);
 
@@ -62,8 +63,9 @@ function runAnalyzer(cppPath) {
 // NEW: run hpp2plantuml and return the generated .puml content (as text)
 function runHpp2Plantuml(headerPath, pumlOutPath) {
     return new Promise((resolve, reject) => {
-        const PYTHON_BIN = process.env.PYTHON_BIN || "py";
-        const PYTHON_ARGS = (process.env.PYTHON_ARGS || "-3")
+        const PYTHON_BIN = process.env.PYTHON_BIN || "python3";
+        //const PYTHON_ARGS = (process.env.PYTHON_ARGS || "-3")
+        const PYTHON_ARGS = (process.env.PYTHON_ARGS || "")
             .split(/\s+/)
             .filter(Boolean);
 
@@ -189,6 +191,8 @@ module.exports = function createAnalyzeRouter({ pool }) {
                 runGraphExtractor(cppPath) // ή hppPath, ανάλογα τι θες να αναλύσεις
             ]);
 
+
+
             // 4) Store all results
             await pool.query(
                 `
@@ -200,6 +204,9 @@ module.exports = function createAnalyzeRouter({ pool }) {
                 `,
                 [metrics, plantuml, graphJson, id]
             );
+
+            await importGraphForRun(id, { pool, driver });
+
 
             return res.json({
                 id,
