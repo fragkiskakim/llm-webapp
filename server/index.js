@@ -25,6 +25,11 @@ const createAnalyzeRouter = require("./routes/analyze");
 app.use("/api", createAnalyzeRouter({ pool }));
 
 
+const neo4jTestRoutes = require("./routes/neo4jTest");
+app.use("/api", neo4jTestRoutes);
+
+
+
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 
