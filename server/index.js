@@ -29,6 +29,10 @@ const neo4jTestRoutes = require("./routes/neo4jTest");
 app.use("/api", neo4jTestRoutes);
 
 
+const graphNeo4jRoutes = require("./routes/graphNeo4j");
+
+app.use("/api", graphNeo4jRoutes);
+
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
