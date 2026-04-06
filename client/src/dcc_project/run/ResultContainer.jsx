@@ -110,7 +110,7 @@ export default function ResultContainer({ result }) {
         {tab === "prompt" && <div>{result.prompt}</div>}
         {tab === "code" && <CodePanel code={result.cpp} />}
         {tab === "viz" && <VisualizationPanel uml={result.plantuml_produced} />}
-        {tab === "analysis" && <AnalysisPanel analysis={result.analysis} />}
+        {tab === "analysis" && <AnalysisPanel analysis={result.architecture_analysis} />}
         {tab === "graphjson" && <CodePanel code={JSON.stringify(result.graphjson, null, 2)} />}
         {tab === "classgraphviewer" && <GraphViewer runId={result.id} />}
         {tab === "namespacegraphviewer" && <NamespaceGraphViewer runId={result.id} />}

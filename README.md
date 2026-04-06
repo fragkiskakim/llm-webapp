@@ -1,6 +1,6 @@
-# llm-webapp
+# How to open the venv
 
-test commit
+source .venv/bin/activate
 
 # HOW TO OPEN THE DATABASE FROM THE TERMINAL
 

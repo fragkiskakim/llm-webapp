@@ -7,6 +7,8 @@ const os = require("node:os");
 
 const driver = require("../neo4j");
 const { importGraphForRun } = require("./graphImport");
+const { analyzeArchitecture } = require("./analyze_architecture");
+
 
 //helper function to strip function bodies from C++ code, leaving only declarations (for better namespace analysis)
 function stripFunctionBodies(code) {
@@ -194,6 +196,7 @@ module.exports = function createAnalyzeRouter({ pool }) {
 
 
             // 4) Store all results
+
             await pool.query(
                 `
                 UPDATE run_experiments
@@ -207,12 +210,24 @@ module.exports = function createAnalyzeRouter({ pool }) {
 
             await importGraphForRun(id, { pool, driver });
 
+            const archRow = await pool.query(
+                "SELECT architecture FROM run_experiments WHERE id=$1", [id]
+            );
+            const architecture = archRow.rows[0]?.architecture;
+            const architectureAnalysis = analyzeArchitecture(graphJson, architecture);
+            console.log("Architecture analysis:", architectureAnalysis);
+
+            await pool.query(
+                `UPDATE run_experiments SET architecture_analysis = $1 WHERE id = $2`,
+                [architectureAnalysis, id]
+            );
 
             return res.json({
                 id,
                 metrics,
                 plantuml,
-                graphJson
+                graphJson,
+                architectureAnalysis
             });
 
         } catch (err) {

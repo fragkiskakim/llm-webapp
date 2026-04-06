@@ -45,7 +45,9 @@ export default function RunPage() {
         ...data,
         metrics: analyzeData.metrics,
         plantuml_produced: analyzeData.plantuml,
-        graphjson: analyzeData.graphJson
+        graphjson: analyzeData.graphJson,
+        architecture_analysis: analyzeData.architectureAnalysis
+
       };
 
       setResult(result);

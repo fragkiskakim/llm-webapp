@@ -53,7 +53,8 @@ async function initDb() {
     cpp_code TEXT,
     uml_produced TEXT,
     graph_json JSONB,
-    cpp_metrics JSONB
+    cpp_metrics JSONB,
+    architecture_analysis JSONB
 
     );
     `);

@@ -376,7 +376,8 @@ app.post("/api/run-experiment", async (req, res) => {
 
       response = await client.responses.create({
         model: request_model,
-        input: llmInput
+        input: llmInput,
+        temperature: 0.0
       });
 
       text = response.output_text ?? "";
@@ -434,20 +435,10 @@ app.post("/api/run-experiment", async (req, res) => {
     );
 
 
-    //TODO: change the analysis to something that makes sense
-    analysis = {
-      min: 0.32,
-      max: 0.87,
-      total: 0.67,
-      problem: "You have too many connections"
-    }
-
-
     return res.json({
       id: runId,
       prompt,
-      cpp,
-      analysis
+      cpp
     });
 
   } catch (err) {
@@ -539,7 +530,8 @@ app.get("/api/run-experiments/:id", async (req, res) => {
         cpp_code AS cpp,
         cpp_metrics AS metrics,
         uml_produced AS plantuml_produced,
-        graph_json AS graphJson
+        graph_json AS graphJson,
+        architecture_analysis AS architecture_analysis
       FROM run_experiments
       WHERE id = $1
       `,

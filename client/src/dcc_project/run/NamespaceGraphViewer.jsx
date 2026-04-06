@@ -9,9 +9,8 @@ const PALETTE = [
     "#6AA84F", "#E69138",
 ];
 
-function buildColorMap(nodes) {
-    const namespaces = [...new Set(nodes.map((n) => n.owner_namespace).filter(Boolean))];
-    return Object.fromEntries(namespaces.map((ns, i) => [ns, PALETTE[i % PALETTE.length]]));
+function buildNamespaceColorMap(nodes) {
+    return Object.fromEntries(nodes.map((n, i) => [n.id, PALETTE[i % PALETTE.length]]));
 }
 
 export default function GraphViewer({ runId }) {
@@ -34,19 +33,20 @@ export default function GraphViewer({ runId }) {
                 const data = await res.json();
                 if (!cancelled) {
                     const nodes = data.nodes || [];
-                    const map = buildColorMap(nodes);
+                    const map = buildNamespaceColorMap(nodes);  // 👈 αλλαγή
                     setColorMap(map);
                     setGraphData({
                         nodes: nodes.map((n) => ({
                             id: n.id,
-                            name: n.id.split("::").pop(),
-                            namespace: n.owner_namespace || "",
-                            color: map[n.owner_namespace] || "#D9D9D9",
+                            name: n.id,           // το namespace είναι ήδη το όνομα
+                            namespace: n.id,      // 👈 βάλε το id ως namespace
+                            color: map[n.id] || "#D9D9D9",
                         })),
                         links: (data.edges || []).map((e) => ({
                             source: e.source,
                             target: e.target,
                             type: e.type,
+                            count: e.total || 1,
                         })),
                     });
                 }
