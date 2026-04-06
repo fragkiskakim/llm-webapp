@@ -47,6 +47,7 @@ async function initDb() {
     architecture TEXT NOT NULL,
     model TEXT NOT NULL,
     prompt_type TEXT NOT NULL,
+    temperature TEXT NOT NULL,
 
     prompt TEXT,
     response TEXT,

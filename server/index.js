@@ -300,9 +300,10 @@ app.post("/api/run-experiment", async (req, res) => {
     const architecture = req.body?.architecture;
     const promptType = req.body?.promptType;
     const model = req.body?.model;
+    const temperature = req.body?.temperature;
 
 
-    if (!architecture || !promptType) {
+    if (!architecture || !promptType || !temperature || !model) {
       return res.status(400).json({ error: "Missing parameters" });
     }
 
@@ -348,14 +349,14 @@ app.post("/api/run-experiment", async (req, res) => {
     // ------------------------
     // INSERT RUN
     // ------------------------
-    const category = `DCC_${architecture}_${model}_${promptType}`;
+    const category = `DCC_${architecture}_${model}_${promptType}_temp${temperature}`;
 
     const ins = await pool.query(
       `INSERT INTO run_experiments
-      (architecture, model, prompt_type, prompt, category)
-      VALUES ($1,$2,$3,$4,$5)
+      (architecture, model, prompt_type, temperature, prompt, category)
+      VALUES ($1,$2,$3,$4,$5,$6)
       RETURNING id`,
-      [architecture, model, promptType, prompt, category]
+      [architecture, model, promptType, temperature, prompt, category]
     );
 
     const runId = ins.rows[0].id;
@@ -377,7 +378,7 @@ app.post("/api/run-experiment", async (req, res) => {
       response = await client.responses.create({
         model: request_model,
         input: llmInput,
-        temperature: 0.0
+        temperature: Number(temperature) ?? 0.0
       });
 
       text = response.output_text ?? "";
@@ -388,6 +389,7 @@ app.post("/api/run-experiment", async (req, res) => {
       const msg = await anthropic.messages.create({
         model: "claude-opus-4-6",
         max_tokens: 4000,
+        temperature: Number(temperature) ?? 0.0,
         messages: [
           {
             role: "user",
@@ -409,6 +411,7 @@ app.post("/api/run-experiment", async (req, res) => {
         },
         body: JSON.stringify({
           model: "grok-4",
+          temperature: Number(temperature) ?? 0.0,
           messages: [
             { role: "user", content: llmInput }
           ]
@@ -438,7 +441,8 @@ app.post("/api/run-experiment", async (req, res) => {
     return res.json({
       id: runId,
       prompt,
-      cpp
+      cpp,
+      category
     });
 
   } catch (err) {

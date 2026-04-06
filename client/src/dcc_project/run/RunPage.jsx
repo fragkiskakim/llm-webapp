@@ -9,11 +9,12 @@ export default function RunPage() {
   const [architecture, setArchitecture] = useState("");
   const [model, setModel] = useState("");
   const [promptType, setPromptType] = useState("");
+  const [temperature, setTemperature] = useState("");
   const [warning, setWarning] = useState("");
 
   const [result, setResult] = useState(null);
 
-  async function runExperiment(architecture, model, promptType) {
+  async function runExperiment(architecture, model, promptType, temperature) {
 
     try {
 
@@ -25,7 +26,8 @@ export default function RunPage() {
         body: JSON.stringify({
           architecture,
           model,
-          promptType
+          promptType,
+          temperature,
         })
       });
 
@@ -60,13 +62,13 @@ export default function RunPage() {
   }
 
   function handleRun() {
-    if (!architecture || !model || !promptType) {
+    if (!architecture || !model || !promptType || !temperature) {
       setWarning("Please select all filters before running.");
       return;
     }
 
     setWarning("");
-    runExperiment(architecture, model, promptType);
+    runExperiment(architecture, model, promptType, temperature);
   }
 
   const cardStyle = {
@@ -127,6 +129,16 @@ export default function RunPage() {
 
           <select
             style={selectStyle}
+            value={promptType}
+            onChange={(e) => setPromptType(e.target.value)}
+          >
+            <option value="" disabled>Prompt Type</option>
+            <option value="frnfr">FR-NFR</option>
+            <option value="srs">SRS</option>
+          </select>
+
+          <select
+            style={selectStyle}
             value={model}
             onChange={(e) => setModel(e.target.value)}
           >
@@ -138,12 +150,13 @@ export default function RunPage() {
 
           <select
             style={selectStyle}
-            value={promptType}
-            onChange={(e) => setPromptType(e.target.value)}
+            value={temperature}
+            onChange={(e) => setTemperature(e.target.value)}
           >
-            <option value="" disabled>Prompt Type</option>
-            <option value="frnfr">FR-NFR</option>
-            <option value="srs">SRS</option>
+            <option value="" disabled>Temperature</option>
+            <option value="0.0">0.0</option>
+            <option value="0.2">0.2</option>
+            <option value="0.5">0.5</option>
           </select>
 
           <button style={buttonStyle} onClick={handleRun}>

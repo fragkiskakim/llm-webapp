@@ -40,24 +40,29 @@ function extractCppUmlFromJson(rawText) {
 
 
 function extractCppFromJson(rawText) {
+    // 1. Προσπάθεια JSON parse
     const obj = safeJsonParse(rawText);
-
     if (obj && typeof obj.cpp === "string") {
         return { cpp: stripFence(obj.cpp, "cpp"), parsed: true };
     }
 
-    // fallback: regex extraction
-    const match = rawText.match(/"cpp"\s*:\s*"([\s\S]*)"/);
+    // 2. Εξαγωγή από ```cpp ... ``` fence
+    const fenceMatch = rawText.match(/```cpp\s*([\s\S]*?)```/);
+    if (fenceMatch) {
+        return { cpp: fenceMatch[1].trim(), parsed: true };
+    }
 
+    // 3. Regex fallback με non-greedy
+    const match = rawText.match(/"cpp"\s*:\s*"([\s\S]*?)(?<!\\)"/);
     if (match) {
-        let cpp = match[1]
+        const cpp = match[1]
             .replace(/\\n/g, "\n")
-            .replace(/\\"/g, '"');
-
+            .replace(/\\"/g, '"')
+            .replace(/\\\\/g, "\\");
         return { cpp, parsed: true };
     }
 
-    return { cpp: null, parsed: false };
+    return { cpp: rawText, parsed: false };
 }
 
 module.exports = { extractCppUmlFromJson, extractCppFromJson };
