@@ -123,7 +123,7 @@ router.get("/graph/namespace/view/:id", async (req, res) => {
               AND a.owner_namespace <> b.owner_namespace
             RETURN a.owner_namespace AS srcNs,
                    b.owner_namespace AS dstNs,
-                   r.type AS relType,
+                   type(r) AS relType,
                    count(*) AS cnt
             `,
             { runId }

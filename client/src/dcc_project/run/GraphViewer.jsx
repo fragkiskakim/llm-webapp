@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef, useMemo } from "react";
 import ForceGraph2D from "react-force-graph-2d";
 
+import * as d3 from "d3-force";
+
 const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 const PALETTE = [
@@ -14,12 +16,70 @@ function buildColorMap(nodes) {
     return Object.fromEntries(namespaces.map((ns, i) => [ns, PALETTE[i % PALETTE.length]]));
 }
 
+function buildNamespaceCenters(colorMap, width = 1200, height = 700) {
+    const namespaces = Object.keys(colorMap);
+    const cx = width / 2;
+    const cy = height / 2;
+    const radius = Math.min(width, height) * 0.28;
+
+    const centers = {};
+
+    namespaces.forEach((ns, i) => {
+        const angle = (2 * Math.PI * i) / namespaces.length;
+        centers[ns] = {
+            x: cx + radius * Math.cos(angle),
+            y: cy + radius * Math.sin(angle),
+        };
+    });
+
+    return centers;
+}
+
 export default function GraphViewer({ runId }) {
     const [graphData, setGraphData] = useState({ nodes: [], links: [] });
     const [colorMap, setColorMap] = useState({});
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const containerRef = useRef(null);
+
+    const fgRef = useRef();
+
+    useEffect(() => {
+        if (!fgRef.current || !graphData.nodes.length) return;
+
+        const width = containerRef.current?.clientWidth || 1200;
+        const height = 700;
+        const centers = buildNamespaceCenters(colorMap, width, height);
+
+        const fg = fgRef.current;
+        const chargeStrength = -220;
+        const linkDistance = 120;
+
+        fg.d3Force("charge", d3.forceManyBody().strength(chargeStrength));
+        fg.d3Force("link").distance(linkDistance);
+        fg.d3Force("center", d3.forceCenter(width / 2, height / 2));
+
+        fg.d3Force(
+            "collision",
+            d3.forceCollide(28)
+        );
+
+        fg.d3Force(
+            "x",
+            d3.forceX((node) => centers[node.namespace]?.x ?? width / 2).strength(0.18)
+        );
+
+        fg.d3Force(
+            "y",
+            d3.forceY((node) => centers[node.namespace]?.y ?? height / 2).strength(0.18)
+        );
+
+        fg.d3ReheatSimulation();
+
+        setTimeout(() => {
+            fg.zoomToFit(700, 80);
+        }, 800);
+    }, [graphData, colorMap]);
 
     useEffect(() => {
         if (!runId) return;
@@ -80,6 +140,7 @@ export default function GraphViewer({ runId }) {
 
             <div ref={containerRef} style={{ height: 700 }}>
                 <ForceGraph2D
+                    ref={fgRef}
                     graphData={graphData}
                     nodeLabel="name"
                     nodeColor={(n) => n.color}

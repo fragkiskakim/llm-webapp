@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef, useMemo } from "react";
 import ForceGraph2D from "react-force-graph-2d";
+import * as d3 from "d3-force";
 
 const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
@@ -19,6 +20,24 @@ export default function GraphViewer({ runId }) {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const containerRef = useRef(null);
+
+    const fgRef = useRef(null);
+
+    useEffect(() => {
+        if (!fgRef.current || !graphData.nodes.length) return;
+
+        const fg = fgRef.current;
+
+        fg.d3Force("charge").strength(-300);   // πιο δυνατή άπωση
+        fg.d3Force("link").distance(120);      // μεγαλύτερη απόσταση ακμών
+        fg.d3Force("center", null);            // προαιρετικά βγάζει το υπερβολικό μάζεμα στο κέντρο
+
+        fg.d3ReheatSimulation();
+
+        setTimeout(() => {
+            fg.zoomToFit(500, 80);
+        }, 700);
+    }, [graphData]);
 
     useEffect(() => {
         if (!runId) return;
@@ -80,11 +99,12 @@ export default function GraphViewer({ runId }) {
 
             <div ref={containerRef} style={{ height: 700 }}>
                 <ForceGraph2D
+                    ref={fgRef}
                     graphData={graphData}
                     nodeLabel="name"
                     nodeColor={(n) => n.color}
                     nodeRelSize={6}
-                    linkLabel="type"
+                    linkLabel={(link) => `count: ${link.count}`}
                     linkDirectionalArrowLength={6}
                     linkDirectionalArrowRelPos={1}
                     linkCurvature={0.1}
@@ -115,6 +135,42 @@ export default function GraphViewer({ runId }) {
                         ctx.fillStyle = color;
                         ctx.fill();
                     }}
+                    linkCanvasObject={(link, ctx, globalScale) => {
+                        const start = link.source;
+                        const end = link.target;
+
+                        if (
+                            typeof start !== "object" ||
+                            typeof end !== "object" ||
+                            start.x == null || start.y == null ||
+                            end.x == null || end.y == null
+                        ) {
+                            return;
+                        }
+
+                        const label = String(link.count ?? 1);
+                        const fontSize = Math.max(14 / globalScale, 5);
+
+                        const midX = (start.x + end.x) / 2;
+                        const midY = (start.y + end.y) / 2;
+
+                        ctx.font = `${fontSize}px Sans-Serif`;
+                        const textWidth = ctx.measureText(label).width;
+
+                        ctx.fillStyle = "rgba(255,255,255,0.85)";
+                        ctx.fillRect(
+                            midX - textWidth / 2 - 4,
+                            midY - fontSize / 2 - 2,
+                            textWidth + 8,
+                            fontSize + 4
+                        );
+
+                        ctx.textAlign = "center";
+                        ctx.textBaseline = "middle";
+                        ctx.fillStyle = "#111";
+                        ctx.fillText(label, midX, midY);
+                    }}
+                    linkCanvasObjectMode={() => "after"}
                     width={containerRef.current?.clientWidth || 800}
                     height={700}
                 />
