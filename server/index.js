@@ -38,19 +38,6 @@ const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 
 
-function wrapPromptForJson(prompt) {
-  return [
-    "You must respond with ONLY valid JSON.",
-    'Schema: {"cpp": string}',
-    "No markdown. No explanations. No extra keys.",
-    "The value of cpp must be valid C++ header source code as a string.",
-    "User request:",
-    prompt
-  ].join("\n");
-}
-
-
-
 app.get("/health", (_req, res) => res.json({ ok: true }));
 
 app.post("/api/generate", async (req, res) => {
@@ -366,7 +353,7 @@ app.post("/api/run-experiment", async (req, res) => {
     // ------------------------
 
 
-    const llmInput = wrapPromptForJson(prompt);
+    const llmInput = prompt;
 
     let text = "";
     let response;
@@ -422,6 +409,36 @@ app.post("/api/run-experiment", async (req, res) => {
 
       text = data.choices?.[0]?.message?.content ?? "";
 
+    }
+    else if (model === "gemini") {
+      const { GoogleGenerativeAI } = await import("@google/generative-ai");
+      const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+      const geminiModel = genAI.getGenerativeModel({
+        model: "gemini-2.5-flash",
+        generationConfig: { temperature: Number(temperature) ?? 0.0 }
+      });
+
+      const result = await geminiModel.generateContent(llmInput);
+      text = result.response.text();
+    }
+    else if (model === "mistral") {
+      const r = await fetch("https://api.mistral.ai/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${process.env.MISTRAL_API_KEY}`
+        },
+        body: JSON.stringify({
+          model: "mistral-large-latest",
+          temperature: Number(temperature) ?? 0.0,
+          messages: [
+            { role: "user", content: llmInput }
+          ]
+        })
+      });
+
+      const data = await r.json();
+      text = data.choices?.[0]?.message?.content ?? "";
     }
 
     const { cpp } = extractCppFromJson(text);

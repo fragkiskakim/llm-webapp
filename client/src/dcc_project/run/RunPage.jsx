@@ -146,6 +146,8 @@ export default function RunPage() {
             <option value="gpt4">GPT-4</option>
             <option value="claude">Claude</option>
             <option value="grok">Grok</option>
+            <option value="gemini">Gemini</option>
+            <option value="mistral">Mistral</option>
           </select>
 
           <select
