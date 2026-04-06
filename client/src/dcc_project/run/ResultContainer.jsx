@@ -5,6 +5,7 @@ import VisualizationPanel from "./VisualizationPanel.jsx";
 import { useControlled } from "@mui/material";
 import GraphViewer from "./GraphViewer.jsx";
 import NamespaceGraphViewer from "./NamespaceGraphViewer.jsx";
+import PromptPanel from "./PromptPanel.jsx";
 
 export default function ResultContainer({ result }) {
   const [tab, setTab] = useState("code");
@@ -118,7 +119,7 @@ export default function ResultContainer({ result }) {
       </div>
 
       <div style={{ display: "flex", gap: 20 }}>
-        {tab === "prompt" && <div>{result.prompt}</div>}
+        {tab === "prompt" && <PromptPanel prompt={result.prompt} />}
         {tab === "code" && <CodePanel code={result.cpp} />}
         {tab === "viz" && <VisualizationPanel uml={result.plantuml_produced} />}
         {tab === "analysis" && <AnalysisPanel analysis={result.architecture_analysis} />}
