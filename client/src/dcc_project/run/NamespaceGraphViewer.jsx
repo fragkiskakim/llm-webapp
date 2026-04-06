@@ -135,41 +135,7 @@ export default function GraphViewer({ runId }) {
                         ctx.fillStyle = color;
                         ctx.fill();
                     }}
-                    linkCanvasObject={(link, ctx, globalScale) => {
-                        const start = link.source;
-                        const end = link.target;
 
-                        if (
-                            typeof start !== "object" ||
-                            typeof end !== "object" ||
-                            start.x == null || start.y == null ||
-                            end.x == null || end.y == null
-                        ) {
-                            return;
-                        }
-
-                        const label = String(link.count ?? 1);
-                        const fontSize = Math.max(14 / globalScale, 5);
-
-                        const midX = (start.x + end.x) / 2;
-                        const midY = (start.y + end.y) / 2;
-
-                        ctx.font = `${fontSize}px Sans-Serif`;
-                        const textWidth = ctx.measureText(label).width;
-
-                        ctx.fillStyle = "rgba(255,255,255,0.85)";
-                        ctx.fillRect(
-                            midX - textWidth / 2 - 4,
-                            midY - fontSize / 2 - 2,
-                            textWidth + 8,
-                            fontSize + 4
-                        );
-
-                        ctx.textAlign = "center";
-                        ctx.textBaseline = "middle";
-                        ctx.fillStyle = "#111";
-                        ctx.fillText(label, midX, midY);
-                    }}
                     linkCanvasObjectMode={() => "after"}
                     width={containerRef.current?.clientWidth || 800}
                     height={700}
