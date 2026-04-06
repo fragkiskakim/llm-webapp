@@ -6,5 +6,12 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     dedupe: ['react', 'react-dom']
+  },
+  server: {
+    watch: {
+      usePolling: true,
+      interval: 100
+    }
   }
+
 })

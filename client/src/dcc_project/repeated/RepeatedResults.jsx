@@ -25,6 +25,8 @@ export default function RepeatedResults() {
   const [loadingResult, setLoadingResult] = useState(false);
   const [resultError, setResultError] = useState("");
 
+  const [selectedRow, setSelectedRow] = useState(null);
+
   const cardStyle = {
     border: "1px solid #ddd",
     borderRadius: 6,
@@ -241,8 +243,14 @@ export default function RepeatedResults() {
                     rows.map((r) => (
                       <tr
                         key={r.id}
-                        style={{ background: "#fafafa", cursor: "pointer" }}
-                        onClick={() => handleRowClick(r.id)}
+                        style={{
+                          background: selectedRow === r.id ? "rgba(217, 161, 161, 0.5)" : "#fafafa",
+                          cursor: "pointer"
+                        }}
+                        onClick={() => {
+                          setSelectedRow(r.id);
+                          handleRowClick(r.id);
+                        }}
                       >
                         <td style={{ paddingLeft: 30 }}>
                           {category}_{r.id}

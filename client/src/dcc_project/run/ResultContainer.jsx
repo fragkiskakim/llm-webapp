@@ -21,7 +21,18 @@ export default function ResultContainer({ result }) {
         background: "#fff"
       }}
     >
-      <h3 style={{ marginTop: 0 }}>Result</h3>
+      <h3 style={{ marginTop: 0 }}>
+        Result of{" "}
+        <span
+          style={{
+            background: "#eee",
+            padding: "2px 8px",
+            borderRadius: 6
+          }}
+        >
+          {result.category}_{result.id}
+        </span>
+      </h3>
 
       <div style={{ display: "flex", gap: 10, marginBottom: 15 }}>
         <button

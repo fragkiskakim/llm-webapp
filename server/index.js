@@ -531,7 +531,8 @@ app.get("/api/run-experiments/:id", async (req, res) => {
         cpp_metrics AS metrics,
         uml_produced AS plantuml_produced,
         graph_json AS graphJson,
-        architecture_analysis AS architecture_analysis
+        architecture_analysis AS architecture_analysis,
+        category
       FROM run_experiments
       WHERE id = $1
       `,
