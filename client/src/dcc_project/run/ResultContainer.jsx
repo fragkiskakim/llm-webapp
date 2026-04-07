@@ -121,7 +121,7 @@ export default function ResultContainer({ result }) {
       <div style={{ display: "flex", gap: 20 }}>
         {tab === "prompt" && <PromptPanel prompt={result.prompt} />}
         {tab === "code" && <CodePanel code={result.cpp} />}
-        {tab === "viz" && <VisualizationPanel uml={result.plantuml_produced} />}
+        {tab === "viz" && <VisualizationPanel uml={result.plantuml_produced} filename={`${result.category}_${result.id}`} />}
         {tab === "analysis" && <AnalysisPanel analysis={result.architecture_analysis} />}
         {tab === "graphjson" && <CodePanel code={JSON.stringify(result.graphjson, null, 2)} />}
         {tab === "classgraphviewer" && <GraphViewer runId={result.id} />}
