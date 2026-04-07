@@ -2,8 +2,22 @@ import { useEffect, useState } from "react";
 import DccTabs from "../../DccTabs.jsx";
 import RepeatedTabs from "../../RepeatedTabs.jsx";
 import ResultContainer from "../run/ResultContainer.jsx";
-import ComparisonModal from "./ComparisonModal.jsx";
+import ComparisonModal, { downloadComparisonCSV } from "./ComparisonModal.jsx";
+
+// Στη parent row, δίπλα στο Compare κουμπί:
+<td>
+  <div style={{ display: "flex", gap: 6 }}>
+    <button onClick={(e) => { e.stopPropagation(); setCompareCategory(category); }}>
+      Compare
+    </button>
+    <button onClick={(e) => { e.stopPropagation(); downloadComparisonCSV(category, rows); }}>
+      ⬇ CSV
+    </button>
+  </div>
+</td>
 import React from "react";
+
+
 
 const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
@@ -255,6 +269,22 @@ export default function RepeatedResults() {
                         }}
                       >
                         Compare
+                      </button>
+                      <button onClick={(e) => { e.stopPropagation(); downloadComparisonCSV(category, rows); 
+                        
+                      }}
+                      
+                      style={{
+                          padding: "3px 10px",
+                          borderRadius: 6,
+                          border: "1px solid #4f46e5",
+                          background: "transparent",
+                          color: "#4f46e5",
+                          cursor: "pointer",
+                          fontSize: 12,
+                          fontWeight: 600,
+                        }}>
+                        ⬇ CSV
                       </button>
                     </td>
                   </tr>

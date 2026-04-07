@@ -87,6 +87,96 @@ function scoreRow(row, metricKeys, violKey) {
   return s;
 }
 
+// ── CSV builder ───────────────────────────────────────────────────────────────
+
+function buildCSV(results, isMicroservices) {
+  const violKey = "Violations";
+  const esc = (v) => `"${String(v).replace(/"/g, '""')}"`;
+
+  if (isMicroservices) {
+    const AGG_KEYS = ["numNs", "Ca", "Ce", "I", "D", "Cohesion"];
+    const AGG_LABELS = { numNs: "# Namespaces", Ca: "Avg Ca", Ce: "Avg Ce", I: "Avg I", D: "Avg D", Cohesion: "Avg Cohesion" };
+
+    const dataRows = results.map((r) => {
+      const agg = getAggregateMetrics(r);
+      return { label: `${r.category}_${r.id}`, ...agg, [violKey]: getArchViolations(r) };
+    });
+
+    const headers = ["Experiment", ...AGG_KEYS.map((k) => AGG_LABELS[k]), "Arch Violations"];
+    const summaryAvg = { label: "Average" };
+    const summaryStd = { label: "Std Dev (variability)" };
+    [...AGG_KEYS, violKey].forEach((k) => {
+      const vals = dataRows.map((r) => r[k]);
+      summaryAvg[k] = avg(vals);
+      summaryStd[k] = stddev(vals);
+    });
+
+    const lines = [
+      headers.map(esc).join(","),
+      ...dataRows.map((r) => [esc(r.label), ...AGG_KEYS.map((k) => esc(r[k])), esc(r[violKey])].join(",")),
+      "",
+      [esc("Average"), ...AGG_KEYS.map((k) => esc(summaryAvg[k])), esc(summaryAvg[violKey])].join(","),
+      [esc("Std Dev (variability)"), ...AGG_KEYS.map((k) => esc(summaryStd[k])), esc(summaryStd[violKey])].join(","),
+    ];
+    return lines.join("\n");
+
+  } else {
+    const METRIC_KEYS = ["Ca", "Ce", "I", "D", "Cohesion"];
+    const namespaces = getNamespaces(results);
+    const allKeys = namespaces.flatMap((ns) => METRIC_KEYS.map((m) => `${ns}.${m}`));
+
+    const dataRows = results.map((r) => {
+      const row = { label: `${r.category}_${r.id}` };
+      namespaces.forEach((ns) => {
+        const m = getMetrics(r, ns);
+        METRIC_KEYS.forEach((k) => { row[`${ns}.${k}`] = m[k]; });
+      });
+      row[violKey] = getArchViolations(r);
+      return row;
+    });
+
+    const summaryAvg = { label: "Average" };
+    const summaryStd = { label: "Std Dev (variability)" };
+    [...allKeys, violKey].forEach((k) => {
+      const vals = dataRows.map((r) => r[k]);
+      summaryAvg[k] = avg(vals);
+      summaryStd[k] = stddev(vals);
+    });
+
+    // header row 1: namespace groups
+    const nsHeader = ["", ...namespaces.flatMap((ns) => [ns, ...Array(METRIC_KEYS.length - 1).fill("")]), ""].map(esc).join(",");
+    // header row 2: metric names
+    const metricHeader = ["Experiment", ...namespaces.flatMap(() => METRIC_KEYS), "Arch Violations"].map(esc).join(",");
+
+    const lines = [
+      nsHeader,
+      metricHeader,
+      ...dataRows.map((r) => [esc(r.label), ...allKeys.map((k) => esc(r[k])), esc(r[violKey])].join(",")),
+      "",
+      [esc("Average"), ...allKeys.map((k) => esc(summaryAvg[k])), esc(summaryAvg[violKey])].join(","),
+      [esc("Std Dev (variability)"), ...allKeys.map((k) => esc(summaryStd[k])), esc(summaryStd[violKey])].join(","),
+    ];
+    return lines.join("\n");
+  }
+}
+
+// ── exported CSV download function ───────────────────────────────────────────
+// Call this from the parent table button WITHOUT opening the modal.
+
+export async function downloadComparisonCSV(category, rows) {
+  const isMicroservices = rows[0]?.architecture === "microservices";
+  const results = await Promise.all(
+    rows.map((r) => fetch(`${API}/api/run-experiments/${r.id}`).then((res) => res.json()))
+  );
+  const csv = buildCSV(results, isMicroservices);
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `${category}_comparison.csv`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
 // ── styles ────────────────────────────────────────────────────────────────────
 
 const C = {
@@ -195,8 +285,6 @@ function NamespaceTable({ results }) {
   const METRIC_KEYS = ["Ca", "Ce", "I", "D", "Cohesion"];
   const namespaces = getNamespaces(results);
   const violKey = "Violations";
-
-  // flat list of all data keys (for extremes / avg / std)
   const allKeys = namespaces.flatMap((ns) => METRIC_KEYS.map((m) => `${ns}.${m}`));
 
   const dataRows = results.map((r) => {
@@ -275,12 +363,7 @@ function NamespaceTable({ results }) {
             </tr>
           );
         })}
-        <SummaryRows
-          rows={[summaryAvg, summaryStd]}
-          keys={allKeys}
-          violKey={violKey}
-          colSpanFill={1 + allKeys.length + 1}
-        />
+        <SummaryRows rows={[summaryAvg, summaryStd]} keys={allKeys} violKey={violKey} colSpanFill={1 + allKeys.length + 1} />
       </tbody>
     </table>
   );
@@ -338,7 +421,7 @@ function AggregateTable({ results }) {
               borderLeft: isBest ? `3px solid ${C.good}` : isWorst ? `3px solid ${C.bad}` : "3px solid transparent",
             }}>
               <RowLabel label={row.label} isBest={isBest} isWorst={isWorst} />
-              {AGG_KEYS.map((k, i) => (
+              {AGG_KEYS.map((k) => (
                 <td key={k} style={{ ...TD(), borderLeft: `1px solid ${C.border}` }}>
                   <CellValue val={String(row[k])} metric={k === "D" ? "D" : k === "Cohesion" ? "Cohesion" : k} ext={ext[k]} />
                 </td>
@@ -349,12 +432,7 @@ function AggregateTable({ results }) {
             </tr>
           );
         })}
-        <SummaryRows
-          rows={[summaryAvg, summaryStd]}
-          keys={AGG_KEYS}
-          violKey={violKey}
-          colSpanFill={1 + AGG_KEYS.length + 1}
-        />
+        <SummaryRows rows={[summaryAvg, summaryStd]} keys={AGG_KEYS} violKey={violKey} colSpanFill={1 + AGG_KEYS.length + 1} />
       </tbody>
     </table>
   );
@@ -366,6 +444,7 @@ export default function ComparisonModal({ category, rows, onClose }) {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [csvLoading, setCsvLoading] = useState(false);
 
   const isMicroservices = rows[0]?.architecture === "microservices";
 
@@ -374,9 +453,7 @@ export default function ComparisonModal({ category, rows, onClose }) {
       try {
         setLoading(true);
         const fetched = await Promise.all(
-          rows.map((r) =>
-            fetch(`${API}/api/run-experiments/${r.id}`).then((res) => res.json())
-          )
+          rows.map((r) => fetch(`${API}/api/run-experiments/${r.id}`).then((res) => res.json()))
         );
         setResults(fetched);
       } catch (e) {
@@ -387,6 +464,21 @@ export default function ComparisonModal({ category, rows, onClose }) {
     }
     load();
   }, [rows]);
+
+  async function handleCSV() {
+    setCsvLoading(true);
+    try {
+      await downloadComparisonCSV(category, rows);
+    } finally {
+      setCsvLoading(false);
+    }
+  }
+
+  const btnStyle = {
+    padding: "5px 12px", borderRadius: 7, border: `1px solid ${C.border}`,
+    background: "transparent", color: C.muted, cursor: "pointer",
+    fontSize: 12, fontWeight: 600, display: "inline-flex", alignItems: "center", gap: 5,
+  };
 
   return (
     <div style={overlay} onClick={(e) => e.target === e.currentTarget && onClose()}>
@@ -404,7 +496,7 @@ export default function ComparisonModal({ category, rows, onClose }) {
             </div>
             <div style={{ fontSize: 18, fontWeight: 700, color: C.accent, marginTop: 2 }}>{category}</div>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
             {[{ color: C.good, label: "Best" }, { color: C.bad, label: "Worst" }, { color: C.mid, label: "Experiment" }]
               .map(({ color, label }) => (
                 <div key={label} style={{ display: "flex", alignItems: "center", gap: 5 }}>
@@ -412,10 +504,13 @@ export default function ComparisonModal({ category, rows, onClose }) {
                   <span style={{ fontSize: 11, color: C.muted }}>{label}</span>
                 </div>
               ))}
-            <button onClick={onClose} style={{
-              background: "none", border: `1px solid ${C.border}`, borderRadius: 8,
-              color: C.muted, cursor: "pointer", padding: "4px 10px", fontSize: 18, lineHeight: 1,
-            }}>×</button>
+
+            {/* CSV download button */}
+            <button onClick={handleCSV} disabled={csvLoading} style={{ ...btnStyle, borderColor: C.accent, color: C.accent }}>
+              {csvLoading ? "…" : "⬇"} Export CSV
+            </button>
+
+            <button onClick={onClose} style={{ ...btnStyle, fontSize: 18, padding: "4px 10px" }}>×</button>
           </div>
         </div>
 
