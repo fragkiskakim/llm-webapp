@@ -71,15 +71,11 @@ function runHpp2Plantuml(headerPath, pumlOutPath) {
             .split(/\s+/)
             .filter(Boolean);
 
-        const SCRIPT = process.env.HPP2PLANTUML_SCRIPT;
-
-        if (!SCRIPT) {
-            return reject(new Error("HPP2PLANTUML_SCRIPT not defined in .env"));
-        }
+        const scriptPath = path.join(__dirname, "hpp2plantuml.py");
 
         const args = [
             ...PYTHON_ARGS,
-            SCRIPT,
+            scriptPath,
             "-i", headerPath,
             "-o", pumlOutPath,
             "-d" // enable dependency extraction (optional but useful for metrics)
