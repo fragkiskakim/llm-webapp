@@ -8,140 +8,131 @@
 
 namespace Presentation {
 	class PresentationCoordinateGroupController {
-		+PresentationCoordinateGroupController(Business::BusinessCoordinateGroupService& service, PresentationCoordinateGroupFormView& formView, PresentationCoordinateGroupListView& listView)
-		-service_ : Business::BusinessCoordinateGroupService&
-		-formView_ : PresentationCoordinateGroupFormView&
-		-listView_ : PresentationCoordinateGroupListView&
+		+PresentationCoordinateGroupController(Business::BusinessCoordinateGroupService& service, PresentationCoordinateGroupForm& form, PresentationCoordinateGroupListView& listView)
+		+~PresentationCoordinateGroupController()
+		-m_service : Business::BusinessCoordinateGroupService&
+		-m_form : PresentationCoordinateGroupForm&
+		-m_listView : PresentationCoordinateGroupListView&
 		+onCreateRequested() : void
 		+onDeleteRequested(int id) : void
-		+onRefreshAllRequested() : void
+		+onLoadForEditRequested(int id) : void
 		+onSearchByLabelRequested(const std::string& label) : void
-		+onSelectRequested(int id) : void
-		+onUpdateRequested() : void
+		+onUpdateRequested(int id) : void
+		+onViewAllRequested() : void
 	}
 
-	class PresentationCoordinateGroupFormView {
-		+PresentationCoordinateGroupFormView()
-		-inputIsCartesian : bool
-		+inputModeIsCartesian() : bool {query}
-		-rInput : double
+	class PresentationCoordinateGroupForm {
+		+PresentationCoordinateGroupForm()
+		+~PresentationCoordinateGroupForm()
+		-m_useCartesian : bool
+		+useCartesianInput() : bool {query}
+		-m_r : double
+		-m_theta : double
+		-m_x : double
+		-m_y : double
 		+rInput() : double {query}
-		-thetaInput : double
 		+thetaInput() : double {query}
-		-xInput : double
 		+xInput() : double {query}
-		-yInput : double
 		+yInput() : double {query}
-		-labelInput : std::string
-		+label() : std::string& {query}
-		+clear() : void
-		+setCartesianInputs(double x, double y) : void
-		+setInputModeCartesian(bool isCartesian) : void
-		+setLabel(const std::string& label) : void
-		+setPolarInputs(double r, double theta) : void
+		+labelInput() : std::string {query}
+		-m_label : std::string
+		+displayGroup(const Business::BusinessCoordinateGroup& group) : void
+		+setCartesianInput(double x, double y) : void
+		+setLabelInput(const std::string& label) : void
+		+setPolarInput(double r, double theta) : void
+		+setUseCartesianInput(bool useCartesian) : void
+		+showError(const std::string& error) : void
+		+showMessage(const std::string& message) : void
 	}
 
 	class PresentationCoordinateGroupListView {
 		+PresentationCoordinateGroupListView()
-		+selectedId() : std::optional<int> {query}
-		-selectedId_ : std::optional<int>
-		-items_ : std::vector<Business::BusinessCoordinateGroup>
-		+items() : std::vector<Business::BusinessCoordinateGroup>& {query}
-		+clearSelection() : void
-		+setItems(const std::vector<Business::BusinessCoordinateGroup>& items) : void
-		+setSelectedId(std::optional<int> id) : void
-	}
-
-	class PresentationSwingMainWindow {
-		+PresentationSwingMainWindow(PresentationCoordinateGroupController& controller)
-		-controller_ : PresentationCoordinateGroupController&
-		-formView_ : PresentationCoordinateGroupFormView
-		+formView() : PresentationCoordinateGroupFormView&
-		-listView_ : PresentationCoordinateGroupListView
-		+listView() : PresentationCoordinateGroupListView&
-		+close() : void
-		+show() : void
+		+~PresentationCoordinateGroupListView()
+		-m_selectedId : int
+		+selectedId() : int {query}
+		+displayAll(const std::vector<Business::BusinessCoordinateGroup>& groups) : void
+		+displaySingle(const Business::BusinessCoordinateGroup& group) : void
+		+setSelectedId(int id) : void
+		+showError(const std::string& error) : void
+		+showMessage(const std::string& message) : void
 	}
 }
 
 
 namespace Data {
-	class DataCoordinateGroupRepository {
-		+DataCoordinateGroupRepository(DataMySqlConnection& connection)
-		-connection_ : DataMySqlConnection&
-		+removeById(int id) : bool
-		+update(const DataCoordinateGroupRecord& record) : bool
-		+insert(const DataCoordinateGroupRecord& record) : int
-		+findById(int id) : std::optional<DataCoordinateGroupRecord> {query}
-		+findAll() : std::vector<DataCoordinateGroupRecord> {query}
-		+findByLabel(const std::string& label) : std::vector<DataCoordinateGroupRecord> {query}
-	}
-
-	class DataMySqlConnection {
-		+DataMySqlConnection(const std::string& host, int port, const std::string& database, const std::string& username, const std::string& password)
-		-connected : bool
-		+isConnected() : bool {query}
-		-port : int
-		+port() : int {query}
-		-database_ : std::string
-		-host_ : std::string
-		-password_ : std::string
-		-username_ : std::string
-		+database() : std::string& {query}
-		+host() : std::string& {query}
-		+connect() : void
-		+disconnect() : void
-	}
-
 	class DataCoordinateGroupRecord {
 		+r : double
 		+theta : double
 		+x : double
 		+y : double
 		+id : int
-		+timestampEpochSeconds : std::int64_t
+		+timestampUtc : std::int64_t
 		+label : std::string
+	}
+
+	class DataCoordinateGroupRepository {
+		+DataCoordinateGroupRepository(DataMySqlConnection& connection)
+		+~DataCoordinateGroupRepository()
+		-m_connection : DataMySqlConnection&
+		+removeById(int id) : bool
+		+update(const DataCoordinateGroupRecord& record) : bool
+		+insert(const DataCoordinateGroupRecord& record) : int
+		+findById(int id) : std::optional<DataCoordinateGroupRecord> {query}
+		+findByLabel(const std::string& label) : std::optional<DataCoordinateGroupRecord> {query}
+		+findAll() : std::vector<DataCoordinateGroupRecord> {query}
+	}
+
+	class DataMySqlConnection {
+		+DataMySqlConnection()
+		+~DataMySqlConnection()
+		+isOpen() : bool {query}
+		-m_open : bool
+		-m_port : int
+		-m_database : std::string
+		-m_host : std::string
+		-m_password : std::string
+		-m_user : std::string
+		+close() : void
+		+configure(const std::string& host, int port, const std::string& database, const std::string& user, const std::string& password) : void
+		+open() : void
 	}
 }
 
 
 namespace Business {
 	class BusinessCoordinateConverter {
-		+toCartesian(const BusinessPolarCoord& polar) : BusinessCartesianCoord {query}
-		+toPolar(const BusinessCartesianCoord& cartesian) : BusinessPolarCoord {query}
-	}
-
-	class BusinessCoordinateGroupService {
-		+BusinessCoordinateGroupService(Data::DataCoordinateGroupRepository& repository)
-		-converter_ : BusinessCoordinateConverter
-		+createFromCartesian(const std::string& label, const BusinessCartesianCoord& cartesian) : BusinessCoordinateGroup
-		+createFromPolar(const std::string& label, const BusinessPolarCoord& polar) : BusinessCoordinateGroup
-		-mapToDomain(const Data::DataCoordinateGroupRecord& record) : BusinessCoordinateGroup {query}
-		-mapToRecord(const BusinessCoordinateGroup& group) : Data::DataCoordinateGroupRecord {query}
-		-repository_ : Data::DataCoordinateGroupRepository&
-		+deleteById(int id) : bool
-		+updateGroup(const BusinessCoordinateGroup& updated) : bool
-		+getById(int id) : std::optional<BusinessCoordinateGroup> {query}
-		+getAll() : std::vector<BusinessCoordinateGroup> {query}
-		+searchByLabel(const std::string& label) : std::vector<BusinessCoordinateGroup> {query}
-	}
-
-	class BusinessCartesianCoord {
-		+x : double
-		+y : double
+		+BusinessCoordinateConverter()
+		+~BusinessCoordinateConverter()
+		+cartesianToPolar(double x, double y, double& outR, double& outTheta) : void {query}
+		+polarToCartesian(double r, double theta, double& outX, double& outY) : void {query}
 	}
 
 	class BusinessCoordinateGroup {
-		+cartesian : BusinessCartesianCoord
-		+polar : BusinessPolarCoord
+		+hasId() : bool {query}
+		+r : double
+		+theta : double
+		+x : double
+		+y : double
 		+id : int
-		+timestampEpochSeconds : std::int64_t
+		+timestampUtc : std::int64_t
 		+label : std::string
 	}
 
-	class BusinessPolarCoord {
-		+r : double
-		+theta : double
+	class BusinessCoordinateGroupService {
+		+BusinessCoordinateGroupService(Data::DataCoordinateGroupRepository& repository, const BusinessCoordinateConverter& converter)
+		+~BusinessCoordinateGroupService()
+		+createFromCartesian(const std::string& label, double x, double y) : BusinessCoordinateGroup
+		+createFromPolar(const std::string& label, double r, double theta) : BusinessCoordinateGroup
+		-mapToDomain(const Data::DataCoordinateGroupRecord& record) : BusinessCoordinateGroup {query}
+		-mapToRecord(const BusinessCoordinateGroup& group) : Data::DataCoordinateGroupRecord {query}
+		-m_repository : Data::DataCoordinateGroupRepository&
+		+deleteById(int id) : bool
+		+updateFromCartesian(int id, const std::string& newLabel, double x, double y) : bool
+		+updateFromPolar(int id, const std::string& newLabel, double r, double theta) : bool
+		-m_converter : const BusinessCoordinateConverter&
+		+getById(int id) : std::optional<BusinessCoordinateGroup> {query}
+		+getByLabel(const std::string& label) : std::optional<BusinessCoordinateGroup> {query}
+		+getAll() : std::vector<BusinessCoordinateGroup> {query}
 	}
 }
 
@@ -156,12 +147,6 @@ namespace Business {
 
 /' Aggregation relationships '/
 
-Business.BusinessCoordinateGroup *-- Business.BusinessCartesianCoord
-
-
-Business.BusinessCoordinateGroup *-- Business.BusinessPolarCoord
-
-
 Business.BusinessCoordinateGroupService *-- Business.BusinessCoordinateConverter
 
 
@@ -174,22 +159,10 @@ Data.DataCoordinateGroupRepository *-- Data.DataMySqlConnection
 Presentation.PresentationCoordinateGroupController *-- Business.BusinessCoordinateGroupService
 
 
-Presentation.PresentationCoordinateGroupController *-- Presentation.PresentationCoordinateGroupFormView
+Presentation.PresentationCoordinateGroupController *-- Presentation.PresentationCoordinateGroupForm
 
 
 Presentation.PresentationCoordinateGroupController *-- Presentation.PresentationCoordinateGroupListView
-
-
-Presentation.PresentationCoordinateGroupListView *-- Business.BusinessCoordinateGroup
-
-
-Presentation.PresentationSwingMainWindow *-- Presentation.PresentationCoordinateGroupController
-
-
-Presentation.PresentationSwingMainWindow *-- Presentation.PresentationCoordinateGroupFormView
-
-
-Presentation.PresentationSwingMainWindow *-- Presentation.PresentationCoordinateGroupListView
 
 
 
@@ -198,25 +171,19 @@ Presentation.PresentationSwingMainWindow *-- Presentation.PresentationCoordinate
 
 /' Dependency relationships '/
 
-Business.BusinessCartesianCoord <.. Business.BusinessCoordinateConverter
-
-
-Business.BusinessCartesianCoord <.. Business.BusinessCoordinateGroupService
+Business.BusinessCoordinateConverter <.. Business.BusinessCoordinateGroupService
 
 
 Business.BusinessCoordinateGroup <.. Business.BusinessCoordinateGroupService
+
+
+Business.BusinessCoordinateGroup <.. Presentation.PresentationCoordinateGroupForm
 
 
 Business.BusinessCoordinateGroup <.. Presentation.PresentationCoordinateGroupListView
 
 
 Business.BusinessCoordinateGroupService <.. Presentation.PresentationCoordinateGroupController
-
-
-Business.BusinessPolarCoord <.. Business.BusinessCoordinateConverter
-
-
-Business.BusinessPolarCoord <.. Business.BusinessCoordinateGroupService
 
 
 Data.DataCoordinateGroupRecord <.. Business.BusinessCoordinateGroupService
@@ -231,10 +198,7 @@ Data.DataCoordinateGroupRepository <.. Business.BusinessCoordinateGroupService
 Data.DataMySqlConnection <.. Data.DataCoordinateGroupRepository
 
 
-Presentation.PresentationCoordinateGroupController <.. Presentation.PresentationSwingMainWindow
-
-
-Presentation.PresentationCoordinateGroupFormView <.. Presentation.PresentationCoordinateGroupController
+Presentation.PresentationCoordinateGroupForm <.. Presentation.PresentationCoordinateGroupController
 
 
 Presentation.PresentationCoordinateGroupListView <.. Presentation.PresentationCoordinateGroupController

@@ -1023,6 +1023,7 @@ class Diagram(object):
         if self._flag_dep:
             self.build_dependency_list()
 
+
     def parse_objects(self, header_file, arg_type='string'):
         """Parse objects
 
@@ -1039,8 +1040,14 @@ class Diagram(object):
             otherwise, it is assumed to be a filename
         """
         # Parse header file
-        parsed_header = CppHeaderParser.CppHeader(header_file,
-                                                  argType=arg_type)
+        if arg_type == 'file':
+            with open(header_file, 'r') as f:
+                source = f.read()
+            source = _preprocess_header(source)
+            parsed_header = CppHeaderParser.CppHeader(source, argType='string')
+        else:
+            source = _preprocess_header(header_file)
+            parsed_header = CppHeaderParser.CppHeader(source, argType=arg_type)
         # DEBUG
         print(f"DEBUG parse: classes found = {list(parsed_header.classes.keys())}")
         print(f"DEBUG parse: namespaces found = {parsed_header.namespaces}")
@@ -1213,12 +1220,12 @@ class Diagram(object):
                 for var_in in obj.build_variable_type_list():
                     # ← Πρόσθεσε αυτή τη γραμμή
                     var_lookup = _extract_base_type(var_in)
-                    # print(f"DEBUG aggregation: obj={obj.name}, var_in={repr(var_in)}, var_lookup={repr(var_lookup)}")
+                    print(f"DEBUG aggregation: obj={obj.name}, var_in={repr(var_in)}, var_lookup={repr(var_lookup)}")
                     var_obj = self.find_parent(
                         var_lookup,  # ← var_in → var_lookup
                         obj_ns_list_base,
                         f_cmp=lambda x, y: re.search(r'\b' + y + r'\b', x))
-                    # print(f"DEBUG aggregation: find_parent result={var_obj.name if var_obj else None}")
+                    print(f"DEBUG aggregation: find_parent result={var_obj.name if var_obj else None}")
                     if var_obj:
                         p_ns_list = [s for s in var_obj._namespace.split('::')
                                      if s != '']
@@ -1268,12 +1275,12 @@ class Diagram(object):
                     if isinstance(member, ClassMethod):
                         for param in member._param_list:
                             param_lookup = _extract_base_type(param[0])
-                            # print(f"DEBUG dependency: obj={obj.name}, param={repr(param[0])}, lookup={repr(param_lookup)}")
+                            print(f"DEBUG dependency: obj={obj.name}, param={repr(param[0])}, lookup={repr(param_lookup)}")
                             depend_obj = self.find_parent(
                                 param_lookup,
                                 obj_ns_list_base,
                                 f_cmp=lambda x, y: re.search(r'\b' + y + r'\b', x))
-                            # print(f"DEBUG dependency: find_parent result={depend_obj.name if depend_obj else None}")
+                            print(f"DEBUG dependency: find_parent result={depend_obj.name if depend_obj else None}")
                             if depend_obj is not None and param_lookup != obj.name:
                                 self._dependency_list.append(
                                     ClassDependencyRelationship(
@@ -1467,6 +1474,16 @@ def _cleanup_single_line(input_str):
 
 # %% Expand wildcards in file list
 
+
+def _preprocess_header(source):
+    """Remove member initializers that confuse CppHeaderParser."""
+    # Στοχεύει μόνο: τύπος όνομα_{value}; ή τύπος όνομα{value};
+    # π.χ. int port_{3306}; bool flag{false}; double x{0.0};
+    return re.sub(
+        r'(\b\w[\w\s:*&<>]*?\s+\w+\s*)\{([^{};\n]*)\}(\s*;)',
+        r'\1\3',
+        source
+    )
 
 
 def _extract_base_type(type_str):
