@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import DccTabs from "../../DccTabs.jsx";
 import RepeatedTabs from "../../RepeatedTabs.jsx";
 import ResultContainer from "../run/ResultContainer.jsx";
+import ComparisonModal from "./ComparisonModal.jsx";
 import React from "react";
 
 const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
@@ -26,6 +27,8 @@ export default function RepeatedResults() {
   const [resultError, setResultError] = useState("");
 
   const [selectedRow, setSelectedRow] = useState(null);
+
+  const [compareCategory, setCompareCategory] = useState(null);
 
   const cardStyle = {
     border: "1px solid #ddd",
@@ -213,6 +216,7 @@ export default function RepeatedResults() {
               <th>Prompt Type</th>
               <th>Average Score</th>
               <th>Score Variability</th>
+              <th>Compare results</th>
             </tr>
           </thead>
 
@@ -236,6 +240,23 @@ export default function RepeatedResults() {
                     <td>{first.prompt_type}</td>
                     <td></td>
                     <td></td>
+                    <td>
+                      <button
+                        onClick={(e) => { e.stopPropagation(); setCompareCategory(category); }}
+                        style={{
+                          padding: "3px 10px",
+                          borderRadius: 6,
+                          border: "1px solid #4f46e5",
+                          background: "transparent",
+                          color: "#4f46e5",
+                          cursor: "pointer",
+                          fontSize: 12,
+                          fontWeight: 600,
+                        }}
+                      >
+                        Compare
+                      </button>
+                    </td>
                   </tr>
 
                   {/* children rows */}
@@ -272,6 +293,14 @@ export default function RepeatedResults() {
 
       {/* Result */}
       <ResultContainer result={selectedResult} />
+
+      {compareCategory && (
+        <ComparisonModal
+          category={compareCategory}
+          rows={grouped[compareCategory]}
+          onClose={() => setCompareCategory(null)}
+        />
+      )}
 
     </div>
   );
