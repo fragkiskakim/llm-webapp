@@ -1,0 +1,5402 @@
+[
+  {
+    "ok": false,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "fetch failed"
+  },
+  {
+    "ok": true,
+    "id": 21,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 22,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 23,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 24,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 25,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 26,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 27,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 28,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 29,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 30,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 31,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 32,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 33,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 34,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 35,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 36,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 37,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 38,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 39,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 40,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 41,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 42,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 43,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 44,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 45,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 46,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 47,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 48,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 49,
+    "architecture": "mvc",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 50,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 51,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 52,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 53,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 54,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 55,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 56,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 57,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 58,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 59,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 60,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 61,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 62,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 63,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 64,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 65,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 66,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 67,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 68,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 69,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 70,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 71,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 72,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 73,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 74,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 75,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 76,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 77,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 78,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 79,
+    "architecture": "mvc",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 80,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 81,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 82,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 83,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 84,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 85,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 86,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 87,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 88,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 89,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 90,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 91,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 92,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 93,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 94,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 95,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 96,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 97,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 98,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 99,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 100,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 101,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 102,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 103,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 104,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 105,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 106,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 107,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 108,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 109,
+    "architecture": "mvc",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 110,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 111,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 112,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 113,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 114,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 115,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 116,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 117,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 118,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 119,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 120,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 121,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 122,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 123,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 124,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 125,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 126,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 127,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 128,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 129,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 130,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 131,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 132,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 133,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 134,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": false,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 136,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 137,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 138,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 139,
+    "architecture": "mvc",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 140,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 141,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 142,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 143,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 144,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 145,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 146,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 147,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 148,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 149,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 150,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": false,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": true,
+    "id": 152,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 153,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 154,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 155,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 156,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 157,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 158,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 159,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 160,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 161,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 162,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 163,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 164,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 165,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 166,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 167,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 168,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 169,
+    "architecture": "mvc",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 170,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 171,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 172,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 173,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 174,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 175,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 176,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 177,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 178,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 179,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 180,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 181,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 182,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 183,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 184,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 185,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 186,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 187,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 188,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 189,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 190,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 191,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 192,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 193,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 194,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 195,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 196,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 197,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 198,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 199,
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 200,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 201,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 202,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 203,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 204,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 205,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 206,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 207,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 208,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 209,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 210,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 211,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 212,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 213,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 214,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 215,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 216,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 217,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 218,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 219,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 220,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 221,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 222,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 223,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 224,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 225,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 226,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 227,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 228,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 229,
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 230,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 231,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 232,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 233,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 234,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 235,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": true,
+    "id": 260,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 261,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 263,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 264,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 265,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 266,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 267,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 268,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 269,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 270,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 271,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 272,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 273,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 274,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 275,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 276,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 277,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 278,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 279,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 280,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 281,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 282,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 283,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 284,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 285,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 286,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 289,
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 290,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 291,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 292,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 293,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 294,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 295,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 296,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 297,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 298,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 299,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 300,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 301,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 302,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 303,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 304,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 305,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 306,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 307,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 308,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 309,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 310,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 311,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 312,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 313,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 314,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 315,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 316,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 317,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 318,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 319,
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 320,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 321,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 322,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 323,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 324,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 325,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 326,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 327,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "fetch failed"
+  },
+  {
+    "ok": true,
+    "id": 329,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 330,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 331,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 332,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 333,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 334,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 335,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 336,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 337,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 338,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 339,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 340,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 341,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 342,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 343,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 344,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 345,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 346,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 347,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 348,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 349,
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": true,
+    "id": 410,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 411,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 412,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 413,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 414,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 415,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 416,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 417,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 418,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 419,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 420,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 421,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 422,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 423,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 424,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 425,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 426,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 429,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 430,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 431,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 432,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 433,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 434,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 435,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 436,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 437,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 438,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 439,
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 440,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 441,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 442,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 443,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 444,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 445,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 446,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 447,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 448,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 449,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 450,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 451,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 452,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 453,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 454,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 455,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 456,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 457,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 458,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 459,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 460,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 461,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 462,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 463,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 464,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 465,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 466,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 467,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 468,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 469,
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "CPP not found"
+  },
+  {
+    "ok": false,
+    "architecture": "client-server",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "CPP not found"
+  },
+  {
+    "ok": true,
+    "id": 560,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 561,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 562,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 563,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 564,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 565,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 566,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 567,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 568,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 569,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 570,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 571,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 572,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 573,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 574,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 575,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 576,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 577,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 578,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 579,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 580,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 581,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 582,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 583,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 584,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 585,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 586,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 587,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 588,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 589,
+    "architecture": "client-server",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 590,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 591,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 592,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 593,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 594,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 595,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 596,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 597,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 598,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 599,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 600,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 601,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 602,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 603,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 604,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 605,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 606,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 607,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 608,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 609,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 610,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 611,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 612,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 613,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 614,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 615,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 616,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 617,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 618,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 619,
+    "architecture": "client-server",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  }
+]

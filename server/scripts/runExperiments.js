@@ -3,32 +3,31 @@
 require("dotenv").config({ path: require("path").join(__dirname, "../.env") });
 
 const ARCHITECTURES = ["mvc", "3tier", "microservices", "client-server"];
-const MODELS = ["gpt4", "claude", "grok"];
+const MODELS = ["gpt4", "claude", "grok", "gemini", "mistral"];
 const PROMPT_TYPES = ["frnfr", "srs"];
+const TEMPERATURES = [0.0, 0.2, 0.5];
 const REPEATS = 5;
 
 const API = process.env.API_URL || "http://localhost:3001";
-const DELAY_MS = 3000; // αναμονή μεταξύ calls για να μην υπερφορτωθούν τα APIs
+const DELAY_MS = 3000;
 
 function sleep(ms) {
     return new Promise(r => setTimeout(r, ms));
 }
 
-async function runOne(architecture, model, promptType, attempt) {
-    console.log(`\n▶ [${architecture}] [${model}] [${promptType}] attempt ${attempt}...`);
+async function runOne(architecture, model, promptType, temperature, attempt) {
+    console.log(`\n▶ [${architecture}] [${model}] [${promptType}] [temp=${temperature}] attempt ${attempt}...`);
 
     try {
-        // 1. run-experiment
         const runRes = await fetch(`${API}/api/run-experiment`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ architecture, model, promptType })
+            body: JSON.stringify({ architecture, model, promptType, temperature: String(temperature) })
         });
         const runData = await runRes.json();
         if (!runRes.ok) throw new Error(runData?.error || "run-experiment failed");
         console.log(`  ✓ run-experiment id=${runData.id}`);
 
-        // 2. analyze
         const analyzeRes = await fetch(`${API}/api/analyze/${runData.id}`, {
             method: "POST"
         });
@@ -36,11 +35,11 @@ async function runOne(architecture, model, promptType, attempt) {
         if (!analyzeRes.ok) throw new Error(analyzeData?.error || "analyze failed");
         console.log(`  ✓ analyze done`);
 
-        return { ok: true, id: runData.id, architecture, model, promptType, attempt };
+        return { ok: true, id: runData.id, architecture, model, promptType, temperature, attempt };
 
     } catch (err) {
         console.error(`  ✗ FAILED: ${err.message}`);
-        return { ok: false, architecture, model, promptType, attempt, error: err.message };
+        return { ok: false, architecture, model, promptType, temperature, attempt, error: err.message };
     }
 }
 
@@ -50,44 +49,48 @@ async function main() {
     for (const architecture of ARCHITECTURES) {
         for (const model of MODELS) {
             for (const promptType of PROMPT_TYPES) {
-                for (let attempt = 1; attempt <= REPEATS; attempt++) {
-                    combinations.push({ architecture, model, promptType, attempt });
+                for (const temperature of TEMPERATURES) {
+                    for (let attempt = 1; attempt <= REPEATS; attempt++) {
+                        combinations.push({ architecture, model, promptType, temperature, attempt });
+                    }
                 }
             }
         }
     }
 
-    console.log(`\n🚀 Τρέχω ${combinations.length} experiments συνολικά...`);
-    console.log(`   (${ARCHITECTURES.length} architectures × ${MODELS.length} models × ${PROMPT_TYPES.length} prompt types × ${REPEATS} repeats)\n`);
+    const total = combinations.length;
+    const breakdown = `${ARCHITECTURES.length} arch × ${MODELS.length} models × ${PROMPT_TYPES.length} prompt types × ${TEMPERATURES.length} temperatures × ${REPEATS} repeats`;
+
+    console.log(`\n🚀 Τρέχω ${total} experiments συνολικά...`);
+    console.log(`   (${breakdown})`);
+    console.log(`   Εκτιμώμενος χρόνος: ~${Math.round(total * DELAY_MS / 60000)} λεπτά\n`);
 
     const results = [];
     let success = 0;
     let failure = 0;
 
-    for (const { architecture, model, promptType, attempt } of combinations) {
-        const result = await runOne(architecture, model, promptType, attempt);
+    for (const [i, { architecture, model, promptType, temperature, attempt }] of combinations.entries()) {
+        console.log(`[${i + 1}/${total}]`);
+        const result = await runOne(architecture, model, promptType, temperature, attempt);
         results.push(result);
 
         if (result.ok) success++;
         else failure++;
 
-        // αναμονή μεταξύ calls
         await sleep(DELAY_MS);
     }
 
-    // summary
     console.log("\n═══════════════════════════════");
-    console.log(`✅ Επιτυχία: ${success}/${combinations.length}`);
-    console.log(`❌ Αποτυχίες: ${failure}/${combinations.length}`);
+    console.log(`✅ Επιτυχία: ${success}/${total}`);
+    console.log(`❌ Αποτυχίες: ${failure}/${total}`);
 
     if (failure > 0) {
         console.log("\nΑποτυχημένα experiments:");
         results
             .filter(r => !r.ok)
-            .forEach(r => console.log(`  - [${r.architecture}] [${r.model}] [${r.promptType}] attempt ${r.attempt}: ${r.error}`));
+            .forEach(r => console.log(`  - [${r.architecture}] [${r.model}] [${r.promptType}] [temp=${r.temperature}] attempt ${r.attempt}: ${r.error}`));
     }
 
-    // αποθήκευση αποτελεσμάτων σε JSON
     const fs = require("fs");
     const outPath = require("path").join(__dirname, `../logs/batch_${Date.now()}.json`);
     fs.mkdirSync(require("path").dirname(outPath), { recursive: true });
