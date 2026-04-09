@@ -201,6 +201,8 @@ export default function RepeatedResults() {
             <option value="gpt4">GPT-4</option>
             <option value="claude">Claude</option>
             <option value="grok">Grok</option>
+            <option value="mistral">Mistral</option>
+            <option value="gemini">Gemini</option>
           </select>
 
 
@@ -270,11 +272,12 @@ export default function RepeatedResults() {
                       >
                         Compare
                       </button>
-                      <button onClick={(e) => { e.stopPropagation(); downloadComparisonCSV(category, rows); 
-                        
+                      <button onClick={(e) => {
+                        e.stopPropagation(); downloadComparisonCSV(category, rows);
+
                       }}
-                      
-                      style={{
+
+                        style={{
                           padding: "3px 10px",
                           borderRadius: 6,
                           border: "1px solid #4f46e5",
