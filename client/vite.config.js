@@ -7,6 +7,11 @@ export default defineConfig({
   resolve: {
     dedupe: ['react', 'react-dom']
   },
+  preview: {
+    host: '0.0.0.0',
+    port: Number(process.env.PORT) || 4173,
+    allowedHosts: ['astonishing-expression-production.up.railway.app'],
+  },
   server: {
     watch: {
       usePolling: true,
