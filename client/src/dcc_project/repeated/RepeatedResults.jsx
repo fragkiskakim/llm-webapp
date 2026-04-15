@@ -80,6 +80,26 @@ export default function RepeatedResults() {
 
   }, {});
 
+  // 1. Διάβασε το id από το URL κατά το mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const idFromUrl = params.get("id");
+    if (idFromUrl) {
+      handleRowClick(Number(idFromUrl));
+      setSelectedRow(Number(idFromUrl));
+    }
+  }, []); // τρέχει μόνο μία φορά
+
+  // 2. Όταν κάνεις click σε row, ενημέρωσε το URL
+  function selectRow(id) {
+    setSelectedRow(id);
+    handleRowClick(id);
+
+    const params = new URLSearchParams(window.location.search);
+    params.set("id", id);
+    history.pushState({}, "", `?${params.toString()}`);
+  }
+
   useEffect(() => {
 
     async function loadCategories() {
@@ -302,8 +322,7 @@ export default function RepeatedResults() {
                           cursor: "pointer"
                         }}
                         onClick={() => {
-                          setSelectedRow(r.id);
-                          handleRowClick(r.id);
+                          selectRow(r.id);
                         }}
                       >
                         <td style={{ paddingLeft: 30 }}>
