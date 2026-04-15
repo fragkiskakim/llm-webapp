@@ -64,30 +64,52 @@ function computeMartinMetrics(graphJson) {
 // όπου max = n*(n-1) για directed graph
 
 function computeCohesion(graphJson) {
-    const { nodes, edges } = graphJson;
+    const { nodes = [], edges = [] } = graphJson;
 
     const nsNodes = {};
+
     for (const node of nodes) {
         const ns = node.owner_namespace;
         if (!ns) continue;
+
         if (!nsNodes[ns]) nsNodes[ns] = new Set();
         nsNodes[ns].add(node.id);
     }
 
     const cohesion = {};
+
     for (const [ns, members] of Object.entries(nsNodes)) {
         const n = members.size;
-        const maxEdges = n * (n - 1);
-        if (maxEdges === 0) { cohesion[ns] = 1; continue; }
 
-        const internalEdges = edges.filter(e => {
-            const src = e.source || e.src;
-            const dst = e.target || e.dst;
-            return members.has(src) && members.has(dst);
-        }).length;
+        // Για namespace με <2 κόμβους δεν ορίζουμε ουσιαστική εσωτερική συνδεσιμότητα
+        if (n < 2) {
+            cohesion[ns] = 0;
+            continue;
+        }
 
-        cohesion[ns] = +(internalEdges / maxEdges).toFixed(3);
+        // Μέγιστος αριθμός μοναδικών undirected ζευγών
+        const maxPossibleConnections = (n * (n - 1)) / 2;
+
+        // Κρατάμε μοναδικά internal pairs
+        const uniqueInternalPairs = new Set();
+
+        for (const e of edges) {
+            const src = e.source ?? e.src;
+            const dst = e.target ?? e.dst;
+
+            if (!src || !dst) continue;
+            if (src === dst) continue; // αγνοούμε self-loops
+            if (!members.has(src) || !members.has(dst)) continue;
+
+            // undirected pair: A--B ίδιο με B--A
+            const pairKey = [src, dst].sort().join("::");
+            uniqueInternalPairs.add(pairKey);
+        }
+
+        const zeta = uniqueInternalPairs.size;
+        cohesion[ns] = +(zeta / maxPossibleConnections).toFixed(3);
     }
+
     return cohesion;
 }
 

@@ -236,5 +236,50 @@ module.exports = function createAnalyzeRouter({ pool }) {
         }
     });
 
+    router.post("/recompute-metrics/:id", async (req, res) => {
+        try {
+            const id = Number(req.params.id);
+            if (!Number.isFinite(id)) {
+                return res.status(400).json({ error: "Invalid id" });
+            }
+
+            const r = await pool.query(
+                `SELECT graph_json, architecture
+             FROM run_experiments
+             WHERE id = $1`,
+                [id]
+            );
+
+            const row = r.rows[0];
+            if (!row) {
+                return res.status(404).json({ error: "Run not found" });
+            }
+
+            if (!row.graph_json) {
+                return res.status(404).json({ error: "graph_json not found" });
+            }
+
+            const architectureAnalysis = analyzeArchitecture(row.graph_json, row.architecture);
+
+            await pool.query(
+                `UPDATE run_experiments
+             SET architecture_analysis = $1
+             WHERE id = $2`,
+                [architectureAnalysis, id]
+            );
+
+            return res.json({
+                id,
+                architectureAnalysis
+            });
+        } catch (err) {
+            console.error(err);
+            return res.status(500).json({
+                error: "Server error",
+                details: String(err.message || err)
+            });
+        }
+    });
+
     return router;
 };
