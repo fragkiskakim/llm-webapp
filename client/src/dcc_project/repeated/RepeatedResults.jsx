@@ -128,6 +128,20 @@ export default function RepeatedResults() {
 
   }, []);
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const idFromUrl = params.get("id");
+    if (!idFromUrl || results.length === 0) return;
+
+    const id = Number(idFromUrl);
+
+    // Βρες σε ποιο category ανήκει το id
+    const match = results.find(r => r.id === id);
+    if (match) {
+      setOpenRows(prev => ({ ...prev, [match.category]: true }));
+    }
+  }, [results]); // τρέχει κάθε φορά που αλλάζουν τα results
+
   function handleMultiSelect(e, setter) {
     const values = Array.from(e.target.selectedOptions, o => o.value);
     setter(values);
