@@ -1,5 +1,15 @@
 const { Pool } = require("pg");
 
+console.log("DATABASE_URL exists:", !!process.env.DATABASE_URL);
+
+try {
+    const u = new URL(process.env.DATABASE_URL);
+    console.log("DB host:", u.hostname);
+} catch (e) {
+    console.log("DATABASE_URL invalid:", process.env.DATABASE_URL);
+}
+
+
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
 });
