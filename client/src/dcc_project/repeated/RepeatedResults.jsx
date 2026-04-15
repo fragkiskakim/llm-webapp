@@ -40,6 +40,10 @@ export default function RepeatedResults() {
   const [loadingResult, setLoadingResult] = useState(false);
   const [resultError, setResultError] = useState("");
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const rowsPerPage = 10; // ή όσα θες
+
+
   const [selectedRow, setSelectedRow] = useState(null);
 
   const [compareCategory, setCompareCategory] = useState(null);
@@ -51,6 +55,8 @@ export default function RepeatedResults() {
     marginTop: 30,
     background: "#fff"
   };
+
+
 
   const selectStyle = {
     padding: "8px 10px",
@@ -79,6 +85,13 @@ export default function RepeatedResults() {
     return acc;
 
   }, {});
+
+  const groupedEntries = Object.entries(grouped);
+  const totalPages = Math.ceil(groupedEntries.length / rowsPerPage);
+  const paginatedEntries = groupedEntries.slice(
+    (currentPage - 1) * rowsPerPage,
+    currentPage * rowsPerPage
+  );
 
   // 1. Διάβασε το id από το URL κατά το mount
   useEffect(() => {
@@ -147,6 +160,8 @@ export default function RepeatedResults() {
 
 
   async function fetchResults() {
+
+    setCurrentPage(1);
 
     const params = new URLSearchParams();
 
@@ -257,7 +272,7 @@ export default function RepeatedResults() {
           </thead>
 
           <tbody>
-            {Object.entries(grouped).map(([category, rows]) => {
+            {paginatedEntries.map(([category, rows]) => {
               const first = rows[0];
 
               return (
@@ -341,6 +356,15 @@ export default function RepeatedResults() {
             })}
           </tbody>
         </table>
+        <div style={{ display: "flex", gap: 8, justifyContent: "flex-end", marginTop: 12 }}>
+          <button onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1}>
+            ← Prev
+          </button>
+          <span style={{ alignSelf: "center" }}>{currentPage} / {totalPages}</span>
+          <button onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages}>
+            Next →
+          </button>
+        </div>
       </div>
 
       {/* Result */}
