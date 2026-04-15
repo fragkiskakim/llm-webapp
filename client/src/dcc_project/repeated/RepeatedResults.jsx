@@ -29,6 +29,7 @@ export default function RepeatedResults() {
   const [architecture, setArchitecture] = useState("");
   const [model, setModel] = useState("");
   const [promptType, setPromptType] = useState("");
+  const [temperature, setTemperature] = useState("");
   const [categories, setCategories] = useState([]);
   const [results, setResults] = useState([]);
   const [result, setResult] = useState(null);
@@ -183,6 +184,7 @@ export default function RepeatedResults() {
     if (architecture) params.append("architecture", architecture);
     if (model) params.append("model", model);
     if (promptType) params.append("promptType", promptType);
+    if (temperature) params.append("temperature", temperature);
 
     const r = await fetch(`${API}/api/results?${params.toString()}`);
     const data = await r.json();
@@ -192,7 +194,7 @@ export default function RepeatedResults() {
 
   useEffect(() => {
     fetchResults();
-  }, [category, architecture, model, promptType]);
+  }, [category, architecture, model, promptType, temperature]);
 
   return (
     <div>
@@ -263,6 +265,17 @@ export default function RepeatedResults() {
             <option value="">Prompt type</option>
             <option value="frnfr">FR-NFR</option>
             <option value="srs">SRS</option>
+          </select>
+
+          <select
+            style={selectStyle}
+            value={temperature}
+            onChange={(e) => setTemperature(e.target.value)}
+          >
+            <option value="">Temperature</option>
+            <option value="0">0</option>
+            <option value="0.2">0.2</option>
+            <option value="0.5">0.5</option>
           </select>
 
         </div>

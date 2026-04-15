@@ -489,14 +489,15 @@ app.get("/api/categories", async (req, res) => {
 
 app.get("/api/results", async (req, res) => {
 
-  const { category, architecture, model, promptType } = req.query;
+  const { category, architecture, model, promptType, temperature } = req.query;
 
   let query = `
     SELECT id,
            category,
            architecture,
            model,
-           prompt_type
+           prompt_type,
+           temperature
     FROM run_experiments
     WHERE 1=1
   `;
@@ -522,6 +523,11 @@ app.get("/api/results", async (req, res) => {
   if (promptType) {
     query += ` AND prompt_type = $${i++}`;
     params.push(promptType);
+  }
+
+  if (temperature) {
+    query += ` AND temperature = $${i++}`;
+    params.push(temperature);
   }
 
   query += `

@@ -156,7 +156,7 @@ export default function RunPage() {
             onChange={(e) => setTemperature(e.target.value)}
           >
             <option value="" disabled>Temperature</option>
-            <option value="0.0">0.0</option>
+            <option value="0">0</option>
             <option value="0.2">0.2</option>
             <option value="0.5">0.5</option>
           </select>
