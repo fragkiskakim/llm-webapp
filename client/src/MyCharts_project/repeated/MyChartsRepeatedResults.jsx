@@ -118,7 +118,7 @@ export default function MyChartsRepeatedResults() {
 
     async function loadCategories() {
 
-      const r = await fetch(`${API}/api/categories`);
+      const r = await fetch(`${API}/api/categories?project=mycharts`);
       const data = await r.json();
 
       setCategories(data);
@@ -179,6 +179,8 @@ export default function MyChartsRepeatedResults() {
     setCurrentPage(1);
 
     const params = new URLSearchParams();
+
+    params.append("project", "mycharts");
 
     if (category.length > 0) params.append("category", category.join(","));
     if (architecture) params.append("architecture", architecture);

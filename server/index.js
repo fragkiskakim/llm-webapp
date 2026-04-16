@@ -468,12 +468,23 @@ app.post("/api/run-experiment", async (req, res) => {
 // API to get all distinct categories for filtering on the frontend
 app.get("/api/categories", async (req, res) => {
   try {
+    const project = req.query.project; // <-- από query
 
-    const r = await pool.query(
-      `SELECT DISTINCT category
-       FROM run_experiments
-       ORDER BY category`
-    );
+    let query = `
+      SELECT DISTINCT category
+      FROM run_experiments
+    `;
+
+    const params = [];
+
+    if (project) {
+      query += ` WHERE category ILIKE $1`;
+      params.push(`${project.toUpperCase()}_%`);
+    }
+
+    query += ` ORDER BY category`;
+
+    const r = await pool.query(query, params);
 
     res.json(r.rows);
 
@@ -485,56 +496,65 @@ app.get("/api/categories", async (req, res) => {
 
 
 app.get("/api/results", async (req, res) => {
+  try {
+    const { project, category, architecture, model, promptType, temperature } = req.query;
 
-  const { category, architecture, model, promptType, temperature } = req.query;
+    let query = `
+      SELECT id,
+             category,
+             architecture,
+             model,
+             prompt_type,
+             temperature
+      FROM run_experiments
+      WHERE 1=1
+    `;
 
-  let query = `
-    SELECT id,
-           category,
-           architecture,
-           model,
-           prompt_type,
-           temperature
-    FROM run_experiments
-    WHERE 1=1
-  `;
+    const params = [];
+    let i = 1;
 
-  const params = [];
-  let i = 1;
+    if (project) {
+      query += ` AND category ILIKE $${i++}`;
+      params.push(`${project.toUpperCase()}_%`);
+    }
 
-  if (category) {
-    query += ` AND category = $${i++}`;
-    params.push(category);
+    if (category) {
+      const categoryList = category.split(",");
+      query += ` AND category = ANY($${i++})`;
+      params.push(categoryList);
+    }
+
+    if (architecture) {
+      query += ` AND architecture = $${i++}`;
+      params.push(architecture);
+    }
+
+    if (model) {
+      query += ` AND model = $${i++}`;
+      params.push(model);
+    }
+
+    if (promptType) {
+      query += ` AND prompt_type = $${i++}`;
+      params.push(promptType);
+    }
+
+    if (temperature) {
+      query += ` AND temperature = $${i++}`;
+      params.push(temperature);
+    }
+
+    query += `
+      ORDER BY category, id
+    `;
+
+    const r = await pool.query(query, params);
+
+    res.json(r.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
   }
-
-  if (architecture) {
-    query += ` AND architecture = $${i++}`;
-    params.push(architecture);
-  }
-
-  if (model) {
-    query += ` AND model = $${i++}`;
-    params.push(model);
-  }
-
-  if (promptType) {
-    query += ` AND prompt_type = $${i++}`;
-    params.push(promptType);
-  }
-
-  if (temperature) {
-    query += ` AND temperature = $${i++}`;
-    params.push(temperature);
-  }
-
-  query += `
-    GROUP BY category, architecture, model, prompt_type, id
-    ORDER BY category
-  `;
-
-  const r = await pool.query(query, params);
-
-  res.json(r.rows);
 });
 
 
