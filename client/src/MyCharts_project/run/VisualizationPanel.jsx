@@ -27,7 +27,7 @@ const btnSecondary = {
   border: "1px solid #ddd",
 };
 
-export default function VisualizationPanel({ uml , filename = "diagram"  }) {
+export default function VisualizationPanel({ uml, filename = "diagram" }) {
   const [showCode, setShowCode] = useState(false);
 
   if (!uml) return <div>No diagram available</div>;
@@ -39,7 +39,7 @@ export default function VisualizationPanel({ uml , filename = "diagram"  }) {
     const blob = new Blob([uml], { type: "text/plain" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = `${filename}.puml`;  // ← αλλαγή
+    a.download = `${filename}.puml`;
     a.click();
     URL.revokeObjectURL(a.href);
   };
@@ -50,7 +50,7 @@ export default function VisualizationPanel({ uml , filename = "diagram"  }) {
     const blob = new Blob([svgText], { type: "image/svg+xml" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = `${filename}.svg`;  // ← αλλαγή
+    a.download = `${filename}.svg`;
     a.click();
     URL.revokeObjectURL(a.href);
   };

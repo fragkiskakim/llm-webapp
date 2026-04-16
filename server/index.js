@@ -283,15 +283,18 @@ app.put("/api/prompt-experiment/:name", async (req, res) => {
 // RUN EXPERIMENT API that runs each time we run a new experiment from the run page
 app.post("/api/run-experiment", async (req, res) => {
   try {
-
     const architecture = req.body?.architecture;
     const promptType = req.body?.promptType;
     const model = req.body?.model;
     const temperature = req.body?.temperature;
+    const project = req.body?.project;
 
-
-    if (!architecture || !promptType || !temperature || !model) {
+    if (!architecture || !promptType || temperature == null || !model || !project) {
       return res.status(400).json({ error: "Missing parameters" });
+    }
+
+    if (!["dcc", "mycharts"].includes(project)) {
+      return res.status(400).json({ error: "Invalid project" });
     }
 
     const archKey =
@@ -309,11 +312,13 @@ app.post("/api/run-experiment", async (req, res) => {
               null;
 
     const specKey =
-      promptType === "srs" ? "2_srs" :
-        promptType === "frnfr" ? "2_frnfr" :
-          null;
+      promptType === "srs"
+        ? (project === "dcc" ? "2_srs_dcc" : "2_srs_mycharts")
+        : promptType === "frnfr"
+          ? (project === "dcc" ? "2_frnfr_dcc" : "2_frnfr_mycharts")
+          : null;
 
-    if (!archKey || !specKey) {
+    if (!archKey || !specKey || !finalInstructionsKey) {
       return res.status(400).json({ error: "Invalid architecture or spec" });
     }
 
@@ -330,28 +335,19 @@ app.post("/api/run-experiment", async (req, res) => {
     );
 
     const map = new Map(r.rows.map(x => [x.name, x.prompt_part]));
-
     const prompt = keys.map(k => map.get(k)).join("\n\n");
 
-    // ------------------------
-    // INSERT RUN
-    // ------------------------
-    const category = `DCC_${architecture}_${model}_${promptType}_temp${temperature}`;
+    const category = `${project.toUpperCase()}_${architecture}_${model}_${promptType}_temp${temperature}`;
 
     const ins = await pool.query(
       `INSERT INTO run_experiments
-      (architecture, model, prompt_type, temperature, prompt, category)
-      VALUES ($1,$2,$3,$4,$5,$6)
-      RETURNING id`,
+       (architecture, model, prompt_type, temperature, prompt, category)
+       VALUES ($1,$2,$3,$4,$5,$6)
+       RETURNING id`,
       [architecture, model, promptType, temperature, prompt, category]
     );
 
     const runId = ins.rows[0].id;
-
-    // ------------------------
-    // CALL LLM
-    // ------------------------
-
 
     const llmInput = prompt;
 
@@ -359,7 +355,6 @@ app.post("/api/run-experiment", async (req, res) => {
     let response;
 
     if (model === "gpt4") {
-
       const request_model = process.env.OPENAI_MODEL || "gpt-4o";
 
       response = await client.responses.create({
@@ -369,10 +364,8 @@ app.post("/api/run-experiment", async (req, res) => {
       });
 
       text = response.output_text ?? "";
-
     }
     else if (model === "claude") {
-
       const msg = await anthropic.messages.create({
         model: "claude-opus-4-6",
         max_tokens: 4000,
@@ -385,12 +378,10 @@ app.post("/api/run-experiment", async (req, res) => {
         ]
       });
 
-      text = msg.content[0].text;
-
+      text = msg.content?.[0]?.text ?? "";
     }
     else if (model === "grok") {
-
-      const r = await fetch("https://api.x.ai/v1/chat/completions", {
+      const grokRes = await fetch("https://api.x.ai/v1/chat/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -405,24 +396,25 @@ app.post("/api/run-experiment", async (req, res) => {
         })
       });
 
-      const data = await r.json();
-
+      const data = await grokRes.json();
       text = data.choices?.[0]?.message?.content ?? "";
-
     }
     else if (model === "gemini") {
       const { GoogleGenerativeAI } = await import("@google/generative-ai");
+
       const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
       const geminiModel = genAI.getGenerativeModel({
         model: "gemini-2.5-flash",
-        generationConfig: { temperature: Number(temperature) ?? 0.0 }
+        generationConfig: {
+          temperature: Number(temperature) ?? 0.0
+        }
       });
 
       const result = await geminiModel.generateContent(llmInput);
       text = result.response.text();
     }
     else if (model === "mistral") {
-      const r = await fetch("https://api.mistral.ai/v1/chat/completions", {
+      const mistralRes = await fetch("https://api.mistral.ai/v1/chat/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -437,36 +429,41 @@ app.post("/api/run-experiment", async (req, res) => {
         })
       });
 
-      const data = await r.json();
+      const data = await mistralRes.json();
       text = data.choices?.[0]?.message?.content ?? "";
+    }
+    else {
+      return res.status(400).json({ error: "Invalid model" });
     }
 
     const { cpp } = extractCppFromJson(text);
 
-    // ------------------------
-    // UPDATE WITH RESULT
-    // ------------------------
-
     await pool.query(
       `UPDATE run_experiments
-       SET response=$1, cpp_code=$2
-       WHERE id=$3`,
+       SET response = $1, cpp_code = $2
+       WHERE id = $3`,
       [text, cpp, runId]
     );
-
 
     return res.json({
       id: runId,
       prompt,
       cpp,
-      category
+      category,
+      project
     });
 
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: "Server error" });
+    return res.status(500).json({ error: "Server error" });
   }
 });
+
+
+
+
+
+
 
 // API to get all distinct categories for filtering on the frontend
 app.get("/api/categories", async (req, res) => {

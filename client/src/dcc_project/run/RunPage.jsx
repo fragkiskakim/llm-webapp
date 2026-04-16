@@ -28,6 +28,7 @@ export default function RunPage() {
           model,
           promptType,
           temperature,
+          project: "dcc"
         })
       });
 

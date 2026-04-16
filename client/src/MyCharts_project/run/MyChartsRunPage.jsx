@@ -28,6 +28,7 @@ export default function MyChartsRunPage() {
           model,
           promptType,
           temperature,
+          project: "mycharts"
         })
       });
 
@@ -121,10 +122,8 @@ export default function MyChartsRunPage() {
             <option value="" disabled>
               Architecture
             </option>
-            <option value="mvc">MVC</option>
             <option value="3tier">3-Tier</option>
             <option value="microservices">Microservices</option>
-            <option value="client-server">Client Server</option>
           </select>
 
           <select
