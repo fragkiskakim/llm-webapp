@@ -33,6 +33,17 @@ export default function Header() {
         </NavLink>
 
         <NavLink
+          to="/myCharts_project"
+          style={({ isActive }) => ({
+            textDecoration: "none",
+            color: "black",
+            fontWeight: isActive ? "bold" : "normal"
+          })}
+        >
+          MyCharts Project
+        </NavLink>
+
+        <NavLink
           to="/dcc_project"
           style={({ isActive }) => ({
             textDecoration: "none",

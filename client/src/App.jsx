@@ -10,6 +10,10 @@ import RepeatedVisualizations from "./dcc_project/repeated/RepeatedVisualization
 import RepeatedResults from "./dcc_project/repeated/RepeatedResults.jsx";
 import MultiTurnPage from "./dcc_project/MultiTurnPage.jsx";
 
+import MyChartsRunPage from "./MyCharts_project/run/MyChartsRunPage.jsx";
+import MyChartsRepeatedVisualizations from "./MyCharts_project/repeated/MyChartsRepeatedVisualizations.jsx";
+import MyChartsRepeatedResults from "./MyCharts_project/repeated/MyChartsRepeatedResults.jsx";
+import MyChartsMultiTurnPage from "./MyCharts_project/MyChartsMultiTurnPage.jsx";
 
 
 
@@ -42,6 +46,14 @@ export default function App() {
           <Route path="/dcc_project/repeated/results" element={<RepeatedResults />} />
           <Route path="/dcc_project/repeated/visualizations" element={<RepeatedVisualizations />} />
           <Route path="/dcc_project/multiturn" element={<MultiTurnPage />} />
+
+
+          <Route path="/myCharts_project" element={<Navigate to="/myCharts_project/run" replace />} />
+          <Route path="/myCharts_project/run" element={<MyChartsRunPage />} />
+          <Route path="/myCharts_project/repeated" element={<Navigate to="/myCharts_project/repeated/results" replace />} />
+          <Route path="/myCharts_project/repeated/results" element={<MyChartsRepeatedResults />} />
+          <Route path="/myCharts_project/repeated/visualizations" element={<MyChartsRepeatedVisualizations />} />
+          <Route path="/myCharts_project/multiturn" element={<MyChartsMultiTurnPage />} />
         </Routes>
       </div>
 

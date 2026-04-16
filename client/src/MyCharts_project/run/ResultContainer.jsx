@@ -1,0 +1,133 @@
+import { useState } from "react";
+import CodePanel from "./CodePanel.jsx";
+import AnalysisPanel from "./AnalysisPanel.jsx";
+import VisualizationPanel from "./VisualizationPanel.jsx";
+import { useControlled } from "@mui/material";
+import GraphViewer from "./GraphViewer.jsx";
+import NamespaceGraphViewer from "./NamespaceGraphViewer.jsx";
+import PromptPanel from "./PromptPanel.jsx";
+
+export default function ResultContainer({ result }) {
+  const [tab, setTab] = useState("code");
+
+  if (!result) return null;
+
+  return (
+    <div
+      style={{
+        border: "1px solid #ddd",
+        borderRadius: 6,
+        padding: 20,
+        marginTop: 30,
+        background: "#fff"
+      }}
+    >
+      <h3 style={{ marginTop: 0 }}>
+        Result of{" "}
+        <span
+          style={{
+            background: "#eee",
+            padding: "2px 8px",
+            borderRadius: 6
+          }}
+        >
+          {result.category}_{result.id}
+        </span>
+      </h3>
+
+      <div style={{ display: "flex", gap: 10, marginBottom: 15 }}>
+        <button
+          onClick={() => setTab("code")}
+          style={{
+            padding: "6px 14px",
+            borderRadius: 20,
+            border: "none",
+            background: tab === "code" ? "#e3a1a1" : "#eee"
+          }}
+        >
+          Code
+        </button>
+
+        <button
+          onClick={() => setTab("prompt")}
+          style={{
+            padding: "6px 14px",
+            borderRadius: 20,
+            border: "none",
+            background: tab === "prompt" ? "#e3a1a1" : "#eee"
+          }}
+        >
+          Prompt
+        </button>
+
+        <button
+          onClick={() => setTab("viz")}
+          style={{
+            padding: "6px 14px",
+            borderRadius: 20,
+            border: "none",
+            background: tab === "viz" ? "#e3a1a1" : "#eee"
+          }}
+        >
+          Visualization
+        </button>
+
+        <button
+          onClick={() => setTab("analysis")}
+          style={{
+            padding: "6px 14px",
+            borderRadius: 20,
+            border: "none",
+            background: tab === "analysis" ? "#e3a1a1" : "#eee"
+          }}
+        >
+          Analysis
+        </button>
+        <button
+          onClick={() => setTab("graphjson")}
+          style={{
+            padding: "6px 14px",
+            borderRadius: 20,
+            border: "none",
+            background: tab === "graphjson" ? "#e3a1a1" : "#eee"
+          }}
+        >
+          Graph JSON
+        </button>
+        <button
+          onClick={() => setTab("classgraphviewer")}
+          style={{
+            padding: "6px 14px",
+            borderRadius: 20,
+            border: "none",
+            background: tab === "classgraphviewer" ? "#e3a1a1" : "#eee"
+          }}
+        >
+          Class Graph Viewer
+        </button>
+        <button
+          onClick={() => setTab("namespacegraphviewer")}
+          style={{
+            padding: "6px 14px",
+            borderRadius: 20,
+            border: "none",
+            background: tab === "namespacegraphviewer" ? "#e3a1a1" : "#eee"
+          }}
+        >
+          Namespace Graph Viewer
+        </button>
+      </div>
+
+      <div style={{ display: "flex", gap: 20 }}>
+        {tab === "prompt" && <PromptPanel prompt={result.prompt} />}
+        {tab === "code" && <CodePanel code={result.cpp} />}
+        {tab === "viz" && <VisualizationPanel uml={result.plantuml_produced} filename={`${result.category}_${result.id}`} />}
+        {tab === "analysis" && <AnalysisPanel analysis={result.architecture_analysis} />}
+        {tab === "graphjson" && <CodePanel code={JSON.stringify(result.graphjson, null, 2)} />}
+        {tab === "classgraphviewer" && <GraphViewer runId={result.id} />}
+        {tab === "namespacegraphviewer" && <NamespaceGraphViewer runId={result.id} />}
+
+      </div>
+    </div>
+  );
+}
