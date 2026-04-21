@@ -1,0 +1,3002 @@
+[
+  {
+    "ok": true,
+    "id": 833,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 834,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 835,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 836,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 837,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 838,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 839,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 840,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 841,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 842,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 843,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 844,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 845,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 846,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 847,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 848,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 849,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 850,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 851,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 852,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 853,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 854,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 855,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 856,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 857,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 858,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 859,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 860,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 861,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 862,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 893,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 894,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 898,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 901,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 902,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 904,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 905,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 906,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 908,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 909,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 910,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 911,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 912,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 913,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 914,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 915,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 916,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 917,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 918,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 919,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 920,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 921,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 922,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 954,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 955,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 956,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 957,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 958,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 959,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 960,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 961,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 962,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 963,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 964,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 965,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 966,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 967,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 968,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 969,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 970,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 971,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 972,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 973,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 974,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 975,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 976,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 977,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 978,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 979,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 980,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 981,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 982,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 984,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 985,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 986,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 987,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 988,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 989,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 990,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 991,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 992,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 993,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 994,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 995,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 996,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 997,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 998,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 999,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1000,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1001,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "fetch failed"
+  },
+  {
+    "ok": true,
+    "id": 1003,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1005,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1006,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1007,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 1008,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1009,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1010,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1011,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1012,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1044,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1045,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1046,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1047,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 1048,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1049,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1050,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1051,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1055,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1057,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1059,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1060,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1061,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1062,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1064,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1065,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1066,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1067,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1069,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1070,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1071,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1072,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 1073,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1074,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1075,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1076,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5,
+    "error": "fetch failed"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1078,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1079,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1080,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1081,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 1082,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1083,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1084,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1085,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1087,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1088,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1089,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1090,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1091,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1093,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1094,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1095,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1096,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 1097,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1098,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1099,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1100,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1101,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 1,
+    "error": "fetch failed"
+  },
+  {
+    "ok": true,
+    "id": 1103,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1104,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1105,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1106,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 1107,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1108,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1109,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1110,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1111,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 1112,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1113,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1114,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1115,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1116,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": 0.5,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 1117,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1118,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1119,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1120,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1121,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 1122,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1123,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1124,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1125,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1126,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.2,
+    "attempt": 5
+  },
+  {
+    "ok": true,
+    "id": 1127,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1128,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1129,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1130,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 4
+  },
+  {
+    "ok": true,
+    "id": 1131,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "srs",
+    "temperature": 0.5,
+    "attempt": 5
+  }
+]
