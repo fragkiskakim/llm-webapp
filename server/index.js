@@ -42,6 +42,9 @@ app.use("/api", exportCsvRouter);
 const exportCsvAggregatedRouter = require("./routes/export_csv_aggregated");
 app.use("/api", exportCsvAggregatedRouter);
 
+const chartSummaryRouter = require("./routes/chart_summary");
+app.use("/api", chartSummaryRouter);
+
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 
