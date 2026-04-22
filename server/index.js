@@ -39,6 +39,9 @@ app.use("/api", graphNeo4jRoutes);
 const exportCsvRouter = require("./routes/export_csv");
 app.use("/api", exportCsvRouter);
 
+const exportCsvAggregatedRouter = require("./routes/export_csv_aggregated");
+app.use("/api", exportCsvAggregatedRouter);
+
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 
@@ -115,6 +118,7 @@ app.get("/api/latest", async (_req, res) => {
   );
   res.json(r.rows[0] ?? null);
 });
+
 
 
 app.get("/api/prompts", async (_req, res) => {
