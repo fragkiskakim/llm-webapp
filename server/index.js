@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const { extractCppUmlFromJson, extractCppFromJson } = require("./parse");
 
+
 const grokKey = process.env.GROK_API_KEY;
 const OpenAI = require("openai");
 
@@ -32,6 +33,11 @@ const graphNeo4jRoutes = require("./routes/graphNeo4j");
 
 app.use("/api", graphNeo4jRoutes);
 
+
+
+
+const exportCsvRouter = require("./routes/export_csv");
+app.use("/api", exportCsvRouter);
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -109,6 +115,7 @@ app.get("/api/latest", async (_req, res) => {
   );
   res.json(r.rows[0] ?? null);
 });
+
 
 app.get("/api/prompts", async (_req, res) => {
   try {
