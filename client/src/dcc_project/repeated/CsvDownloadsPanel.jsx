@@ -1,5 +1,7 @@
 import React from "react";
 
+const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
+
 const ARCHITECTURES = [
   { key: "client-server", label: "Client-Server" },
   { key: "3tier", label: "3-Tier" },
@@ -11,8 +13,8 @@ export default function CsvDownloadsPanel() {
   const handleDownload = async (architecture, aggregated = false) => {
     try {
       const endpoint = aggregated
-        ? `/api/export-csv-aggregated?architecture=${encodeURIComponent(architecture)}`
-        : `/api/export-csv?architecture=${encodeURIComponent(architecture)}`;
+        ? `${API}/api/export-csv-aggregated?architecture=${encodeURIComponent(architecture)}`
+        : `${API}/api/export-csv?architecture=${encodeURIComponent(architecture)}`;
 
       const response = await fetch(endpoint);
 

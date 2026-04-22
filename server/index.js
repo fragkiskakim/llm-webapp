@@ -45,6 +45,12 @@ app.use("/api", exportCsvAggregatedRouter);
 const chartSummaryRouter = require("./routes/chart_summary");
 app.use("/api", chartSummaryRouter);
 
+const chartCohesionByModelRouter = require("./routes/chart_cohesion_by_model");
+app.use("/api", chartCohesionByModelRouter);
+
+const advancedRoutes = require("./routes/AdvancedAnalysis");
+app.use("/api", advancedRoutes);
+
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 
