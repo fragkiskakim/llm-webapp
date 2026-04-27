@@ -1,4 +1,11 @@
 require("dotenv").config();
+
+// Στην αρχή του αρχείου, μετά τα require()
+const { setGlobalDispatcher, Agent } = require("undici");
+setGlobalDispatcher(new Agent({
+  headersTimeout: 1800000,  // 30 λεπτά
+  bodyTimeout: 1800000
+}));
 const express = require("express");
 const cors = require("cors");
 const { extractCppUmlFromJson, extractCppFromJson } = require("./parse");
@@ -434,31 +441,33 @@ app.post("/api/run-experiment", async (req, res) => {
       text = result.response.text();
     }
     else if (model === "qwen") {
-      const qwenRes = await fetch("http://localhost:11434/v1/chat/completions", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "qwen2.5-coder:32b",
-          temperature: Number(temperature) ?? 0.0,
-          messages: [{ role: "user", content: llmInput }]
-        })
-      });
-      const data = await qwenRes.json();
-      text = data.choices?.[0]?.message?.content ?? "";
-    }
-    else if (model === "deepseek") {
-      const deepseekRes = await fetch("http://localhost:11434/v1/chat/completions", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "deepseek-r1:32b",
-          temperature: Number(temperature) ?? 0.0,
-          messages: [{ role: "user", content: llmInput }]
-        })
-      });
-      const data = await deepseekRes.json();
-      text = data.choices?.[0]?.message?.content ?? "";
-    }
+  const qwenRes = await fetch("http://localhost:11434/v1/chat/completions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    signal: AbortSignal.timeout(1800000),
+    body: JSON.stringify({
+      model: "qwen2.5-coder:32b",
+      temperature: Number(temperature) ?? 0.0,
+      messages: [{ role: "user", content: llmInput }]
+    })
+  });
+  const data = await qwenRes.json();
+  text = data.choices?.[0]?.message?.content ?? "";
+}
+else if (model === "deepseek") {
+  const deepseekRes = await fetch("http://localhost:11434/v1/chat/completions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    signal: AbortSignal.timeout(1800000),
+    body: JSON.stringify({
+      model: "deepseek-r1:32b",
+      temperature: Number(temperature) ?? 0.0,
+      messages: [{ role: "user", content: llmInput }]
+    })
+  });
+  const data = await deepseekRes.json();
+  text = data.choices?.[0]?.message?.content ?? "";
+}
     else if (model === "mistral") {
       const mistralRes = await fetch("https://api.mistral.ai/v1/chat/completions", {
         method: "POST",
