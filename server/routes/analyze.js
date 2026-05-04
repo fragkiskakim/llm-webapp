@@ -210,7 +210,7 @@ module.exports = function createAnalyzeRouter({ pool }) {
                 "SELECT architecture FROM run_experiments WHERE id=$1", [id]
             );
             const architecture = archRow.rows[0]?.architecture;
-            const architectureAnalysis = analyzeArchitecture(graphJson, architecture);
+            const architectureAnalysis = analyzeArchitecture(graphJson, architecture, metrics);
             console.log("Architecture analysis:", architectureAnalysis);
 
             await pool.query(
@@ -244,7 +244,7 @@ module.exports = function createAnalyzeRouter({ pool }) {
             }
 
             const r = await pool.query(
-                `SELECT graph_json, architecture
+                `SELECT graph_json, architecture, cpp_metrics
              FROM run_experiments
              WHERE id = $1`,
                 [id]
@@ -259,7 +259,7 @@ module.exports = function createAnalyzeRouter({ pool }) {
                 return res.status(404).json({ error: "graph_json not found" });
             }
 
-            const architectureAnalysis = analyzeArchitecture(row.graph_json, row.architecture);
+            const architectureAnalysis = analyzeArchitecture(row.graph_json, row.architecture, row.cpp_metrics);
 
             await pool.query(
                 `UPDATE run_experiments

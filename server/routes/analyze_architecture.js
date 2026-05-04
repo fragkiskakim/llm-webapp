@@ -1,113 +1,40 @@
 // server/routes/analyze_architecture.js
 
-// ─── Martin metrics ───────────────────────────────────────────────────────────
-// Για κάθε namespace υπολογίζει:
-//   Ca  = afferent couplings  (πόσα άλλα namespaces εξαρτώνται ΑΠΟ αυτό)
-//   Ce  = efferent couplings  (πόσα άλλα namespaces εξαρτάται αυτό)
-//   I   = Instability = Ce / (Ca + Ce)
-//   A   = Abstractness = abstract_classes / total_classes
-//   D   = |A + I - 1|  (Distance from Main Sequence)
-
-function computeMartinMetrics(graphJson) {
-    const { nodes, edges } = graphJson;
-
-    // namespace -> set of classes
-    const nsClasses = {};
-    for (const node of nodes) {
-        const ns = node.owner_namespace;
-        if (!ns) continue;
-        if (!nsClasses[ns]) nsClasses[ns] = { total: 0, abstract: 0 };
-        nsClasses[ns].total++;
-        if (node.is_abstract) nsClasses[ns].abstract++;
-    }
-
-    // namespace -> Ca, Ce
-    const Ca = {}, Ce = {};
-    for (const ns of Object.keys(nsClasses)) { Ca[ns] = 0; Ce[ns] = 0; }
-
-    for (const edge of edges) {
-        const srcNode = nodes.find(n => n.id === edge.source || n.id === edge.src);
-        const dstNode = nodes.find(n => n.id === edge.target || n.id === edge.dst);
-        if (!srcNode || !dstNode) continue;
-        const srcNs = srcNode.owner_namespace;
-        const dstNs = dstNode.owner_namespace;
-        if (!srcNs || !dstNs || srcNs === dstNs) continue;
-        Ce[srcNs] = (Ce[srcNs] || 0) + 1;
-        Ca[dstNs] = (Ca[dstNs] || 0) + 1;
-    }
-
-    const metrics = {};
-    for (const ns of Object.keys(nsClasses)) {
-        const ca = Ca[ns] || 0;
-        const ce = Ce[ns] || 0;
-        const total = nsClasses[ns].total;
-        const abstract = nsClasses[ns].abstract;
-        const I = (ca + ce) === 0 ? 0 : ce / (ca + ce);
-        const A = total === 0 ? 0 : abstract / total;
-        const D = Math.abs(A + I - 1);
-        metrics[ns] = {
-            ca, ce,
-            instability: +I.toFixed(3),
-            abstractness: +A.toFixed(3),
-            distance: +D.toFixed(3),
-            total_classes: total,
-            abstract_classes: abstract,
-        };
-    }
-    return metrics;
-}
-
 // ─── Cohesion (LCOM approximation) ───────────────────────────────────────────
-// Χρησιμοποιούμε τον αριθμό εσωτερικών συνδέσεων μέσα στο namespace
-// vs τον μέγιστο δυνατό αριθμό συνδέσεων
-// cohesion = internal_edges / max_possible_edges
-// όπου max = n*(n-1) για directed graph
+// cohesion = unique_internal_pairs / max_possible_pairs
+// όπου max = n*(n-1)/2 για undirected graph
 
 function computeCohesion(graphJson) {
     const { nodes = [], edges = [] } = graphJson;
 
     const nsNodes = {};
-
     for (const node of nodes) {
         const ns = node.owner_namespace;
         if (!ns) continue;
-
         if (!nsNodes[ns]) nsNodes[ns] = new Set();
         nsNodes[ns].add(node.id);
     }
 
     const cohesion = {};
-
     for (const [ns, members] of Object.entries(nsNodes)) {
         const n = members.size;
-
-        // Για namespace με <2 κόμβους δεν ορίζουμε ουσιαστική εσωτερική συνδεσιμότητα
         if (n < 2) {
             cohesion[ns] = 0;
             continue;
         }
 
-        // Μέγιστος αριθμός μοναδικών undirected ζευγών
         const maxPossibleConnections = (n * (n - 1)) / 2;
-
-        // Κρατάμε μοναδικά internal pairs
         const uniqueInternalPairs = new Set();
 
         for (const e of edges) {
             const src = e.source ?? e.src;
             const dst = e.target ?? e.dst;
-
-            if (!src || !dst) continue;
-            if (src === dst) continue; // αγνοούμε self-loops
+            if (!src || !dst || src === dst) continue;
             if (!members.has(src) || !members.has(dst)) continue;
-
-            // undirected pair: A--B ίδιο με B--A
-            const pairKey = [src, dst].sort().join("::");
-            uniqueInternalPairs.add(pairKey);
+            uniqueInternalPairs.add([src, dst].sort().join("::"));
         }
 
-        const zeta = uniqueInternalPairs.size;
-        cohesion[ns] = +(zeta / maxPossibleConnections).toFixed(3);
+        cohesion[ns] = +(uniqueInternalPairs.size / maxPossibleConnections).toFixed(3);
     }
 
     return cohesion;
@@ -175,13 +102,11 @@ function checkMVC(nsEdges) {
 
 function checkMicroservices(nsEdges, graphJson) {
     const warnings = [];
-    // Βασικός κανόνας: κάθε service έχει το δικό του namespace
-    // Απαγορεύεται direct cross-service database access
-    // Ανιχνεύουμε αν κάποιο namespace (εκτός Database) έχει άμεση εξάρτηση σε Database namespace
     const { nodes } = graphJson;
     const namespaces = [...new Set(nodes.map(n => n.owner_namespace).filter(Boolean))];
-    const dbNamespaces = namespaces.filter(ns => ns.toLowerCase().includes("database") || ns.toLowerCase().includes("data"));
-
+    const dbNamespaces = namespaces.filter(ns =>
+        ns.toLowerCase().includes("database") || ns.toLowerCase().includes("data")
+    );
     for (const edge of nsEdges) {
         const [src, dst] = edge.split("→");
         for (const dbNs of dbNamespaces) {
@@ -194,11 +119,26 @@ function checkMicroservices(nsEdges, graphJson) {
 }
 
 // ─── Main export ──────────────────────────────────────────────────────────────
+// cppMetrics: το JSON που επιστρέφει το analyze_cpp_namespaces.py
+// Έχει τη μορφή: { namespaces: [ { name, Ca, Ce, I, D, A, uses, used_by }, … ] }
 
-function analyzeArchitecture(graphJson, architecture) {
-    const martinMetrics = computeMartinMetrics(graphJson);
+function analyzeArchitecture(graphJson, architecture, cppMetrics) {
     const cohesion = computeCohesion(graphJson);
     const nsEdges = getNamespaceEdges(graphJson);
+
+    // Μετατροπή του Python output σε { [nsName]: { ca, ce, instability, abstractness, distance } }
+    const martinMetrics = {};
+    if (cppMetrics?.namespaces) {
+        for (const ns of cppMetrics.namespaces) {
+            martinMetrics[ns.name] = {
+                ca: ns.Ca,
+                ce: ns.Ce,
+                instability: +ns.I.toFixed(3),
+                abstractness: +ns.A.toFixed(3),
+                distance: +ns.D.toFixed(3),
+            };
+        }
+    }
 
     // Architecture-specific warnings
     let archWarnings = [];
@@ -211,7 +151,7 @@ function analyzeArchitecture(graphJson, architecture) {
     const martinWarnings = [];
     for (const [ns, m] of Object.entries(martinMetrics)) {
         if (m.distance > 0.3) {
-            martinWarnings.push(`⚠️ ${ns}: απόσταση από Main Sequence D=${m.distance} (>0.3) — εξετάστε ισορροπία abstractness/instability`);
+            martinWarnings.push(`⚠️ ${ns}: D=${m.distance} (>0.3) — εξετάστε ισορροπία abstractness/instability`);
         }
     }
 
