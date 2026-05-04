@@ -23,20 +23,30 @@ function safeJsonParse(str) {
     }
 }
 
-function extractCppUmlFromJson(rawText) {
-    const obj = safeJsonParse(rawText);
-    if (!obj || typeof obj !== "object") {
-        return { cpp: null, uml: null, parsed: false };
+function extractCppFromJson(rawText) {
+    if (!rawText) return { cpp: "", parsed: false };
+
+    // Πιάσε ΟΠΟΙΟΔΗΠΟΤΕ fenced block
+    const match = rawText.match(/```[\s\S]*?```/);
+
+    let cpp = match ? match[0] : rawText;
+
+    // Αφαίρεσε ``` και ```cpp
+    cpp = cpp
+        .replace(/```cpp/i, "")
+        .replace(/```/g, "")
+        .trim();
+
+    // Κόψε ό,τι υπάρχει πριν από πραγματικό C++
+    const start = cpp.search(/(#ifndef|#include|namespace|class)\b/);
+    if (start !== -1) {
+        cpp = cpp.slice(start);
     }
 
-    let cpp = typeof obj.cpp === "string" ? obj.cpp : null;
-    let uml = typeof obj.uml === "string" ? obj.uml : null;
-
-    if (cpp) cpp = stripFence(cpp, "cpp");
-    if (uml) uml = stripFence(uml, "plantuml");
-
-    return { cpp, uml, parsed: Boolean(cpp) };
+    return {
+        cpp,
+        parsed: !!match
+    };
 }
 
-
-module.exports = { extractCppUmlFromJson };
+module.exports = { extractCppFromJson };
