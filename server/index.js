@@ -1,275 +1,58 @@
 require("dotenv").config();
 
-// Στην αρχή του αρχείου, μετά τα require()
+
+
+// ── 1. undici global dispatcher (extended timeouts for local LLMs) ────────────
 const { setGlobalDispatcher, Agent } = require("undici");
 setGlobalDispatcher(new Agent({
   headersTimeout: 1800000,  // 30 λεπτά
   bodyTimeout: 1800000
 }));
+
+
+// ── 2. Dependencies ───────────────────────────────────────────────────────────
 const express = require("express");
 const cors = require("cors");
-const { extractCppUmlFromJson, extractCppFromJson } = require("./parse");
-
-
 const grokKey = process.env.GROK_API_KEY;
 const OpenAI = require("openai");
-
 const Anthropic = require("@anthropic-ai/sdk");
 
+
+
+const { extractCppFromJson } = require("./parse");
+const { pool, initDb } = require("./db");
+
+
+
+// ── 3. SDK clients ────────────────────────────────────────────────────────────
+const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
 
-
-const { pool, initDb } = require("./db");
-
+// ── 4. Express setup ──────────────────────────────────────────────────────────
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: "1mb" }));
 
-const createAnalyzeRouter = require("./routes/analyze");
-app.use("/api", createAnalyzeRouter({ pool }));
+
+// ── 5. Routers ────────────────────────────────────────────────────────────────
+app.use("/api", require("./routes/analyze")({ pool }));
+app.use("/api", require("./routes/neo4jTest"));
+app.use("/api", require("./routes/graphNeo4j"));
+app.use("/api", require("./routes/export_csv"));
+app.use("/api", require("./routes/export_csv_aggregated"));
+app.use("/api", require("./routes/chart_summary"));
+app.use("/api", require("./routes/chart_cohesion_by_model"));
+app.use("/api", require("./routes/AdvancedAnalysis"));
 
 
-const neo4jTestRoutes = require("./routes/neo4jTest");
-app.use("/api", neo4jTestRoutes);
-
-
-const graphNeo4jRoutes = require("./routes/graphNeo4j");
-
-app.use("/api", graphNeo4jRoutes);
-
-
-
-
-const exportCsvRouter = require("./routes/export_csv");
-app.use("/api", exportCsvRouter);
-
-const exportCsvAggregatedRouter = require("./routes/export_csv_aggregated");
-app.use("/api", exportCsvAggregatedRouter);
-
-const chartSummaryRouter = require("./routes/chart_summary");
-app.use("/api", chartSummaryRouter);
-
-const chartCohesionByModelRouter = require("./routes/chart_cohesion_by_model");
-app.use("/api", chartCohesionByModelRouter);
-
-const advancedRoutes = require("./routes/AdvancedAnalysis");
-app.use("/api", advancedRoutes);
-
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
-
-
-
+// ── 6. Health ─────────────────────────────────────────────────────────────────
 app.get("/health", (_req, res) => res.json({ ok: true }));
 
-app.post("/api/generate", async (req, res) => {
-  try {
-    const prompt = (req.body?.prompt ?? "").trim();
-    const exp_name = (req.body?.exp_name ?? null);
-    const architecture = (req.body?.architecture ?? null);
-    const description_type = (req.body?.description_type ?? null);
 
-    if (!prompt) return res.status(400).json({ error: "Empty prompt" });
-    if (prompt.length > 18000) return res.status(400).json({ error: "Prompt too long" });
-
-    // 1) Store prompt
-    const ins = await pool.query(
-      `INSERT INTO prompts(prompt, exp_name, architecture, description_type)
-        VALUES($1, $2, $3, $4)
-        RETURNING id, created_at`,
-      [prompt, exp_name, architecture, description_type]
-    );
-
-    const rowId = ins.rows[0].id;
-
-    // 2) Call OpenAI (request JSON-only output)
-    const model = process.env.OPENAI_MODEL || "gpt-5.2";
-    const llmInput = wrapPromptForJson(prompt);
-
-    const response = await client.responses.create({
-      model,
-      input: llmInput
-    });
-
-    const text = response.output_text ?? "";
-
-    // 3) Parse and validate format
-    const { cpp, uml, parsed } = extractCppUmlFromJson(text);
-
-    // 4) Store raw response + parsed parts (even if parsing fails, store raw for debugging)
-    await pool.query(
-      "UPDATE prompts SET response=$1, cpp_code=$2, uml_code=$3 WHERE id=$4",
-      [text, cpp, uml, rowId]
-    );
-
-    // 5) If not correct format, return 422 with details
-    if (!parsed) {
-      return res.status(422).json({
-        error: 'Invalid LLM format. Expected ONLY JSON: {"cpp": "...", "uml": "..."}',
-        id: rowId,
-        model,
-        output: text,
-        parsed: { cpp_found: Boolean(cpp), uml_found: Boolean(uml) }
-      });
-    }
-
-    return res.json({
-      id: rowId,
-      model,
-      cpp,
-      uml
-    });
-  } catch (err) {
-    console.error(err);
-    return res.status(500).json({ error: "Server error" });
-  }
-});
-
-app.get("/api/latest", async (_req, res) => {
-  const r = await pool.query(
-    "SELECT id, created_at, prompt, cpp_code, uml_code FROM prompts ORDER BY id DESC LIMIT 1"
-  );
-  res.json(r.rows[0] ?? null);
-});
-
-
-
-app.get("/api/prompts", async (_req, res) => {
-  try {
-    const r = await pool.query(`
-      SELECT
-        id,
-        created_at,
-        exp_name,
-        architecture,
-        description_type,
-        prompt,
-        CASE WHEN cpp_code IS NULL OR length(cpp_code)=0 THEN false ELSE true END AS has_cpp,
-        CASE WHEN uml_code IS NULL OR length(uml_code)=0 THEN false ELSE true END AS has_uml,
-        CASE WHEN uml_code_produced IS NULL OR length(uml_code_produced)=0 THEN false ELSE true END AS has_uml_produced,
-        CASE
-          WHEN cpp_metrics IS NULL THEN false
-          WHEN cpp_metrics = '{}'::jsonb THEN false
-          WHEN cpp_metrics = '[]'::jsonb THEN false
-          ELSE true
-        END AS has_cpp_metrics,
-        cpp_metrics
-      FROM prompts
-      ORDER BY id DESC
-    `);
-
-    res.json(r.rows);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Server error" });
-  }
-});
-
-
-app.get("/api/prompts/:id/cpp", async (req, res) => {
-  try {
-    const id = Number(req.params.id);
-    if (!Number.isFinite(id)) return res.status(400).send("Invalid id");
-
-    const r = await pool.query("SELECT cpp_code FROM prompts WHERE id=$1", [id]);
-    const cpp = r.rows[0]?.cpp_code;
-    if (!cpp) return res.status(404).send("CPP not found");
-
-    res.setHeader("Content-Type", "text/x-c++src; charset=utf-8");
-    res.setHeader("Content-Disposition", `attachment; filename="generated_${id}.hpp"`);
-    res.send(cpp);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Server error");
-  }
-});
-
-
-app.get("/api/prompts/:id/uml", async (req, res) => {
-  try {
-    const id = Number(req.params.id);
-    if (!Number.isFinite(id)) return res.status(400).send("Invalid id");
-
-    const r = await pool.query("SELECT uml_code FROM prompts WHERE id=$1", [id]);
-    const uml = r.rows[0]?.uml_code;
-    if (!uml) return res.status(404).send("UML not found");
-
-    res.setHeader("Content-Type", "text/plain; charset=utf-8");
-    res.setHeader("Content-Disposition", `attachment; filename="diagram_${id}.puml"`);
-    res.send(uml);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Server error");
-  }
-});
-
-
-app.get("/api/prompts/:id/uml_produced", async (req, res) => {
-  try {
-    const id = Number(req.params.id);
-    if (!Number.isFinite(id)) return res.status(400).send("Invalid id");
-
-    const r = await pool.query("SELECT uml_code_produced FROM prompts WHERE id=$1", [id]);
-    const uml = r.rows[0]?.uml_code_produced;
-    if (!uml) return res.status(404).send("UML not found");
-
-    res.setHeader("Content-Type", "text/plain; charset=utf-8");
-    res.setHeader("Content-Disposition", `attachment; filename="diagram_${id}.puml"`);
-    res.send(uml);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Server error");
-  }
-});
-
-app.get("/api/prompt-template", async (req, res) => {
-  try {
-    const arch = String(req.query.arch || "").toLowerCase();     // "3tier" | "microservices" | "mvc"
-    const spec = String(req.query.spec || "").toLowerCase();     // "srs" | "frnfr"
-
-    const archKey =
-      arch === "3tier" ? "3_3tier" :
-        arch === "mvc" ? "3_mvc" :
-          arch === "microservices" ? "3_micro" :
-            null;
-
-    const specKey =
-      spec === "srs" ? "2_srs" :
-        spec === "frnfr" ? "2_frnfr" :
-          null;
-
-    if (!archKey || !specKey) {
-      return res.status(400).json({ error: "Invalid arch/spec. Use arch=3tier|mvc|microservices and spec=srs|frnfr." });
-    }
-
-    const keys = ["1_task_description", specKey, archKey, "4_finalInstructions"];
-
-    const r = await pool.query(
-      "SELECT name, prompt_part FROM prompt_experiment WHERE name = ANY($1)",
-      [keys]
-    );
-
-    const map = new Map(r.rows.map(x => [x.name, x.prompt_part]));
-
-    const missing = keys.filter(k => !map.has(k));
-    if (missing.length) {
-      return res.status(422).json({ error: "Missing prompt parts in prompt_experiment.", missing });
-    }
-
-    const fullPrompt = keys.map(k => map.get(k)).join("\n\n");
-
-    return res.json({ arch, spec, prompt: fullPrompt });
-  } catch (err) {
-    console.error(err);
-    return res.status(500).json({ error: "Server error" });
-  }
-
-
-});
-
+// ── 7. Prompt experiment — GET all parts ─────────────────────────────────────
 app.get("/api/prompt-experiment", async (_req, res) => {
   try {
     const r = await pool.query(
@@ -282,7 +65,7 @@ app.get("/api/prompt-experiment", async (_req, res) => {
   }
 });
 
-
+// ── 8. Prompt experiment — UPSERT a part ─────────────────────────────────────
 app.put("/api/prompt-experiment/:name", async (req, res) => {
   try {
     const name = String(req.params.name || "").trim();
@@ -307,7 +90,7 @@ app.put("/api/prompt-experiment/:name", async (req, res) => {
 
 
 
-// RUN EXPERIMENT API that runs each time we run a new experiment from the run page
+// ── 9. Run experiment — core endpoint ────────────────────────────────────────
 app.post("/api/run-experiment", async (req, res) => {
   try {
     const architecture = req.body?.architecture;
@@ -441,33 +224,33 @@ app.post("/api/run-experiment", async (req, res) => {
       text = result.response.text();
     }
     else if (model === "qwen") {
-  const qwenRes = await fetch("http://localhost:11434/v1/chat/completions", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    signal: AbortSignal.timeout(1800000),
-    body: JSON.stringify({
-      model: "qwen2.5-coder:32b",
-      temperature: Number(temperature) ?? 0.0,
-      messages: [{ role: "user", content: llmInput }]
-    })
-  });
-  const data = await qwenRes.json();
-  text = data.choices?.[0]?.message?.content ?? "";
-}
-else if (model === "deepseek") {
-  const deepseekRes = await fetch("http://localhost:11434/v1/chat/completions", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    signal: AbortSignal.timeout(1800000),
-    body: JSON.stringify({
-      model: "deepseek-r1:32b",
-      temperature: Number(temperature) ?? 0.0,
-      messages: [{ role: "user", content: llmInput }]
-    })
-  });
-  const data = await deepseekRes.json();
-  text = data.choices?.[0]?.message?.content ?? "";
-}
+      const qwenRes = await fetch("http://localhost:11434/v1/chat/completions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        signal: AbortSignal.timeout(1800000),
+        body: JSON.stringify({
+          model: "qwen2.5-coder:32b",
+          temperature: Number(temperature) ?? 0.0,
+          messages: [{ role: "user", content: llmInput }]
+        })
+      });
+      const data = await qwenRes.json();
+      text = data.choices?.[0]?.message?.content ?? "";
+    }
+    else if (model === "deepseek") {
+      const deepseekRes = await fetch("http://localhost:11434/v1/chat/completions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        signal: AbortSignal.timeout(1800000),
+        body: JSON.stringify({
+          model: "deepseek-r1:32b",
+          temperature: Number(temperature) ?? 0.0,
+          messages: [{ role: "user", content: llmInput }]
+        })
+      });
+      const data = await deepseekRes.json();
+      text = data.choices?.[0]?.message?.content ?? "";
+    }
     else if (model === "mistral") {
       const mistralRes = await fetch("https://api.mistral.ai/v1/chat/completions", {
         method: "POST",
@@ -520,7 +303,7 @@ else if (model === "deepseek") {
 
 
 
-// API to get all distinct categories for filtering on the frontend
+// ── 10. Categories ────────────────────────────────────────────────────────────
 app.get("/api/categories", async (req, res) => {
   try {
     const project = req.query.project; // <-- από query
@@ -549,7 +332,7 @@ app.get("/api/categories", async (req, res) => {
   }
 });
 
-
+// ── 11. Results — filtered list ───────────────────────────────────────────────
 app.get("/api/results", async (req, res) => {
   try {
     const { project, category, architecture, model, promptType, temperature } = req.query;
@@ -612,7 +395,7 @@ app.get("/api/results", async (req, res) => {
   }
 });
 
-
+// ── 12. Single run experiment by id ──────────────────────────────────────────
 app.get("/api/run-experiments/:id", async (req, res) => {
   try {
     const id = Number(req.params.id);
@@ -652,7 +435,7 @@ app.get("/api/run-experiments/:id", async (req, res) => {
   }
 });
 
-
+// ── 13. Bootstrap ─────────────────────────────────────────────────────────────
 (async () => {
   await initDb();
   const port = Number(process.env.PORT || 3001);

@@ -256,6 +256,8 @@ export default function MyChartsRepeatedResults() {
             <option value="grok">Grok</option>
             <option value="mistral">Mistral</option>
             <option value="gemini">Gemini</option>
+            <option value="deepseek">Deepseek (local)</option>
+            <option value="qwen">Qwen (local)</option>
           </select>
 
 
