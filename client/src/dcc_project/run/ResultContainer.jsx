@@ -2,6 +2,7 @@ import { useState } from "react";
 import CodePanel from "./CodePanel.jsx";
 import AnalysisPanel from "./AnalysisPanel.jsx";
 import VisualizationPanel from "./VisualizationPanel.jsx";
+import VisualizationPanelShort from "./VisualizationPanel_short.jsx";
 import { useControlled } from "@mui/material";
 import GraphViewer from "./GraphViewer.jsx";
 import NamespaceGraphViewer from "./NamespaceGraphViewer.jsx";
@@ -73,6 +74,18 @@ export default function ResultContainer({ result }) {
         </button>
 
         <button
+          onClick={() => setTab("viz2")}
+          style={{
+            padding: "6px 14px",
+            borderRadius: 20,
+            border: "none",
+            background: tab === "viz" ? "#e3a1a1" : "#eee"
+          }}
+        >
+          Visualization 2
+        </button>
+
+        <button
           onClick={() => setTab("analysis")}
           style={{
             padding: "6px 14px",
@@ -122,6 +135,7 @@ export default function ResultContainer({ result }) {
         {tab === "prompt" && <PromptPanel prompt={result.prompt} />}
         {tab === "code" && <CodePanel code={result.cpp} />}
         {tab === "viz" && <VisualizationPanel uml={result.plantuml_produced} filename={`${result.category}_${result.id}`} />}
+        {tab === "viz2" && <VisualizationPanelShort uml={result.plantuml_produced} filename={`${result.category}_${result.id}`} />}
         {tab === "analysis" && <AnalysisPanel analysis={result.architecture_analysis} />}
         {tab === "graphjson" && <CodePanel code={JSON.stringify(result.graphjson, null, 2)} />}
         {tab === "classgraphviewer" && <GraphViewer runId={result.id} />}

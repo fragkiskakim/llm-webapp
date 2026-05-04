@@ -27,7 +27,7 @@ const btnSecondary = {
   border: "1px solid #ddd",
 };
 
-export default function VisualizationPanel({ uml , filename = "diagram"  }) {
+export default function VisualizationPanel({ uml, filename = "diagram" }) {
   const [showCode, setShowCode] = useState(false);
 
   if (!uml) return <div>No diagram available</div>;
