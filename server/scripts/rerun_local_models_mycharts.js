@@ -9,9 +9,9 @@ const PROJECT = "mycharts";
 
 const { setGlobalDispatcher, Agent } = require("undici");
 setGlobalDispatcher(new Agent({
-    headersTimeout: 3600000,
-    bodyTimeout: 3600000,
-    connectTimeout: 3600000,
+  headersTimeout: 3600000,
+  bodyTimeout: 3600000,
+  connectTimeout: 3600000,
 }));
 
 // Όλα τα missing combos για MYCHARTS
