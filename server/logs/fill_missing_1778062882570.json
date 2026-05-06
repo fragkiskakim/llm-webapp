@@ -1,0 +1,62 @@
+[
+  {
+    "ok": false,
+    "project": "dcc",
+    "architecture": "3tier",
+    "model": "deepseek",
+    "promptType": "srs",
+    "temperature": "0.5",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1759,
+    "project": "dcc",
+    "architecture": "client-server",
+    "model": "deepseek",
+    "promptType": "frnfr",
+    "temperature": "0.5",
+    "attempt": 1
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0.5",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0.5",
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0.5",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0",
+    "attempt": 1,
+    "error": "Server error"
+  }
+]

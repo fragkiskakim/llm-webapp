@@ -1,0 +1,22 @@
+[
+  {
+    "ok": true,
+    "id": 1780,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0.5",
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1781,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0",
+    "attempt": 1
+  }
+]

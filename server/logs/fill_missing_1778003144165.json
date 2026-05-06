@@ -1,0 +1,172 @@
+[
+  {
+    "ok": false,
+    "project": "dcc",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "dcc",
+    "architecture": "microservices",
+    "model": "deepseek",
+    "promptType": "frnfr",
+    "temperature": "0.5",
+    "attempt": 1,
+    "error": "fetch failed"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0.2",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1707,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0.2",
+    "attempt": 2
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0.2",
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1709,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0",
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1710,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0",
+    "attempt": 2
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0",
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0",
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0.2",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0.2",
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1715,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0.2",
+    "attempt": 3
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0.5",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1717,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0.5",
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1718,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": "0.2",
+    "attempt": 1
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "qwen",
+    "promptType": "srs",
+    "temperature": "0",
+    "attempt": 1,
+    "error": "fetch failed"
+  }
+]

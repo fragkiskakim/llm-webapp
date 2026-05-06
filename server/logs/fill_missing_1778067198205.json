@@ -1,0 +1,42 @@
+[
+  {
+    "ok": true,
+    "id": 1776,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0.5",
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1777,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0.5",
+    "attempt": 2
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0.5",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0",
+    "attempt": 1,
+    "error": "Server error"
+  }
+]

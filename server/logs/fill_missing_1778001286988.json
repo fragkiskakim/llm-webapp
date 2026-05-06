@@ -1,0 +1,302 @@
+[
+  {
+    "ok": true,
+    "id": 1674,
+    "project": "dcc",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0",
+    "attempt": 1
+  },
+  {
+    "ok": false,
+    "project": "dcc",
+    "architecture": "microservices",
+    "model": "gpt4",
+    "promptType": "frnfr",
+    "temperature": "0.2",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1676,
+    "project": "dcc",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": "0.2",
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1677,
+    "project": "dcc",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": "0.2",
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1678,
+    "project": "dcc",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": "0.2",
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1679,
+    "project": "dcc",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": "0.5",
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1680,
+    "project": "dcc",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": "0.5",
+    "attempt": 2
+  },
+  {
+    "ok": true,
+    "id": 1681,
+    "project": "dcc",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "frnfr",
+    "temperature": "0.5",
+    "attempt": 3
+  },
+  {
+    "ok": true,
+    "id": 1682,
+    "project": "dcc",
+    "architecture": "microservices",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": "0.5",
+    "attempt": 1
+  },
+  {
+    "ok": false,
+    "project": "dcc",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": "0.2",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "dcc",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "claude",
+    "promptType": "srs",
+    "temperature": "0.2",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1686,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0",
+    "attempt": 1
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0.2",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0.2",
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0.2",
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0",
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0",
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0",
+    "attempt": 4,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0.2",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0.2",
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0.2",
+    "attempt": 3,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0.5",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "gemini",
+    "promptType": "srs",
+    "temperature": "0.5",
+    "attempt": 2,
+    "error": "Server error"
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": "0.2",
+    "attempt": 1,
+    "error": "CPP not found"
+  },
+  {
+    "ok": true,
+    "id": 1700,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "frnfr",
+    "temperature": "0.5",
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1701,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "grok",
+    "promptType": "srs",
+    "temperature": "0",
+    "attempt": 1
+  },
+  {
+    "ok": false,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "gemini",
+    "promptType": "frnfr",
+    "temperature": "0",
+    "attempt": 1,
+    "error": "Server error"
+  },
+  {
+    "ok": true,
+    "id": 1703,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "mistral",
+    "promptType": "frnfr",
+    "temperature": "0",
+    "attempt": 1
+  }
+]

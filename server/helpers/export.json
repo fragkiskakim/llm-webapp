@@ -1,0 +1,1765 @@
+[{
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 4
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 13
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 15
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "3tier",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 8
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 8
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 7
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 7
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 7
+}, {
+  "experiment": "DCC",
+  "architecture": "client-server",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 7
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 2
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 2
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 4
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 7
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 7
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 4
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 4
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 4
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "microservices",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 9
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 7
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 7
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 6
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 12
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "DCC",
+  "architecture": "mvc",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 6
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 4
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 4
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 2
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 1
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 2
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 3
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 12
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "3tier",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "claude",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "claude",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "deepseek",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "deepseek",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 4
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "gemini",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "gemini",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 6
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "gpt4",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "gpt4",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 4
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "grok",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 4
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 4
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "grok",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 4
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "mistral",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "mistral",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "qwen",
+  "prompt_type": "frnfr",
+  "temperature": "0.5",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0.2",
+  "runs": 5
+}, {
+  "experiment": "MYCHARTS",
+  "architecture": "microservices",
+  "model": "qwen",
+  "prompt_type": "srs",
+  "temperature": "0.5",
+  "runs": 5
+}]

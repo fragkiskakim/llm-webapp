@@ -18,6 +18,11 @@ function stripFunctionBodies(code) {
 
     // remove inline function bodies
     code = code.replace(/\)\s*\{[^{}]*\}/g, ");");
+    
+    code = code.replace(/enum\s+class\s+(\w+)/g, "enum $1");
+    
+    // Αφαίρεση inline comments που σπάνε τον parser
+    code = code.replace(/\/\/[^\n]*/g, "");
 
     return code;
 }

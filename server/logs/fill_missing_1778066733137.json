@@ -1,0 +1,42 @@
+[
+  {
+    "ok": true,
+    "id": 1772,
+    "project": "dcc",
+    "architecture": "3tier",
+    "model": "deepseek",
+    "promptType": "srs",
+    "temperature": "0.5",
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1773,
+    "project": "mycharts",
+    "architecture": "3tier",
+    "model": "deepseek",
+    "promptType": "srs",
+    "temperature": "0.5",
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1774,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "qwen",
+    "promptType": "srs",
+    "temperature": "0.2",
+    "attempt": 1
+  },
+  {
+    "ok": true,
+    "id": 1775,
+    "project": "mycharts",
+    "architecture": "microservices",
+    "model": "deepseek",
+    "promptType": "frnfr",
+    "temperature": "0.2",
+    "attempt": 1
+  }
+]
