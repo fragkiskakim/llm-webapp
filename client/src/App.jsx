@@ -2,7 +2,7 @@ import { Link, Routes, Route, Navigate } from "react-router-dom";
 import PromptPage from "./PromptPage.jsx";
 import HistoryPage from "./HistoryPage.jsx";
 import DatabasePage from "./DatabasePage.jsx";
-import NewProjectPage from "./NewProjectPage.jsx";
+import ResultsPage from "./ResultsPage.jsx";
 import NewPage from "./NewPage.jsx";
 import Header from "./Header.jsx";
 import RunPage from "./dcc_project/run/RunPage.jsx";
@@ -39,7 +39,7 @@ export default function App() {
           <Route path="/database" element={<DatabasePage />} />
           <Route path="/new" element={<NewPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
-          <Route path="/new_project" element={<NewProjectPage />} />
+          <Route path="/new_project" element={<ResultsPage />} />
           <Route path="/dcc_project" element={<Navigate to="/dcc_project/run" replace />} />
           <Route path="/dcc_project/run" element={<RunPage />} />
           <Route path="/dcc_project/repeated" element={<Navigate to="/dcc_project/repeated/results" replace />} />

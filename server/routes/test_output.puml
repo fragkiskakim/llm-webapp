@@ -7,156 +7,119 @@
 /' Objects '/
 
 namespace Presentation {
-	class PresentationCoordinateGroupFormatter {
-		+PresentationCoordinateGroupFormatter()
-		+~PresentationCoordinateGroupFormatter()
-		+toViewModel(const BusinessCoordinateGroup& group) : PresentationCoordinateGroupViewModel {query}
-		+formatTimestamp(std::int64_t timestampEpochSeconds) : std::string {query}
+	class CreateGroupPanel {
+		+CreateGroupPanel(Business::CoordinateGroupManager* gm, Business::CoordinateConverter* cc)
+		+~CreateGroupPanel()
+		-coordinateConverter : Business::CoordinateConverter*
+		-groupManager : Business::CoordinateGroupManager*
+		+createCartesianGroup(const std::string& label, float x, float y) : void
+		+createPolarGroup(const std::string& label, float r, float theta) : void
 	}
 
-	class PresentationDccController {
-		+PresentationDccController(std::shared_ptr<BusinessCoordinateGroupService> service, std::shared_ptr<PresentationCoordinateGroupFormatter> formatter)
-		+~PresentationDccController()
-		+createGroupFromCartesian(const std::string& label, double x, double y) : PresentationCoordinateGroupViewModel
-		+createGroupFromPolar(const std::string& label, double r, double thetaRadians) : PresentationCoordinateGroupViewModel
-		+deleteGroup(int id) : bool
-		+updateGroupFromCartesian(int id, const std::string& newLabel, double x, double y) : bool
-		+updateGroupFromPolar(int id, const std::string& newLabel, double r, double thetaRadians) : bool
-		+getById(int id) : std::optional<PresentationCoordinateGroupViewModel> {query}
-		-m_service : std::shared_ptr<BusinessCoordinateGroupService>
-		-m_formatter : std::shared_ptr<PresentationCoordinateGroupFormatter>
-		+listAll() : std::vector<PresentationCoordinateGroupViewModel> {query}
-		+searchByLabel(const std::string& label) : std::vector<PresentationCoordinateGroupViewModel> {query}
+	class MainWindow {
+		+MainWindow(Business::CoordinateGroupManager* gm, Business::DataRetriever* dr, Business::CoordinateConverter* cc)
+		+~MainWindow()
+		-coordinateConverter : Business::CoordinateConverter*
+		-groupManager : Business::CoordinateGroupManager*
+		-dataRetriever : Business::DataRetriever*
+		+displayAllGroups() : void
+		+displayGroupsByLabel(const std::string& label) : void
+		+showCreatePanel() : void
+		+showModifyPanel() : void
 	}
 
-	class PresentationSwingDccView {
-		+PresentationSwingDccView(std::shared_ptr<PresentationDccController> controller)
-		+~PresentationSwingDccView()
-		-m_controller : std::shared_ptr<PresentationDccController>
-		+close() : void
-		+onCreateFromCartesian(const std::string& label, double x, double y) : void
-		+onCreateFromPolar(const std::string& label, double r, double thetaRadians) : void
-		+onDelete(int id) : void
-		+onListAll() : void
-		+onSearchByLabel(const std::string& label) : void
-		+onSelectById(int id) : void
-		+onUpdateFromCartesian(int id, const std::string& newLabel, double x, double y) : void
-		+onUpdateFromPolar(int id, const std::string& newLabel, double r, double thetaRadians) : void
-		+show() : void
+	class ModifyGroupPanel {
+		+ModifyGroupPanel(Business::CoordinateGroupManager* gm, Business::DataRetriever* dr, Business::CoordinateConverter* cc)
+		+~ModifyGroupPanel()
+		-coordinateConverter : Business::CoordinateConverter*
+		-groupManager : Business::CoordinateGroupManager*
+		-dataRetriever : Business::DataRetriever*
+		+updateGroup(int id, const std::string& label, float x, float y) : void
+		+updateGroup(int id, const std::string& label, float r, float theta) : void
 	}
 
-	class PresentationCoordinateGroupViewModel {
-		+r : double
-		+thetaRadians : double
-		+x : double
-		+y : double
-		+id : int
-		+label : std::string
-		+timestampText : std::string
+	class SearchPanel {
+		+SearchPanel(Business::DataRetriever* dr)
+		+~SearchPanel()
+		-dataRetriever : Business::DataRetriever*
+		+search(const std::string& label) : std::vector<std::tuple<int , std::string , float , float , float , float>>
+		+viewAll() : std::vector<std::tuple<int , std::string , float , float , float , float>>
 	}
 }
 
 
 namespace Data {
-	class DataCoordinateGroupMapper {
-		+DataCoordinateGroupMapper()
-		+~DataCoordinateGroupMapper()
-		+toDomain(const DataCoordinateGroupRecord& record) : BusinessCoordinateGroup {query}
-		+toRecord(const BusinessCoordinateGroup& group) : DataCoordinateGroupRecord {query}
+	class CartesianCoordinates {
+		+CartesianCoordinates(float newX, float newY)
+		+~CartesianCoordinates()
+		+getX() : float {query}
+		+getY() : float {query}
+		-x : float
+		-y : float
+		+setX(float newX) : void
+		+setY(float newY) : void
 	}
 
-	class DataCoordinateGroupRepository {
-		+DataCoordinateGroupRepository(std::shared_ptr<DataMySqlConnection> connection)
-		+~DataCoordinateGroupRepository()
-		+removeById(int id) : bool
-		+update(const DataCoordinateGroupRecord& record) : bool
-		+insert(const DataCoordinateGroupRecord& record) : int
-		+findById(int id) : std::optional<DataCoordinateGroupRecord> {query}
-		-m_connection : std::shared_ptr<DataMySqlConnection>
-		+findAll() : std::vector<DataCoordinateGroupRecord> {query}
-		+findByLabel(const std::string& label) : std::vector<DataCoordinateGroupRecord> {query}
+	class CoordinateGroupDAO {
+		+CoordinateGroupDAO(Data::DatabaseConnection* conn)
+		+~CoordinateGroupDAO()
+		-dbConnection : Data::DatabaseConnection*
+		+findAll() : std::vector<std::tuple<int , std::string , float , float , float , float>>
+		+findByLabel(const std::string& label) : std::vector<std::tuple<int , std::string , float , float , float , float>>
+		+remove(int id) : void
+		+save(const std::string& label, float x, float y, float r, float theta) : void
+		+update(int id, const std::string& label, float x, float y, float r, float theta) : void
 	}
 
-	class DataMySqlConnection {
-		+DataMySqlConnection(const std::string& host, int port, const std::string& database, const std::string& user, const std::string& password)
-		+DataMySqlConnection(DataMySqlConnection& &)
-		+~DataMySqlConnection()
-		+operator=(DataMySqlConnection& &) : DataMySqlConnection&
-		+isOpen() : bool {query}
-		-m_open : bool
-		-m_port : int
-		-m_database : std::string
-		-m_host : std::string
-		-m_password : std::string
-		-m_user : std::string
-		+close() : void
-		+open() : void
+	class DatabaseConnection {
+		+DatabaseConnection(const std::string& connStr, int p, const std::string& u, const std::string& pw)
+		+~DatabaseConnection()
+		-port : int
+		-connectionString : std::string
+		-password : std::string
+		-username : std::string
+		+connect() : void
+		+disconnect() : void
 	}
 
-	class DataCoordinateGroupRecord {
-		+r : double
-		+thetaRadians : double
-		+x : double
-		+y : double
-		+id : int
-		+timestampEpochSeconds : std::int64_t
-		+label : std::string
+	class PolarCoordinates {
+		+PolarCoordinates(float newR, float newTheta)
+		+~PolarCoordinates()
+		+getR() : float {query}
+		+getTheta() : float {query}
+		-r : float
+		-theta : float
+		+setR(float newR) : void
+		+setTheta(float newTheta) : void
 	}
 }
 
 
 namespace Business {
-	class BusinessCoordinateConverter {
-		+BusinessCoordinateConverter()
-		+~BusinessCoordinateConverter()
-		+polarToCartesian(const BusinessPolarCoord& polar) : BusinessCartesianCoord {query}
-		+cartesianToPolar(const BusinessCartesianCoord& cart) : BusinessPolarCoord {query}
+	class CoordinateConverter {
+		+{static} cartesianToPolar(float x, float y) : std::pair<float , float>
+		+{static} polarToCartesian(float r, float theta) : std::pair<float , float>
 	}
 
-	class BusinessCoordinateGroup {
-		+BusinessCoordinateGroup()
-		+BusinessCoordinateGroup(int id, const std::string& label, std::int64_t timestampEpochSeconds, const BusinessCartesianCoord& cartesian, const BusinessPolarCoord& polar)
-		-m_cartesian : BusinessCartesianCoord
-		+getCartesian() : BusinessCartesianCoord& {query}
-		-m_polar : BusinessPolarCoord
-		+getPolar() : BusinessPolarCoord& {query}
-		+getId() : int {query}
-		-m_id : int
-		+getTimestampEpochSeconds() : std::int64_t {query}
-		-m_timestampEpochSeconds : std::int64_t
-		-m_label : std::string
-		+getLabel() : std::string& {query}
-		+setCartesian(const BusinessCartesianCoord& cartesian) : void
-		+setId(int id) : void
-		+setLabel(const std::string& label) : void
-		+setPolar(const BusinessPolarCoord& polar) : void
-		+setTimestampEpochSeconds(std::int64_t ts) : void
+	class CoordinateGroupManager {
+		+CoordinateGroupManager(Data::CoordinateGroupDAO* dao)
+		+~CoordinateGroupManager()
+		-coordinateGroupDAO : Data::CoordinateGroupDAO*
+		+getAllGroups() : std::vector<std::tuple<int , std::string , float , float , float , float>>
+		+searchGroups(const std::string& label) : std::vector<std::tuple<int , std::string , float , float , float , float>>
+		+createGroup(const std::string& label, float x, float y) : void
+		+createGroup(const std::string& label, float r, float theta) : void
+		+deleteGroup(int id) : void
+		+updateGroup(int id, const std::string& label, float x, float y) : void
+		+updateGroup(int id, const std::string& label, float r, float theta) : void
 	}
 
-	class BusinessCoordinateGroupService {
-		+BusinessCoordinateGroupService(std::shared_ptr<DataCoordinateGroupRepository> repository, std::shared_ptr<DataCoordinateGroupMapper> mapper, std::shared_ptr<BusinessCoordinateConverter> converter)
-		+~BusinessCoordinateGroupService()
-		+createFromCartesian(const std::string& label, const BusinessCartesianCoord& cartesian) : BusinessCoordinateGroup
-		+createFromPolar(const std::string& label, const BusinessPolarCoord& polar) : BusinessCoordinateGroup
-		+deleteById(int id) : bool
-		+updateFromCartesian(int id, const std::string& newLabel, const BusinessCartesianCoord& cartesian) : bool
-		+updateFromPolar(int id, const std::string& newLabel, const BusinessPolarCoord& polar) : bool
-		+getById(int id) : std::optional<BusinessCoordinateGroup> {query}
-		-m_converter : std::shared_ptr<BusinessCoordinateConverter>
-		-m_mapper : std::shared_ptr<DataCoordinateGroupMapper>
-		-m_repository : std::shared_ptr<DataCoordinateGroupRepository>
-		+getAll() : std::vector<BusinessCoordinateGroup> {query}
-		+searchByLabel(const std::string& label) : std::vector<BusinessCoordinateGroup> {query}
-	}
-
-	class BusinessCartesianCoord {
-		+x : double
-		+y : double
-	}
-
-	class BusinessPolarCoord {
-		+r : double
-		+thetaRadians : double
+	class DataRetriever {
+		+DataRetriever(Data::CoordinateGroupDAO* dao)
+		+~DataRetriever()
+		-coordinateGroupDAO : Data::CoordinateGroupDAO*
+		+retrieveAllGroups() : std::vector<std::tuple<int , std::string , float , float , float , float>>
+		+retrieveByLabel(const std::string& label) : std::vector<std::tuple<int , std::string , float , float , float , float>>
 	}
 }
 
@@ -171,22 +134,40 @@ namespace Business {
 
 /' Aggregation relationships '/
 
-Business.BusinessCoordinateGroup *-- Business.BusinessCartesianCoord
+Data.CoordinateGroupDAO o-- Data.DatabaseConnection
 
 
-Business.BusinessCoordinateGroup *-- Business.BusinessPolarCoord
+Business.CoordinateGroupManager o-- Data.CoordinateGroupDAO
 
 
-Business.BusinessCoordinateGroupService o-- Business.BusinessCoordinateConverter
+Presentation.CreateGroupPanel o-- Business.CoordinateConverter
 
 
-Data.DataCoordinateGroupRepository o-- Data.DataMySqlConnection
+Presentation.CreateGroupPanel o-- Business.CoordinateGroupManager
 
 
-Presentation.PresentationDccController o-- Presentation.PresentationCoordinateGroupFormatter
+Business.DataRetriever o-- Data.CoordinateGroupDAO
 
 
-Presentation.PresentationSwingDccView o-- Presentation.PresentationDccController
+Presentation.MainWindow o-- Business.CoordinateConverter
+
+
+Presentation.MainWindow o-- Business.CoordinateGroupManager
+
+
+Presentation.MainWindow o-- Business.DataRetriever
+
+
+Presentation.ModifyGroupPanel o-- Business.CoordinateConverter
+
+
+Presentation.ModifyGroupPanel o-- Business.CoordinateGroupManager
+
+
+Presentation.ModifyGroupPanel o-- Business.DataRetriever
+
+
+Presentation.SearchPanel o-- Business.DataRetriever
 
 
 
@@ -195,40 +176,40 @@ Presentation.PresentationSwingDccView o-- Presentation.PresentationDccController
 
 /' Dependency relationships '/
 
-Business.BusinessCartesianCoord <.. Business.BusinessCoordinateConverter
+Business.CoordinateConverter <.. Presentation.CreateGroupPanel
 
 
-Business.BusinessCartesianCoord <.. Business.BusinessCoordinateGroup
+Business.CoordinateConverter <.. Presentation.MainWindow
 
 
-Business.BusinessCartesianCoord <.. Business.BusinessCoordinateGroupService
+Business.CoordinateConverter <.. Presentation.ModifyGroupPanel
 
 
-Business.BusinessCoordinateConverter <.. Business.BusinessCoordinateGroupService
+Data.CoordinateGroupDAO <.. Business.CoordinateGroupManager
 
 
-Business.BusinessPolarCoord <.. Business.BusinessCoordinateConverter
+Data.CoordinateGroupDAO <.. Business.DataRetriever
 
 
-Business.BusinessPolarCoord <.. Business.BusinessCoordinateGroup
+Business.CoordinateGroupManager <.. Presentation.CreateGroupPanel
 
 
-Business.BusinessPolarCoord <.. Business.BusinessCoordinateGroupService
+Business.CoordinateGroupManager <.. Presentation.MainWindow
 
 
-Data.DataCoordinateGroupRecord <.. Data.DataCoordinateGroupMapper
+Business.CoordinateGroupManager <.. Presentation.ModifyGroupPanel
 
 
-Data.DataCoordinateGroupRecord <.. Data.DataCoordinateGroupRepository
+Business.DataRetriever <.. Presentation.MainWindow
 
 
-Data.DataMySqlConnection <.. Data.DataCoordinateGroupRepository
+Business.DataRetriever <.. Presentation.ModifyGroupPanel
 
 
-Presentation.PresentationCoordinateGroupFormatter <.. Presentation.PresentationDccController
+Business.DataRetriever <.. Presentation.SearchPanel
 
 
-Presentation.PresentationDccController <.. Presentation.PresentationSwingDccView
+Data.DatabaseConnection <.. Data.CoordinateGroupDAO
 
 
 

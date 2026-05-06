@@ -29,7 +29,7 @@ export default function Header() {
             fontWeight: isActive ? "bold" : "normal"
           })}
         >
-          New Project
+          Results
         </NavLink>
 
         <NavLink

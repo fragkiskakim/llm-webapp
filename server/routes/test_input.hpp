@@ -1,293 +1,143 @@
-#pragma once
+#ifndef DCC_CLASS_DIAGRAM_H
+#define DCC_CLASS_DIAGRAM_H
 
-#include <string>
-#include <vector>
-#include <memory>
-#include <optional>
-#include <cstdint>
-
+// Data Layer Classes
 namespace Data {
+    class DatabaseConnection {
+    private:
+        std::string connectionString;
+        int port;
+        std::string username;
+        std::string password;
+    public:
+        DatabaseConnection(const std::string& connStr, int p, const std::string& u, const std::string& pw);
+        virtual ~DatabaseConnection();
+        void connect();
+        void disconnect();
+    };
 
-// Forward declarations (cross-namespace)
-class BusinessCoordinateGroup;
+    class CoordinateGroupDAO {
+    private:
+        Data::DatabaseConnection* dbConnection;
+    public:
+        CoordinateGroupDAO(Data::DatabaseConnection* conn);
+        virtual ~CoordinateGroupDAO();
+        void save(const std::string& label, float x, float y, float r, float theta);
+        void update(int id, const std::string& label, float x, float y, float r, float theta);
+        void remove(int id);
+        std::vector<std::tuple<int, std::string, float, float, float, float>> findByLabel(const std::string& label);
+        std::vector<std::tuple<int, std::string, float, float, float, float>> findAll();
+    };
 
-// --------------------
-// Data Transfer Objects
-// --------------------
-struct DataCoordinateGroupRecord final {
-    int id{};
-    std::string label;
-    std::int64_t timestampEpochSeconds{};
+    class CartesianCoordinates {
+    private:
+        float x;
+        float y;
+    public:
+        CartesianCoordinates(float newX, float newY);
+        ~CartesianCoordinates();
+        float getX() const;
+        float getY() const;
+        void setX(float newX);
+        void setY(float newY);
+    };
 
-    double x{};
-    double y{};
-    double r{};
-    double thetaRadians{};
-};
+    class PolarCoordinates {
+    private:
+        float r;
+        float theta;
+    public:
+        PolarCoordinates(float newR, float newTheta);
+        ~PolarCoordinates();
+        float getR() const;
+        float getTheta() const;
+        void setR(float newR);
+        void setTheta(float newTheta);
+    };
+}
 
-// --------------------
-// Database Abstractions
-// --------------------
-class DataMySqlConnection final {
-public:
-    DataMySqlConnection(const std::string& host,
-                        int port,
-                        const std::string& database,
-                        const std::string& user,
-                        const std::string& password);
-    ~DataMySqlConnection();
-
-    DataMySqlConnection(const DataMySqlConnection&) = delete;
-    DataMySqlConnection& operator=(const DataMySqlConnection&) = delete;
-
-    DataMySqlConnection(DataMySqlConnection&&) noexcept;
-    DataMySqlConnection& operator=(DataMySqlConnection&&) noexcept;
-
-    bool isOpen() const;
-    void open();
-    void close();
-
-private:
-    std::string m_host;
-    int m_port{};
-    std::string m_database;
-    std::string m_user;
-    std::string m_password;
-    bool m_open{false};
-};
-
-class DataCoordinateGroupRepository final {
-public:
-    explicit DataCoordinateGroupRepository(std::shared_ptr<DataMySqlConnection> connection);
-    ~DataCoordinateGroupRepository();
-
-    // Create
-    int insert(const DataCoordinateGroupRecord& record);
-
-    // Read
-    std::optional<DataCoordinateGroupRecord> findById(int id) const;
-    std::vector<DataCoordinateGroupRecord> findByLabel(const std::string& label) const;
-    std::vector<DataCoordinateGroupRecord> findAll() const;
-
-    // Update
-    bool update(const DataCoordinateGroupRecord& record);
-
-    // Delete
-    bool removeById(int id);
-
-private:
-    std::shared_ptr<DataMySqlConnection> m_connection;
-};
-
-class DataCoordinateGroupMapper final {
-public:
-    DataCoordinateGroupMapper() = default;
-    ~DataCoordinateGroupMapper() = default;
-
-    DataCoordinateGroupRecord toRecord(const BusinessCoordinateGroup& group) const;
-    BusinessCoordinateGroup toDomain(const DataCoordinateGroupRecord& record) const;
-};
-
-} // namespace Data
-
+// Business Layer Classes
 namespace Business {
+    class CoordinateGroupManager {
+    private:
+        Data::CoordinateGroupDAO* coordinateGroupDAO;
+    public:
+        CoordinateGroupManager(Data::CoordinateGroupDAO* dao);
+        ~CoordinateGroupManager();
+        void createGroup(const std::string& label, float x, float y);
+        void createGroup(const std::string& label, float r, float theta);
+        void updateGroup(int id, const std::string& label, float x, float y);
+        void updateGroup(int id, const std::string& label, float r, float theta);
+        void deleteGroup(int id);
+        std::vector<std::tuple<int, std::string, float, float, float, float>> searchGroups(const std::string& label);
+        std::vector<std::tuple<int, std::string, float, float, float, float>> getAllGroups();
+    };
 
-// Forward declarations (cross-namespace)
-class DataCoordinateGroupRepository;
-class DataCoordinateGroupMapper;
+    class CoordinateConverter {
+    public:
+        static std::pair<float, float> cartesianToPolar(float x, float y);
+        static std::pair<float, float> polarToCartesian(float r, float theta);
+    };
 
-// --------------------
-// Domain Model
-// --------------------
-struct BusinessCartesianCoord final {
-    double x{};
-    double y{};
-};
+    class DataRetriever {
+    private:
+        Data::CoordinateGroupDAO* coordinateGroupDAO;
+    public:
+        DataRetriever(Data::CoordinateGroupDAO* dao);
+        ~DataRetriever();
+        std::vector<std::tuple<int, std::string, float, float, float, float>> retrieveAllGroups();
+        std::vector<std::tuple<int, std::string, float, float, float, float>> retrieveByLabel(const std::string& label);
+    };
+}
 
-struct BusinessPolarCoord final {
-    double r{};
-    double thetaRadians{};
-};
-
-class BusinessCoordinateGroup final {
-public:
-    BusinessCoordinateGroup();
-    BusinessCoordinateGroup(int id,
-                            const std::string& label,
-                            std::int64_t timestampEpochSeconds,
-                            const BusinessCartesianCoord& cartesian,
-                            const BusinessPolarCoord& polar);
-
-    int getId() const;
-    void setId(int id);
-
-    const std::string& getLabel() const;
-    void setLabel(const std::string& label);
-
-    std::int64_t getTimestampEpochSeconds() const;
-    void setTimestampEpochSeconds(std::int64_t ts);
-
-    const BusinessCartesianCoord& getCartesian() const;
-    void setCartesian(const BusinessCartesianCoord& cartesian);
-
-    const BusinessPolarCoord& getPolar() const;
-    void setPolar(const BusinessPolarCoord& polar);
-
-private:
-    int m_id{0};
-    std::string m_label;
-    std::int64_t m_timestampEpochSeconds{0};
-    BusinessCartesianCoord m_cartesian{};
-    BusinessPolarCoord m_polar{};
-};
-
-// --------------------
-// Conversion Service
-// --------------------
-class BusinessCoordinateConverter final {
-public:
-    BusinessCoordinateConverter() = default;
-    ~BusinessCoordinateConverter() = default;
-
-    BusinessPolarCoord cartesianToPolar(const BusinessCartesianCoord& cart) const;
-    BusinessCartesianCoord polarToCartesian(const BusinessPolarCoord& polar) const;
-};
-
-// --------------------
-// Application Service (Use Cases)
-// --------------------
-class BusinessCoordinateGroupService final {
-public:
-    BusinessCoordinateGroupService(std::shared_ptr<DataCoordinateGroupRepository> repository,
-                                   std::shared_ptr<DataCoordinateGroupMapper> mapper,
-                                   std::shared_ptr<BusinessCoordinateConverter> converter);
-    ~BusinessCoordinateGroupService();
-
-    // Create: input either Cartesian or Polar; service computes the other.
-    BusinessCoordinateGroup createFromCartesian(const std::string& label,
-                                               const BusinessCartesianCoord& cartesian);
-    BusinessCoordinateGroup createFromPolar(const std::string& label,
-                                           const BusinessPolarCoord& polar);
-
-    // Retrieve
-    std::vector<BusinessCoordinateGroup> getAll() const;
-    std::vector<BusinessCoordinateGroup> searchByLabel(const std::string& label) const;
-    std::optional<BusinessCoordinateGroup> getById(int id) const;
-
-    // Modify (updates label and/or coordinates; service keeps both representations consistent)
-    bool updateFromCartesian(int id,
-                             const std::string& newLabel,
-                             const BusinessCartesianCoord& cartesian);
-    bool updateFromPolar(int id,
-                         const std::string& newLabel,
-                         const BusinessPolarCoord& polar);
-
-    // Delete
-    bool deleteById(int id);
-
-private:
-    std::shared_ptr<DataCoordinateGroupRepository> m_repository;
-    std::shared_ptr<DataCoordinateGroupMapper> m_mapper;
-    std::shared_ptr<BusinessCoordinateConverter> m_converter;
-};
-
-} // namespace Business
-
+// Presentation Layer Classes
 namespace Presentation {
+    class MainWindow {
+    private:
+        Business::CoordinateGroupManager* groupManager;
+        Business::DataRetriever* dataRetriever;
+        Business::CoordinateConverter* coordinateConverter;
+    public:
+        MainWindow(Business::CoordinateGroupManager* gm, Business::DataRetriever* dr, Business::CoordinateConverter* cc);
+        ~MainWindow();
+        void displayAllGroups();
+        void displayGroupsByLabel(const std::string& label);
+        void showCreatePanel();
+        void showModifyPanel();
+    };
 
-// Forward declarations (cross-namespace)
-class BusinessCoordinateGroupService;
-class BusinessCoordinateGroup;
-struct BusinessCartesianCoord;
-struct BusinessPolarCoord;
+    class CreateGroupPanel {
+    private:
+        Business::CoordinateGroupManager* groupManager;
+        Business::CoordinateConverter* coordinateConverter;
+    public:
+        CreateGroupPanel(Business::CoordinateGroupManager* gm, Business::CoordinateConverter* cc);
+        ~CreateGroupPanel();
+        void createCartesianGroup(const std::string& label, float x, float y);
+        void createPolarGroup(const std::string& label, float r, float theta);
+    };
 
-// --------------------
-// View Models
-// --------------------
-struct PresentationCoordinateGroupViewModel final {
-    int id{};
-    std::string label;
-    std::string timestampText;
+    class ModifyGroupPanel {
+    private:
+        Business::CoordinateGroupManager* groupManager;
+        Business::DataRetriever* dataRetriever;
+        Business::CoordinateConverter* coordinateConverter;
+    public:
+        ModifyGroupPanel(Business::CoordinateGroupManager* gm, Business::DataRetriever* dr, Business::CoordinateConverter* cc);
+        ~ModifyGroupPanel();
+        void updateGroup(int id, const std::string& label, float x, float y);
+        void updateGroup(int id, const std::string& label, float r, float theta);
+    };
 
-    double x{};
-    double y{};
-    double r{};
-    double thetaRadians{};
-};
+    class SearchPanel {
+    private:
+        Business::DataRetriever* dataRetriever;
+    public:
+        SearchPanel(Business::DataRetriever* dr);
+        ~SearchPanel();
+        std::vector<std::tuple<int, std::string, float, float, float, float>> search(const std::string& label);
+        std::vector<std::tuple<int, std::string, float, float, float, float>> viewAll();
+    };
+}
 
-class PresentationCoordinateGroupFormatter final {
-public:
-    PresentationCoordinateGroupFormatter() = default;
-    ~PresentationCoordinateGroupFormatter() = default;
-
-    PresentationCoordinateGroupViewModel toViewModel(const BusinessCoordinateGroup& group) const;
-    std::string formatTimestamp(std::int64_t timestampEpochSeconds) const;
-};
-
-// --------------------
-// Controller (Swing UI would call these methods directly)
-// --------------------
-class PresentationDccController final {
-public:
-    PresentationDccController(std::shared_ptr<BusinessCoordinateGroupService> service,
-                              std::shared_ptr<PresentationCoordinateGroupFormatter> formatter);
-    ~PresentationDccController();
-
-    // Create
-    PresentationCoordinateGroupViewModel createGroupFromCartesian(const std::string& label,
-                                                                  double x,
-                                                                  double y);
-    PresentationCoordinateGroupViewModel createGroupFromPolar(const std::string& label,
-                                                              double r,
-                                                              double thetaRadians);
-
-    // Retrieve
-    std::vector<PresentationCoordinateGroupViewModel> listAll() const;
-    std::vector<PresentationCoordinateGroupViewModel> searchByLabel(const std::string& label) const;
-    std::optional<PresentationCoordinateGroupViewModel> getById(int id) const;
-
-    // Modify
-    bool updateGroupFromCartesian(int id,
-                                  const std::string& newLabel,
-                                  double x,
-                                  double y);
-    bool updateGroupFromPolar(int id,
-                              const std::string& newLabel,
-                              double r,
-                              double thetaRadians);
-
-    // Delete
-    bool deleteGroup(int id);
-
-private:
-    std::shared_ptr<BusinessCoordinateGroupService> m_service;
-    std::shared_ptr<PresentationCoordinateGroupFormatter> m_formatter;
-};
-
-// --------------------
-// UI Boundary (represents Java Swing layer conceptually)
-// --------------------
-class PresentationSwingDccView final {
-public:
-    explicit PresentationSwingDccView(std::shared_ptr<PresentationDccController> controller);
-    ~PresentationSwingDccView();
-
-    // UI lifecycle
-    void show();
-    void close();
-
-    // UI actions (would be bound to Swing events)
-    void onCreateFromCartesian(const std::string& label, double x, double y);
-    void onCreateFromPolar(const std::string& label, double r, double thetaRadians);
-    void onSearchByLabel(const std::string& label);
-    void onListAll();
-    void onSelectById(int id);
-    void onUpdateFromCartesian(int id, const std::string& newLabel, double x, double y);
-    void onUpdateFromPolar(int id, const std::string& newLabel, double r, double thetaRadians);
-    void onDelete(int id);
-
-private:
-    std::shared_ptr<PresentationDccController> m_controller;
-};
-
-} // namespace Presentation
+#endif // DCC_CLASS_DIAGRAM_H
