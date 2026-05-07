@@ -22,7 +22,7 @@ export default function Header() {
 
       <div style={{ display: "flex", gap: 20 }}>
         <NavLink
-          to="/new_project"
+          to="/results"
           style={({ isActive }) => ({
             textDecoration: "none",
             color: "black",

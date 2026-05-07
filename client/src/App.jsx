@@ -39,7 +39,7 @@ export default function App() {
           <Route path="/database" element={<DatabasePage />} />
           <Route path="/new" element={<NewPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
-          <Route path="/new_project" element={<ResultsPage />} />
+          <Route path="/results" element={<ResultsPage />} />
           <Route path="/dcc_project" element={<Navigate to="/dcc_project/run" replace />} />
           <Route path="/dcc_project/run" element={<RunPage />} />
           <Route path="/dcc_project/repeated" element={<Navigate to="/dcc_project/repeated/results" replace />} />
