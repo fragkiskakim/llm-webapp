@@ -18,10 +18,7 @@ function computeCohesion(graphJson) {
     const cohesion = {};
     for (const [ns, members] of Object.entries(nsNodes)) {
         const n = members.size;
-        if (n < 2) {
-            cohesion[ns] = 0;
-            continue;
-        }
+        if (n < 2) { cohesion[ns] = 0; continue; }
 
         const maxPossibleConnections = (n * (n - 1)) / 2;
         const uniqueInternalPairs = new Set();
@@ -38,6 +35,48 @@ function computeCohesion(graphJson) {
     }
 
     return cohesion;
+}
+
+// ─── Weighted Coupling ────────────────────────────────────────────────────────
+// weighted_ce[A] = total edges leaving A to other namespaces (counts multiplicity)
+// weighted_ca[A] = total edges arriving at A from other namespaces (counts multiplicity)
+//
+// Contrast with Martin's Ca/Ce which count only unique namespace-to-namespace pairs.
+// weighted_ce/ca capture coupling *strength*: a namespace with 20 edges to B is more
+// tightly coupled than one with 1 edge to B, even though both have Ce = 1.
+
+function computeWeightedCoupling(graphJson) {
+    const { nodes = [], edges = [] } = graphJson;
+
+    const nodeNs = {};
+    for (const node of nodes) {
+        if (node.owner_namespace) nodeNs[node.id] = node.owner_namespace;
+    }
+
+    const weightedCe = {};
+    const weightedCa = {};
+
+    for (const e of edges) {
+        const src = e.source ?? e.src;
+        const dst = e.target ?? e.dst;
+        if (!src || !dst) continue;
+        const srcNs = nodeNs[src];
+        const dstNs = nodeNs[dst];
+        if (!srcNs || !dstNs || srcNs === dstNs) continue;
+
+        weightedCe[srcNs] = (weightedCe[srcNs] ?? 0) + 1;
+        weightedCa[dstNs] = (weightedCa[dstNs] ?? 0) + 1;
+    }
+
+    const allNs = new Set([...Object.keys(weightedCe), ...Object.keys(weightedCa)]);
+    const result = {};
+    for (const ns of allNs) {
+        result[ns] = {
+            weighted_ce: weightedCe[ns] ?? 0,
+            weighted_ca: weightedCa[ns] ?? 0,
+        };
+    }
+    return result;
 }
 
 // ─── Architecture-specific warnings ──────────────────────────────────────────
@@ -60,25 +99,25 @@ function check3Tier(nsEdges) {
     const warnings = [];
     const allowed = new Set(["Presentation→Business", "Business→Data"]);
     for (const edge of nsEdges) {
-        if (!allowed.has(edge)) {
-            warnings.push(`❌ Παράνομη εξάρτηση: ${edge} (επιτρέπεται μόνο Presentation→Business, Business→Data)`);
-        }
+        if (!allowed.has(edge))
+            warnings.push(`❌ Παράνομη εξάρτηση: ${edge}`);
     }
-    if (!nsEdges.has("Presentation→Business")) warnings.push("⚠️ Λείπει η εξάρτηση Presentation→Business");
-    if (!nsEdges.has("Business→Data")) warnings.push("⚠️ Λείπει η εξάρτηση Business→Data");
+    if (!nsEdges.has("Presentation→Business"))
+        warnings.push(`❌ Λείπει η απαιτούμενη εξάρτηση: Presentation→Business`);
+    if (!nsEdges.has("Business→Data"))
+        warnings.push(`❌ Λείπει η απαιτούμενη εξάρτηση: Business→Data`);
     return warnings;
 }
 
 function checkClientServer(nsEdges) {
     const warnings = [];
-    const allowed = new Set(["Client→Server", "Server→Database"]);
+    const allowed = new Set(["Client→Server"]);
     for (const edge of nsEdges) {
-        if (!allowed.has(edge)) {
-            warnings.push(`❌ Παράνομη εξάρτηση: ${edge} (επιτρέπεται μόνο Client→Server, Server→Database)`);
-        }
+        if (!allowed.has(edge))
+            warnings.push(`❌ Παράνομη εξάρτηση: ${edge}`);
     }
-    if (!nsEdges.has("Client→Server")) warnings.push("⚠️ Λείπει η εξάρτηση Client→Server");
-    if (!nsEdges.has("Server→Database")) warnings.push("⚠️ Λείπει η εξάρτηση Server→Database");
+    if (!nsEdges.has("Client→Server"))
+        warnings.push(`❌ Λείπει η απαιτούμενη εξάρτηση: Client→Server`);
     return warnings;
 }
 
@@ -87,15 +126,14 @@ function checkMVC(nsEdges) {
     const required = new Set(["View→Controller", "Controller→Model"]);
     const optional = new Set(["View→Model"]);
     for (const edge of nsEdges) {
-        if (!required.has(edge) && !optional.has(edge)) {
+        if (!required.has(edge) && !optional.has(edge))
             warnings.push(`❌ Παράνομη εξάρτηση: ${edge}`);
-        }
-        if (optional.has(edge)) {
-            warnings.push(`⚠️ Προαιρετική εξάρτηση ${edge} — ελέγξτε αν είναι σκόπιμη`);
-        }
+        if (optional.has(edge))
+            warnings.push(`⚠️ Προαιρετική εξάρτηση ${edge}`);
     }
     for (const req of required) {
-        if (!nsEdges.has(req)) warnings.push(`❌ Λείπει η απαιτούμενη εξάρτηση: ${req}`);
+        if (!nsEdges.has(req))
+            warnings.push(`❌ Λείπει η απαιτούμενη εξάρτηση: ${req}`);
     }
     return warnings;
 }
@@ -110,23 +148,21 @@ function checkMicroservices(nsEdges, graphJson) {
     for (const edge of nsEdges) {
         const [src, dst] = edge.split("→");
         for (const dbNs of dbNamespaces) {
-            if (dst === dbNs && src !== dbNs) {
-                warnings.push(`⚠️ Direct database access από ${src}→${dst} — εξετάστε αν παραβιάζει τα όρια του service`);
-            }
+            if (dst === dbNs && src !== dbNs)
+                warnings.push(`⚠️ Direct database access από ${src}→${dst}`);
         }
     }
     return warnings;
 }
 
 // ─── Main export ──────────────────────────────────────────────────────────────
-// cppMetrics: το JSON που επιστρέφει το analyze_cpp_namespaces.py
-// Έχει τη μορφή: { namespaces: [ { name, Ca, Ce, I, D, A, uses, used_by }, … ] }
 
 function analyzeArchitecture(graphJson, architecture, cppMetrics) {
     const cohesion = computeCohesion(graphJson);
+    const weightedCoupling = computeWeightedCoupling(graphJson);
     const nsEdges = getNamespaceEdges(graphJson);
 
-    // Μετατροπή του Python output σε { [nsName]: { ca, ce, instability, abstractness, distance } }
+    // Martin metrics from Python (Ca/Ce = unique namespace pairs)
     const martinMetrics = {};
     if (cppMetrics?.namespaces) {
         for (const ns of cppMetrics.namespaces) {
@@ -150,23 +186,22 @@ function analyzeArchitecture(graphJson, architecture, cppMetrics) {
     // Martin metric warnings
     const martinWarnings = [];
     for (const [ns, m] of Object.entries(martinMetrics)) {
-        if (m.distance > 0.3) {
-            martinWarnings.push(`⚠️ ${ns}: D=${m.distance} (>0.3) — εξετάστε ισορροπία abstractness/instability`);
-        }
+        if (m.distance > 0.3)
+            martinWarnings.push(`⚠️ ${ns}: D=${m.distance} (>0.3)`);
     }
 
     // Cohesion warnings
     const cohesionWarnings = [];
     for (const [ns, c] of Object.entries(cohesion)) {
-        if (c < 0.3) {
-            cohesionWarnings.push(`⚠️ ${ns}: χαμηλό cohesion (${c}) — οι κλάσεις του namespace είναι χαλαρά συνδεδεμένες`);
-        }
+        if (c < 0.3)
+            cohesionWarnings.push(`⚠️ ${ns}: χαμηλό cohesion (${c})`);
     }
 
     return {
         architecture,
         martin_metrics: martinMetrics,
         cohesion,
+        weighted_coupling: weightedCoupling,
         warnings: {
             architecture: archWarnings,
             martin: martinWarnings,
@@ -175,7 +210,7 @@ function analyzeArchitecture(graphJson, architecture, cppMetrics) {
         summary: {
             total_warnings: archWarnings.length + martinWarnings.length + cohesionWarnings.length,
             arch_violations: archWarnings.filter(w => w.startsWith("❌")).length,
-        }
+        },
     };
 }
 
